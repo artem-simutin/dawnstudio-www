@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+  min-width: 0px;
+}
+
 @theme {
   --color-base-white: #ffffff;
   --color-base-black: #000000;
@@ -366,9 +371,9 @@
   --color-yellow-950: #542c0d;
 
   --spacing-0: 0px;
-  --spacing-0-5: 2px;
+  --spacing-0_5: 2px;
   --spacing-1: 4px;
-  --spacing-1-5: 6px;
+  --spacing-1_5: 6px;
   --spacing-2: 8px;
   --spacing-3: 12px;
   --spacing-4: 16px;
@@ -398,14 +403,15 @@
   --spacing-400: 1600px;
   --spacing-480: 1920px;
 
-  --container-padding-mobile: var(--spacing-4);
-  --container-padding-desktop: var(--spacing-8);
+  --spacing-container-padding-mobile: var(--spacing-4);
+  --spacing-container-padding-desktop: var(--spacing-8);
+
   --container-max-width-desktop: var(--spacing-320);
 
   --spacing-none: var(--spacing-0);
-  --spacing-xxs: var(--spacing-0․5);
+  --spacing-xxs: var(--spacing-0_5);
   --spacing-xs: var(--spacing-1);
-  --spacing-sm: var(--spacing-1․5);
+  --spacing-sm: var(--spacing-1_5);
   --spacing-md: var(--spacing-2);
   --spacing-lg: var(--spacing-3);
   --spacing-xl: var(--spacing-4);
@@ -435,14 +441,14 @@
   --font-display: "Manrope";
   --font-body: "Manrope";
 
-  --font-regular: "Regular";
-  --font-regular-italic: "Regular italic";
-  --font-medium: "Medium";
-  --font-medium-italic: "Medium italic";
-  --font-semibold: "Semibold";
-  --font-semibold-italic: "Semibold italic";
-  --font-bold: "Bold";
-  --font-bold-italic: "Bold italic";
+  --font-weight-regular: 400;
+  --font-weight-regular-italic: 400 italic;
+  --font-weight-medium: 500;
+  --font-weight-medium-italic: 500 italic;
+  --font-weight-semibold: 600;
+  --font-weight-semibold-italic: 600 italic;
+  --font-weight-bold: 700;
+  --font-weight-bold-italic: 700 italic;
 
   --leading-xs: 18px;
   --leading-sm: 20px;
@@ -542,7 +548,6 @@
   --color-component-alpha-black-80: #000000CC;
   --color-component-alpha-black-90: #000000E5;
   --color-component-alpha-black-100: #000000;
-  --color-component-utility-gray-utility-gray-50: var(--color-gray-50);
   --color-component-appstorebadges-app-store-badge-border: #A6A6A6;
   --color-component-avatars-avatar-styles-neutral: #E0E0E0;
   --color-component-button-primary-icon: var(--color-brand-300);
@@ -568,15 +573,16 @@
   --color-component-tooltips-tooltip-supporting-text: var(--color-gray-300);
   --color-component-texteditor-text-editor-icon-fg: var(--color-gray-400);
   --color-component-texteditor-text-editor-icon-fg_active: var(--color-gray-500);
-  --color-component-utility-gray-utility-gray-100: var(--color-gray-100);
-  --color-component-utility-gray-utility-gray-200: var(--color-gray-200);
-  --color-component-utility-gray-utility-gray-300: var(--color-gray-300);
-  --color-component-utility-gray-utility-gray-400: var(--color-gray-400);
-  --color-component-utility-gray-utility-gray-500: var(--color-gray-500);
-  --color-component-utility-gray-utility-gray-600: var(--color-gray-600);
-  --color-component-utility-gray-utility-gray-700: var(--color-gray-700);
-  --color-component-utility-gray-utility-gray-800: var(--color-gray-800);
-  --color-component-utility-gray-utility-gray-900: var(--color-gray-900);
+  --color-component-utility-gray-50: var(--color-gray-50);
+  --color-component-utility-gray-100: var(--color-gray-100);
+  --color-component-utility-gray-200: var(--color-gray-200);
+  --color-component-utility-gray-300: var(--color-gray-300);
+  --color-component-utility-gray-400: var(--color-gray-400);
+  --color-component-utility-gray-500: var(--color-gray-500);
+  --color-component-utility-gray-600: var(--color-gray-600);
+  --color-component-utility-gray-700: var(--color-gray-700);
+  --color-component-utility-gray-800: var(--color-gray-800);
+  --color-component-utility-gray-900: var(--color-gray-900);
   --color-component-utility-brand-50: var(--color-brand-50);
   --color-component-utility-brand-50_alt: var(--color-brand-50);
   --color-component-utility-brand-100: var(--color-brand-100);
@@ -709,19 +715,19 @@
   --color-component-utility-orange-500: var(--color-orange-500);
   --color-component-utility-orange-600: var(--color-orange-600);
   --color-component-utility-orange-700: var(--color-orange-700);
-  --color-foreground-secondary(700): var(--color-gray-700);
+  --color-foreground-secondary: var(--color-gray-700);
   --color-foreground-secondary_hover: var(--color-gray-800);
-  --color-foreground-tertiary(600): var(--color-gray-600);
+  --color-foreground-tertiary: var(--color-gray-600);
   --color-foreground-tertiary_hover: var(--color-gray-700);
-  --color-foreground-quaternary(400): var(--color-gray-400);
+  --color-foreground-quaternary: var(--color-gray-400);
   --color-foreground-quaternary_hover: var(--color-gray-500);
   --color-foreground-white: var(--color-base-white);
   --color-foreground-disabled: var(--color-gray-400);
   --color-foreground-disabled_subtle: var(--color-gray-300);
-  --color-foreground-brand-primary(600): var(--color-brand-600);
-  --color-foreground-brand-primary_alt: var(--color-foreground-brand-primary(600));
-  --color-foreground-brand-secondary(500): var(--color-brand-500);
-  --color-foreground-brand-secondary_alt: var(--color-foreground-brand-secondary(500));
+  --color-foreground-brand-primary: var(--color-brand-600);
+  --color-foreground-brand-primary_alt: var(--color-foreground-brand-primary);
+  --color-foreground-brand-secondary: var(--color-brand-500);
+  --color-foreground-brand-secondary_alt: var(--color-foreground-brand-secondary);
   --color-foreground-brand-secondary_hover: var(--color-brand-600);
   --color-foreground-error-primary: var(--color-error-600);
   --color-foreground-error-secondary: var(--color-error-500);
