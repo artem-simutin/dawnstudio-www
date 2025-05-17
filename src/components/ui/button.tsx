@@ -10,9 +10,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-background-brand-solid text-text-primary_on-brand shadow-xs hover:bg-background-brand-solid_hover disabled:bg-background-disabled",
+          "bg-background-brand-solid text-text-primary_on-brand shadow-xs hover:bg-background-brand-solid_hover disabled:bg-background-disabled shadow-xs",
         secondary:
-          "bg-background-primary text-text-secondary hover:bg-background-primary_hover hover:text-text-secondary_hover border-border-primary",
+          "bg-background-primary text-text-secondary border border-border-primary hover:bg-background-primary_hover hover:text-text-secondary_hover border-border-primary shadow-xs",
         tertiary:
           "text-text-tertiary hover:bg-background-primary_hover hover:text-text-tertiary_hover disabled:text-foreground-disabled",
         linkColor:
