@@ -13,7 +13,6 @@ import {
   AnnotationInfo,
   Feather,
   HeartHand,
-  Inbox01,
   Speedometer03,
   UntitledIcon,
   Wallet03,

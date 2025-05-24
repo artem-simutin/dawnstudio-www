@@ -11,7 +11,7 @@ import {
 } from "./ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import config from "@/config";
 
 const Header = () => {

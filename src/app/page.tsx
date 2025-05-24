@@ -11,7 +11,6 @@ import SocialProof from "@/components/social-proof";
 import Team from "@/components/team";
 import Testimonials from "@/components/testimonials";
 import { Metadata } from "next";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Dawn Studio | AI Automation Agency",
