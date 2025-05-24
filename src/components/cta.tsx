@@ -30,7 +30,7 @@ const CTA = () => {
               Schedule a call
             </Link>
             <span className="text-text-tertiary text-xs leading-xs">
-              *It's free
+              *It&apos;s free
             </span>
           </div>
         </div>

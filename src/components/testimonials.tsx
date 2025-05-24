@@ -95,8 +95,8 @@ const TextCard: FC<Props> = ({ className }) => {
         />
         <p className="w-full text-text-tertiary text-md leading-md">
           My god it is so fast. Boot time, UI interaction, typing latency. I
-          feel it. I knew VS Code always felt sluggish, but I didn't realize how
-          good things could really be. I'm honestly astounded.
+          feel it. I knew VS Code always felt sluggish, but I didn&apos;t
+          realize how good things could really be. I&apos;m honestly astounded.
         </p>
       </div>
       <div className="flex gap-x-lg">
