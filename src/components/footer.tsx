@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full flex flex-col">
       {/* decoration */}
-      <div className="border border-border-secondary h-4"></div>
+      <div className="border border-border-secondary h-4 bg-[url(/patterns/slash.svg)]"></div>
 
       {/* main content */}
       <div className="max-w-container-desktop px-container-desktop py-8xl">
@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       {/* sub footer */}
-      <div className="w-full pb-6xl pt-8xl border-border-secondary border-t">
+      <div className="w-full pb-6xl pt-6xl border-border-secondary border-t">
         <div className="max-w-max-width-desktop flex justify-between items-center mx-auto px-container-padding-desktop">
           <span className="text-text-quaternary">
             © 2025 Dawn Studio. All rights reserved.

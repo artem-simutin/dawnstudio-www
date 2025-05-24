@@ -4,28 +4,22 @@ import React from "react";
 import { ArrowRight } from "untitledui-js/react";
 import { buttonVariants } from "./ui/button";
 import Image from "next/image";
+import SectionTitle from "./shared/section-title";
 
 const Services = () => {
   return (
-    <section className="w-full border border-border-secondary flex flex-col gap-y-9xl py-9xl">
-      <div className="w-full max-w-max-width-desktop mx-auto flex-col flex space-y-3xl">
-        <div className="w-full flex flex-col space-y-lg">
-          <span className="text-text-brand-secondary text-md leading-md w-full text-center">
-            Services
-          </span>
-          <h2 className="text-text-primary text-display-md leading-display-md font-semibold text-center w-full">
-            What we offer
-          </h2>
-        </div>
-        <p className="text-text-tertiary text-lg leading-lg w-full text-center">
-          Powerful package to elevate your business to the new level.
-        </p>
+    <section className="w-full border-b border-border-secondary flex flex-col gap-y-9xl py-9xl max-w-full-page border-x">
+      <div className="mx-auto w-full max-w-max-width-desktop">
+        <SectionTitle
+          title="What we offer"
+          description="Automation systems that win back your time, grow revenue, and keep your operations moving."
+        />
       </div>
-      <div className="w-full mx-auto max-w-max-width-desktop px-container-padding-desktop">
+      <div className="w-full mx-auto max-w-256">
         {/* card - row */}
         <div className="border border-border-secondary w-full flex h-96">
-          <div className="w-full flex flex-col justify-end p-6xl space-y-4xl border-r border-border-secondary">
-            <div className="w-full flex flex-col space-y-lg">
+          <div className="w-full flex flex-col justify-center p-6xl space-y-4xl border-r border-border-secondary">
+            <div className="w-full flex flex-col space-y-lg max-w-96">
               <h3 className="text-text-primary text-display-sm leading-display-sm font-semibold">
                 Cold Email System
               </h3>
@@ -45,15 +39,13 @@ const Services = () => {
               <ArrowRight size="20px" />
             </Link>
           </div>
-          <div className="relative w-full overflow-hidden">
+          <div className="relative w-full overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px]">
             <Image
-              src="/illustrations/phone.svg"
-              width={769}
-              height={493}
-              className="absolute top-[77px] right-[77px]"
-              alt="Phone"
+              src="/illustrations/cold-email-system.svg"
+              width={196}
+              height={236}
+              alt="Watch"
             />
-            <div className="absolute w-full h-[110px] bottom-0 bg-gradient-to-b from-transparent to-white" />
           </div>
         </div>
 
@@ -62,24 +54,23 @@ const Services = () => {
 
         {/* card - row */}
         <div className="border border-border-secondary w-full flex h-80">
-          <div className="relative w-full overflow-hidden border-r border-border-secondary">
+          <div className="relative overflow-hidden border-r border-border-secondary flex items-center bg-[url(/patterns/square-small.svg)] w-[280px] shrink-0">
             <Image
-              src="/illustrations/trees.svg"
-              width={189}
-              height={162}
-              className="absolute top-[87px] left-[54px]"
-              alt="Trees"
+              src="/illustrations/battery.svg"
+              width={114}
+              height={120}
+              className="absolute left-[63px]"
+              alt="Battery"
             />
-            <div className="absolute w-full h-[110px] bottom-0 bg-gradient-to-b from-transparent to-white" />
           </div>
-          <div className="w-full flex flex-col justify-end p-6xl space-y-4xl border-r border-border-secondary">
-            <div className="w-full flex flex-col space-y-lg">
+          <div className="w-full flex flex-col justify-center p-6xl space-y-4xl border-r border-border-secondary">
+            <div className="w-full flex flex-col space-y-lg max-w-96">
               <h3 className="text-text-primary text-display-sm leading-display-sm font-semibold">
-                Cold Email System
+                Customized CRM System
               </h3>
               <p className="text-text-tertiary text-md leading-md">
-                Send highly personalized emails which cuts research times and
-                increases reply rates at scale.
+                Add AI automations on top of the CRM you already use, saving
+                time and making sure no lead gets missed.
               </p>
             </div>
             <Link
@@ -93,15 +84,13 @@ const Services = () => {
               <ArrowRight size="20px" />
             </Link>
           </div>
-          <div className="relative w-full overflow-hidden">
+          <div className="relative overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] w-[280px] shrink-0">
             <Image
-              src="/illustrations/trees.svg"
-              width={189}
-              height={162}
-              className="absolute top-[87px] left-[54px]"
-              alt="Trees"
+              src="/illustrations/tumbler.svg"
+              width={191}
+              height={109}
+              alt="Tumbler"
             />
-            <div className="absolute w-full h-[110px] bottom-0 bg-gradient-to-b from-transparent to-white" />
           </div>
         </div>
 
@@ -110,24 +99,22 @@ const Services = () => {
 
         {/* card - row */}
         <div className="border border-border-secondary w-full flex h-80">
-          <div className="relative w-full overflow-hidden border-r border-border-secondary max-w-120">
+          <div className="relative w-full overflow-hidden border-r border-border-secondary flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px]">
             <Image
-              src="/illustrations/phone.svg"
-              width={769}
-              height={493}
-              className="absolute top-[77px] right-[77px]"
-              alt="Phone"
+              src="/illustrations/ball-rolling.svg"
+              width={241}
+              height={256}
+              alt="Ball rolling"
             />
-            <div className="absolute w-full h-[110px] bottom-0 bg-gradient-to-b from-transparent to-white" />
           </div>
-          <div className="w-full flex flex-col justify-end p-6xl space-y-4xl">
-            <div className="w-full flex flex-col space-y-lg">
+          <div className="w-full flex flex-col justify-center p-6xl space-y-4xl">
+            <div className="w-full flex flex-col space-y-lg max-w-96">
               <h3 className="text-text-primary text-display-sm leading-display-sm font-semibold">
-                Cold Email System
+                Onboarding Systems
               </h3>
               <p className="text-text-tertiary text-md leading-md">
-                Send highly personalized emails which cuts research times and
-                increases reply rates at scale.
+                Guides every customer automatically sending emails, reminders,
+                and docs at the right time.
               </p>
             </div>
             <Link
@@ -148,14 +135,14 @@ const Services = () => {
 
         {/* card - row */}
         <div className="border border-border-secondary w-full flex h-80">
-          <div className="w-full flex flex-col justify-end p-6xl space-y-4xl border-r border-border-secondary max-w-120">
-            <div className="w-full flex flex-col space-y-lg">
+          <div className="w-full flex flex-col justify-center p-6xl space-y-4xl border-r border-border-secondary">
+            <div className="w-full flex flex-col space-y-lg max-w-96">
               <h3 className="text-text-primary text-display-sm leading-display-sm font-semibold">
-                Cold Email System
+                Content Systems
               </h3>
               <p className="text-text-tertiary text-md leading-md">
-                Send highly personalized emails which cuts research times and
-                increases reply rates at scale.
+                Create and share posts and emails without having to write or
+                schedule them yourself.
               </p>
             </div>
             <Link
@@ -169,7 +156,7 @@ const Services = () => {
               <ArrowRight size="20px" />
             </Link>
           </div>
-          <div className="relative w-full overflow-hidden flex items-center">
+          <div className="relative w-full overflow-hidden flex items-center max-w-[440px]">
             <Image
               src="/illustrations/trees.svg"
               width={189}

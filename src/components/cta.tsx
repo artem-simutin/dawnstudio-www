@@ -1,10 +1,12 @@
 import React from "react";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import config from "@/config";
 
 const CTA = () => {
   return (
-    <section className="w-full py-9xl">
+    <section className="w-full py-9xl border-x max-w-full-page border-border-secondary">
       <div className="max-w-max-width-desktop mx-auto flex gap-x-7xl items-center justify-between px-container-padding-desktop">
         <div className="space-y-6xl flex flex-col max-w-120">
           <div className="space-y-3xl flex flex-col">
@@ -17,7 +19,16 @@ const CTA = () => {
             </p>
           </div>
           <div className="flex flex-col space-y-xs">
-            <Button className="w-min">Schedule a call</Button>
+            <Link
+              href={config.calComLink}
+              className={buttonVariants({
+                variant: "primary",
+                className: "w-min",
+              })}
+              target="_blank"
+            >
+              Schedule a call
+            </Link>
             <span className="text-text-tertiary text-xs leading-xs">
               *It's free
             </span>

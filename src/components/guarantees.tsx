@@ -9,44 +9,56 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Inbox01 } from "untitledui-js/react";
+import {
+  AnnotationInfo,
+  Feather,
+  HeartHand,
+  Inbox01,
+  Speedometer03,
+  UntitledIcon,
+  Wallet03,
+} from "untitledui-js/react";
 
 type Guarantee = {
   value: string;
   title: string;
   content: string;
+  icon: UntitledIcon;
 };
 
 const guarantees: Guarantee[] = [
   {
     value: "1",
-    title: "Share team inboxes",
-    content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+    title: "ROI Guarantee",
+    content: "If you don’t get 2× ROI, you get 100% of your money back.",
+    icon: Wallet03,
   },
   {
     value: "2",
-    title: "Share team inboxes",
+    title: "Fast Delivery Guarantee",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "Your first system goes live in 7–14 days - or you get a discount.",
+    icon: Speedometer03,
   },
   {
     value: "3",
-    title: "Share team inboxes",
+    title: "Full Ownership Guarantee",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "All accounts and tools are set up under your name. You keep everything, always.",
+    icon: HeartHand,
   },
   {
     value: "4",
-    title: "Share team inboxes",
+    title: "No Ghosting Guarantees",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "You get 30 days of free support to make sure everything works smoothly.",
+    icon: AnnotationInfo,
   },
   {
     value: "5",
-    title: "Share team inboxes",
-    content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+    title: "No Lock-In",
+    content: "No contracts. No commitments. Cancel anytime - no hard feelings.",
+    icon: Feather,
   },
 ];
 
@@ -54,12 +66,11 @@ const Guarantees = () => {
   const [openItem, setOpenItem] = useState("1");
 
   return (
-    <section className="w-full border-b border-border-secondary py-9xl space-y-7xl flex flex-col">
+    <section className="w-full border-b border-border-secondary py-9xl space-y-7xl flex flex-col max-w-full-page border-x">
       <div className="w-full mx-auto max-w-max-width-desktop">
         <SectionTitle
-          subTitle="Features"
-          title="Overflowing with useful features"
-          description="Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups."
+          title="Our Promises"
+          description="Just real guarantees that protect your time, money, and trust."
         />
       </div>
       <div className="w-full max-w-max-width-desktop border border-border-secondary mx-auto flex">
@@ -71,6 +82,7 @@ const Guarantees = () => {
                 value={g.value}
                 title={g.title}
                 content={g.content}
+                icon={g.icon}
                 onClick={() => {
                   setOpenItem(g.value);
                 }}
@@ -96,19 +108,21 @@ interface ItemProps {
   onClick?: () => void;
   title: string;
   content: string;
+  icon: UntitledIcon;
 }
 
-const Item: FC<ItemProps> = ({ onClick, content, title, value }) => {
+const Item: FC<ItemProps> = ({ onClick, content, title, value, icon }) => {
+  const Icon = icon;
   return (
     <AccordionItem
       value={value}
       onClick={onClick}
       className="cursor-pointer p-3xl border-b border-border-secondary"
     >
-      <AccordionTrigger className="!p-0 mb-1">
+      <AccordionTrigger className="!p-0 mb-1 cursor-pointer">
         <div className="w-full flex gap-x-xl items-center">
           <div className="p-xs rounded-xs border border-border-secondary bg-background-secondary">
-            <Inbox01 size="20px" className="text-foreground-brand-primary" />
+            <Icon size="20px" className="text-foreground-brand-primary" />
           </div>
           <span className="text-text-primary font-semibold text-lg leading-lg">
             {title}

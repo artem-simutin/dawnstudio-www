@@ -5,6 +5,8 @@
   min-width: 0px;
 }
 
+
+
 @theme {
   --color-base-white: #ffffff;
   --color-base-black: #000000;
@@ -407,6 +409,7 @@
   --spacing-container-padding-desktop: var(--spacing-8);
 
   --container-max-width-desktop: var(--spacing-320);
+  --container-full-page: var(--spacing-360);
 
   --spacing-none: var(--spacing-0);
   --spacing-xxs: var(--spacing-0_5);
@@ -493,6 +496,37 @@
   --focus-ring-error: 0px 0px 0px 4px #F04438, 0px 0px 0px 2px var(--color-background-primary);
   --focus-ring-error-shadow-xs: 0px 0px 0px 4px #F04438, 0px 0px 0px 2px var(--color-background-primary), 0px 1px 2px 0px rgba(10,13,18,0);
   --focus-ring-error-shadow-xs-skeuomorphic: 0px 0px 0px 4px #F04438, 0px 0px 0px 2px var(--color-background-primary), 0px 1px 2px 0px rgba(10,13,18,0), inset 0px -2px 0px 0px rgba(10,13,18,0), inset 0px 0px 0px 1px rgba(10,13,18,0);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1s steps(1) infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes caret-blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
 
   --color-text-primary: var(--color-gray-900);
   --color-text-primary_on-brand: var(--color-base-white);

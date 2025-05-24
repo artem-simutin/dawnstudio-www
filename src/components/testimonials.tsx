@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 const Testimonials = () => {
   return (
-    <section className="w-full flex border-b border-border-secondary flex-col space-y-7xl py-9xl">
+    <section className="w-full flex border-b border-border-secondary flex-col space-y-7xl py-9xl max-w-full-page border-x">
       <div className="w-full max-w-max-width-desktop mx-auto flex flex-col space-y-2xl">
         <h2 className="text-text-primary font-semibold text-display-md leading-display-md w-full text-center">
           What do our customers say?

@@ -7,10 +7,6 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Dawn Studio",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

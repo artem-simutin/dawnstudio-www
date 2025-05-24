@@ -8,25 +8,34 @@ import { ArrowRight } from "untitledui-js/react";
 
 const CaseStudies = () => {
   return (
-    <section className="w-full border-b border-border-secondary py-9xl flex flex-col space-y-6xl">
-      <div className="w-full mx-auto max-w-max-width-desktop">
-        <SectionTitle
-          subTitle="Case studies"
-          title="How we helped business grow."
-          description="Read our case studies."
-        />
+    <section className="w-full border-y border-border-secondary flex flex-col">
+      <div className="border-border-secondary border-x max-w-full-page pt-9xl pb-6xl mx-auto w-full">
+        <div className="w-full mx-auto max-w-max-width-desktop">
+          <SectionTitle
+            title="How we helped business grow."
+            description="Read our case studies."
+          />
+        </div>
       </div>
-      <div className="w-full mx-auto max-w-max-width-desktop">
-        <CaseStudyPreview
-          companyLogoUrl="/companies/nietzsche.svg"
-          tags={["+50% Lead Generation", "$6.2M Series A"]}
-          title="How Nietzsche increased their sales 2X"
-          description="By channeling Nietzschean boldness into its branding, the company doubled sales through a fearless, value-driven campaign."
-          companyName="Nietzssche"
-          href="/"
-          illustrationUrl="/illustrations/card.svg"
-        />
+
+      <div className="w-full mx-auto border-y border-border-secondary flex">
+        <div className="w-full max-w-full-page mx-auto flex border-x border-border-secondary">
+          <div className="bg-[url(/patterns/slash.svg)] grow" />
+          <div className="w-full mx-auto max-w-max-width-desktop">
+            <CaseStudyPreview
+              companyLogoUrl="/companies/nietzsche.svg"
+              tags={["+50% Lead Generation", "$6.2M Series A"]}
+              title="How Nietzsche increased their sales 2X"
+              description="By channeling Nietzschean boldness into its branding, the company doubled sales through a fearless, value-driven campaign."
+              companyName="Nietzssche"
+              href="/"
+              illustrationUrl="/illustrations/card.svg"
+            />
+          </div>
+          <div className="bg-[url(/patterns/slash.svg)] grow" />
+        </div>
       </div>
+      <div className="h-10xl max-w-full-page border-x border-border-secondary w-full mx-auto"></div>
     </section>
   );
 };
@@ -43,7 +52,7 @@ interface CaseStudyProps {
 
 const CaseStudyPreview: FC<CaseStudyProps> = (props) => {
   return (
-    <div className="w-full flex border border-border-secondary">
+    <div className="w-full flex border-x border-border-secondary">
       <div className="w-[312px] flex items-center border-r border-border-secondary">
         <Image
           src={props.illustrationUrl}
