@@ -3,46 +3,47 @@ import React from "react";
 
 const SocialProof = () => {
   return (
-    <section className="w-full py-8xl px-5xl flex flex-col items-center border-b border-border-secondary border-x max-w-full-page">
-      <span className="text-text-tertiary text-sm leading-sm">
-        Trusted by professionals at
-      </span>
-      <div className="w-full flex items-center">
-        <div className="px-container-padding-desktop flex w-full">
-          <div className="justify-center w-full flex items-center gap-x-9xl">
-            <Image
-              src="/companies/docutiv.svg"
-              width={145}
-              height={46}
-              alt="Docutiv"
-            />
-            <Image
-              src="/companies/prxyai.svg"
-              width={216}
-              height={36}
-              alt="Prxy.ai"
-            />
-            <Image
-              src="/companies/paperfly.svg"
-              width={166}
-              height={38}
-              alt="Paperfly"
-            />
-            <Image
-              src="/companies/cana.png"
-              width={101}
-              height={80}
-              alt="Cana Neurology"
-              quality={100}
-            />
-            <Image
-              src="/companies/linguai.svg"
-              width={157}
-              height={48}
-              alt="LinguAI"
-            />
-          </div>
+    <section className="w-full flex flex-col max-w-full-page border-x border-border-secondary items-center">
+      <div className="w-full flex border-b border-border-secondary">
+        <div className="w-full max-w-120 h-7xl flex pr-4xl pl-[112px] items-center flex">
+          <span className="text-text-quaternary text-xs leading-xs font-medium">
+            Among our clients:
+          </span>
         </div>
+        <div className="border-l border-border-secondary flex bg-[url(/patterns/slash.svg)] w-full"></div>
+      </div>
+      <div className="flex w-full py-8xl flex justify-between px-4xl max-w-max-width-desktop">
+        <Image
+          src="/companies/docutiv.svg"
+          width={133}
+          height={42}
+          alt="Docutiv"
+        />
+        <Image
+          src="/companies/paperfly.svg"
+          width={157}
+          height={36}
+          alt="Paperfly"
+        />
+        <Image
+          src="/companies/prxyai.svg"
+          width={192}
+          height={32}
+          alt="Prxy.ai"
+        />
+        {/* <Image */}
+        {/*   src="/companies/cana.png" */}
+        {/*   width={101} */}
+        {/*   height={80} */}
+        {/*   alt="Cana Neurology" */}
+        {/*   quality={100} */}
+        {/* /> */}
+        <Image
+          src="/companies/linguai.svg"
+          width={137}
+          height={42}
+          alt="LinguAI"
+        />
       </div>
     </section>
   );

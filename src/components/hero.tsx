@@ -1,8 +1,7 @@
 "use client";
-import React, { FC, useEffect, useMemo, useRef, useState } from "react";
+import React, { FC, useRef } from "react";
 import Image from "next/image";
 import { Button, buttonVariants } from "./ui/button";
-import { Bookmark } from "untitledui-js/react";
 import Link from "next/link";
 import config from "@/config";
 import {
@@ -11,181 +10,198 @@ import {
   useMotionValue,
   useTransform,
 } from "motion/react";
-
-const phrases = [
-  "booked calls",
-  "lead quality",
-  "sales pipeline",
-  "client retention",
-  "lifetime value",
-];
+import { cn } from "@/lib/utils";
+import { ArrowRight } from "untitledui-js/react";
 
 const Hero = () => {
   return (
-    <section className="border-b border-border-secondary w-full pt-10xl pb-10xl bg-[url(/patterns/square.svg)] relative max-w-full-page border-x">
-      <div className="mx-auto px-container-padding-desktop max-w-max-width-desktop flex flex-col space-y-7xl w-full">
-        <div className="flex flex-col space-y-4xl items-center border p-9xl w-fit mx-auto rounded-4xl border-border-secondary bg-background-primary">
-          <div className="flex w-full justify-between px-4xl max-w-192">
-            <Image
-              src="/illustrations/dashes.svg"
-              width={188}
-              height={32}
-              alt="Dashes"
-            />
-            <Image
-              src="/illustrations/cube.svg"
-              width={59}
-              height={48}
-              alt="Cube"
-            />
-            <Image
-              src="/illustrations/dashes.svg"
-              width={188}
-              height={32}
-              alt="Dashes"
-            />
-          </div>
-          <div className="flex flex-col space-y-6xl">
-            <div className="flex flex-col space-y-3xl items-center">
-              <div className="flex flex-col space-y-sm items-center">
-                <div className="flex items-center gap-x-xl">
-                  <h1 className="text-text-primary text-display-xl leading-display-xl font-bold">
-                    Boost your
-                  </h1>
-                  <HeadingTextBox />
-                </div>
-                <h1 className="text-text-primary text-display-xl leading-display-xl font-bold">
-                  with growth systems
-                </h1>
+    <section className="w-full flex flex-col max-w-full-page border-x border-border-secondary">
+      {/* first decoration row */}
+      <div className="flex w-full h-[120px] border-border-secondary">
+        {Array.from({ length: 12 }).map((_, idx, arr) => {
+          return (
+            <div
+              key={`first-row-decoration-box-${idx}`}
+              className={cn(
+                "w-[120px] h-[120px] border-border-secondary",
+                idx !== arr.length - 1 && "border-r",
+                idx === 1 && "bg-[url(/patterns/slash.svg)]",
+              )}
+            ></div>
+          );
+        })}
+      </div>
+
+      {/* central */}
+      <div className="border-y border-border-secondary w-full flex h-[600px]">
+        {/* decoration column */}
+        <div className="w-[120px] flex flex-col border-r border-border-secondary shrink-0">
+          {Array.from({ length: 5 }).map((_, idx, arr) => {
+            return (
+              <div
+                key={`first-central-column-decoration-box-${idx}`}
+                className={cn(
+                  "w-[120px] h-[120px] border-border-secondary",
+                  idx !== arr.length - 1 && "border-b",
+                  idx === 0 && "bg-[url(/patterns/slash.svg)]",
+                )}
+              ></div>
+            );
+          })}
+        </div>
+
+        {/* main content */}
+        <div className="w-full flex justify-center items-center relative">
+          <div className="flex flex-col items-center space-y-3xl">
+            {/* badge */}
+            <div className="p-xs pr-md rounded-lg border border-border-primary flex gap-x-md items-center">
+              <div className="flex items-center py-xxs px-sm rounded-sm border border-border-secondary gap-x-xs">
+                <div className="h-3 w-3 rounded-full bg-utility-success-500 border-3 border-utility-success-100"></div>
+                <span className="text-text-secondary font-medium text-xs leading-xs">
+                  2/5
+                </span>
               </div>
-              <p className="w-full text-center text-text-tertiary max-w-140">
-                Experience the future of business with intelligent, scalable
-                automation solutions tailored to your needs.
-              </p>
+              <span className="text-text-secondary font-medium text-xs leading-xs">
+                Two slots available
+              </span>
             </div>
-            <div className="flex gap-x-xl w-full justify-center">
-              <Link
-                href={config.calComLink}
-                className={buttonVariants({
-                  variant: "primary",
-                })}
-                target="_blank"
-              >
-                Book a call <Bookmark size="20px" />
-              </Link>
-              <Button variant="secondary">Our Projects</Button>
+
+            <div className="w-full flex flex-col space-y-6xl">
+              <div className="flex items-center space-y-3xl flex-col">
+                {/* title */}
+                <div className="flex flex-col space-y-lg items-center">
+                  <div className="flex gap-x-lg">
+                    <div className="px-3xl py-sm border border-border-primary rounded-md bg-[url(/patterns/slash.svg)]">
+                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                        B2B SasS
+                      </span>
+                    </div>
+                    <div className="px-3xl py-sm border border-border-primary rounded-md">
+                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                        From
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex gap-x-lg">
+                    <div className="px-3xl py-sm border border-border-primary rounded-md">
+                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                        Idea
+                      </span>
+                    </div>
+                    <div className="px-3xl py-sm border-dashed border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] flex items-center">
+                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                        <ArrowRight size={48} />
+                      </span>
+                    </div>
+                    <div className="px-3xl py-sm border border-border-primary rounded-md">
+                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                        First Customers
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* subtitle */}
+                <p className="w-full text-center text-text-primary text-xl leading-xl max-w-140">
+                  We develop your MVP, create your brand, and help you acquire
+                  your first customers.
+                </p>
+              </div>
+
+              {/* buttons */}
+              <div className="flex gap-x-lg w-full justify-center">
+                <Link
+                  href={config.calComLink}
+                  className={buttonVariants({
+                    variant: "primary",
+                    className: "font-semibold",
+                  })}
+                  target="_blank"
+                >
+                  Book a call
+                </Link>
+                <Button variant="secondary" className="font-semibold">
+                  Our Projects
+                </Button>
+              </div>
             </div>
           </div>
+
+          <InteractiveIllustration
+            src="/illustrations/gameboy.svg"
+            width={174}
+            height={215}
+            alt="Gameboy"
+            className="absolute bottom-[103px] -left-[56px]"
+          />
+          <InteractiveIllustration
+            src="/illustrations/domino.svg"
+            alt="Domino"
+            width={55}
+            height={80}
+            className="absolute -left-[56px] -bottom-[40px]"
+          />
+          <InteractiveIllustration
+            src="/illustrations/cubes.svg"
+            width={235}
+            height={143}
+            alt="Cubes"
+            className="left-[31px] -bottom-[71px] absolute"
+          />
+          <InteractiveIllustration
+            src="/illustrations/hero-phone.svg"
+            width={181}
+            height={273}
+            className="-right-[56px] absolute bottom-[68px]"
+            alt="Phone"
+          />
+          <InteractiveIllustration
+            src="/illustrations/social-media-integration.svg"
+            alt="Social Media Integrations"
+            width={179}
+            height={93}
+            className="absolute -right-[56px] -bottom-[56px]"
+          />
+          <InteractiveIllustration
+            src="/illustrations/debit-card.svg"
+            alt="Card"
+            width={123}
+            height={161}
+            className="absolute -bottom-[72px] right-[173px]"
+          />
+        </div>
+
+        {/* decoration column */}
+        <div className="w-[120px] flex flex-col border-l border-border-secondary shrink-0">
+          {Array.from({ length: 5 }).map((_, idx, arr) => {
+            return (
+              <div
+                key={`second-central-column-decoration-box-${idx}`}
+                className={cn(
+                  "w-[120px] h-[120px] border-border-secondary",
+                  idx !== arr.length - 1 && "border-b",
+                )}
+              ></div>
+            );
+          })}
         </div>
       </div>
-      <InteractiveIllustration
-        src="/illustrations/gameboy.svg"
-        width={174}
-        height={215}
-        alt="Gameboy"
-        className="absolute bottom-[205px] left-[100px]"
-      />
-      <InteractiveIllustration
-        src="/illustrations/domino.svg"
-        alt="Domino"
-        width={55}
-        height={80}
-        className="absolute left-[42px] bottom-[70px]"
-      />
-      <InteractiveIllustration
-        src="/illustrations/cubes.svg"
-        width={235}
-        height={143}
-        alt="Cubes"
-        className="left-[125px] bottom-[50px] absolute"
-      />
-      <InteractiveIllustration
-        src="/illustrations/hero-phone.svg"
-        width={228}
-        height={273}
-        className="right-[60px] absolute bottom-[160px]"
-        alt="Phone"
-      />
-      <InteractiveIllustration
-        src="/illustrations/social-media-integration.svg"
-        alt="Social Media Integrations"
-        width={179}
-        height={93}
-        className="absolute right-[40px] bottom-[63px]"
-      />
-      <InteractiveIllustration
-        src="/illustrations/debit-card.svg"
-        alt="Card"
-        width={123}
-        height={161}
-        className="absolute bottom-[33px] right-[328px]"
-      />
-    </section>
-  );
-};
 
-const minDelay = 50; // min ms between keystrokes
-const maxDelay = 200; // max ms between keystrokes
-const phrasePause = 2000; // pause after finishing a word
-
-function getRandomDelay() {
-  return Math.random() * (maxDelay - minDelay) + minDelay;
-}
-
-const HeadingTextBox = () => {
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(0);
-
-  const phrase = useMemo(
-    () => phrases[currentPhraseIndex],
-    [currentPhraseIndex]
-  );
-
-  useEffect(() => {
-    let i = 0;
-    let timeoutId: NodeJS.Timeout;
-
-    const runCycle = () => {
-      if (i < phrase.length) {
-        i += 1;
-        setVisibleCount(i);
-        timeoutId = setTimeout(runCycle, getRandomDelay());
-      } else {
-        timeoutId = setTimeout(() => {
-          setCurrentPhraseIndex((idx) => (idx + 1) % phrases.length);
-        }, phrasePause);
-      }
-    };
-
-    runCycle();
-    return () => clearTimeout(timeoutId);
-  }, [phrase]);
-
-  return (
-    <div className="h-[84px] bg-background-secondary border border-border-secondary rounded-md flex justify-start px-xl w-[531px]">
-      <div className="flex whitespace-nowrap items-baseline bg-gradient-to-r from-brand-600 to-brand-500 text-transparent bg-clip-text">
-        {phrase
-          .slice(0, visibleCount)
-          .split("")
-          .map((char, idx) => (
-            <motion.span
-              key={idx}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 0,
-                ease: "linear",
-              }}
-              className="inline-block text-display-xl leading-[84px] font-bold"
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        <span className="inline-block text-display-xl leading-[84px] font-bold animate-caret-blink">
-          _
-        </span>
+      {/* last decoration row */}
+      <div className="flex w-full h-[120px] border-b border-border-secondary">
+        {Array.from({ length: 12 }).map((_, idx, arr) => {
+          return (
+            <div
+              key={`last-row-decoration-box-${idx}`}
+              className={cn(
+                "w-[120px] h-[120px] border-border-secondary",
+                idx !== arr.length - 1 && "border-r",
+              )}
+            ></div>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -213,7 +229,7 @@ const InteractiveIllustration: FC<InteractiveIllustrationProps> = ({
   const x: MotionValue<number> = useMotionValue(0);
   const y: MotionValue<number> = useMotionValue(0);
 
-  const tiltSensitivity = 10; // Lower number = stronger tilt
+  const tiltSensitivity = 20; // Lower number = stronger tilt
   const rotateX = useTransform(y, (v: number) => -v / tiltSensitivity);
   const rotateY = useTransform(x, (v: number) => v / tiltSensitivity);
 

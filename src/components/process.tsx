@@ -1,56 +1,96 @@
-import React from "react";
-import Image from "next/image";
+import React, { FC } from "react";
 import SectionTitle from "./shared/section-title";
+import { cn } from "@/lib/utils";
+import { Clock, GoogleChrome } from "untitledui-js/react";
+import { Avatar, AvatarImage } from "./ui/avatar";
+import Image from "next/image";
 
 const Process = () => {
   return (
-    <section className="w-full border-b border-border-secondary py-10xl flex flex-col space-y-7xl max-w-full-page border-x">
-      <div className="w-full max-w-max-width-desktop mx-auto">
-        <SectionTitle
-          title="That's how it works"
-          description="First we find the friction. Then we build a system that runs without you."
-        />
-      </div>
-      <div className="flex max-w-max-width-desktop flex-col border border-border-secondary mx-auto w-full">
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+    <section className="w-full border-b border-border-secondary flex flex-col space-y-7xl max-w-full-page border-x">
+      <SectionTitle
+        subTitle="Our Plan"
+        title="How we work"
+        description="Expect well structured, straight to the point approach from our team to keep you on top of the things."
+      />
+      <div className="w-full flex">
+        <div className="w-full flex">
+          <div className="grow bg-[url(/patterns/slash.svg)]"></div>
+          <div className="w-full max-w-max-width-desktop h-[678px] overflow-x-auto overflow-y-hidden">
+            <div className="h-full relative">
+              <Card
+                className="w-96"
+                title="Discovery call"
+                description="Discuss scope of the project, idea, requirements, etc."
+                duration="45 minutes"
+                icon="/products/google-meet.svg"
+                people={[
+                  "/people/artem-simutin.jpeg",
+                  "/people/kristian-veter.jpg",
+                ]}
+              />
+            </div>
+          </div>
+          <div className="grow bg-[url(/patterns/slash.svg)]"></div>
+        </div>
       </div>
     </section>
   );
 };
 
-const Item = () => {
+interface CardProps {
+  className?: string;
+  icon: string;
+  title: string;
+  description: string;
+  duration: string;
+  people: string[];
+}
+
+const Card: FC<CardProps> = (props) => {
   return (
-    <div className="w-full flex border-b border-border-secondary gap-x-6xl">
-      <div className="w-[144px] h-[144px] flex flex-col border-r border-border-secondary shrink-0">
-        <div className="bg-[url(/patterns/slash.svg)] h-5xl border-border-secondary border-b"></div>
-        <div className="w-full justify-center flex">
-          <div className="h-7xl w-7xl flex justify-center items-center border-border-secondary border-x">
-            <span className="text-text-primary text-display-sm leading-display-sm font-bold">
-              01
+    <div
+      className={cn(
+        "rounded-lg flex border border-border-secondary flex",
+        props.className,
+      )}
+    >
+      <div className="w-full flex flex-col p-2xl pr-4xl space-y-2xl">
+        <div className="flex flex-col w-full space-y-sm">
+          <div className="w-full flex gap-x-md items-center">
+            <Image src={props.icon} width={32} height={32} alt="Icon" />
+            <span className="text-text-primary text-lg leading-lg font-semibold">
+              {props.title}
             </span>
           </div>
+          <p className="text-sm leading-sm text-text-primary line-clamp-2">
+            {props.description}
+          </p>
         </div>
-        <div className="bg-[url(/patterns/slash.svg)] h-5xl border-border-secondary border-t"></div>
+        <div className="w-full justify-between items-center flex">
+          <div className="flex items-center gap-x-md text-text-quaternary">
+            <Clock size={20} />
+            <span className="font-semibold text-sm leading-sm text-text-tertiary">
+              {props.duration}
+            </span>
+          </div>
+          <div className="flex -space-x-2">
+            {props.people.map((link, idx) => {
+              return (
+                <Avatar
+                  key={`card-avatar-${idx}`}
+                  className="w-7 h-7 rounded-full border-2 border-background-primary"
+                >
+                  <AvatarImage src={link} />
+                </Avatar>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      <div className="w-full flex flex-col justify-center space-y-xs">
-        <h3 className="text-text-primary text-lg leading-lg font-semibold">
-          Discovery call
-        </h3>
-        <p className="text-text-tertiary text-md leading-md">
-          Discuss pain-points of your business and find solutions.
-        </p>
-      </div>
-      <div className="w-60 shrink-0 flex items-center justify-center border-l border-border-secondary">
-        <Image
-          src="/illustrations/trees.svg"
-          alt="Trees"
-          width={112}
-          height={96}
-        />
+
+      <div className="w-4xl bg-[url(/patterns/slash.svg)] border-l border-border-tertiary relative flex items-center rounded-r-lg">
+        <div className="w-4 h-4 rounded-full bg-background-primary border border-border-secondary -right-2 absolute"></div>
       </div>
     </div>
   );

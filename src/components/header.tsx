@@ -20,12 +20,14 @@ const Header = () => {
       <div className="mx-auto max-w-full-page border-x border-border-secondary w-full h-full flex items-center">
         <div className="w-full max-w-max-width-desktop mx-auto flex gap-x-xl px-container-padding-desktop">
           <div className="flex items-center gap-x-6xl w-full">
-            <Image
-              src="/logo-light.svg"
-              alt="Dawn Studio"
-              width={179}
-              height={32}
-            />
+            <div className="mb-[6px]">
+              <Image
+                src="/logo-light.svg"
+                alt="Dawn Studio"
+                width={121}
+                height={32}
+              />
+            </div>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -113,7 +115,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >

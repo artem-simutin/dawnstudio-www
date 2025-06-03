@@ -8,13 +8,12 @@ import SectionTitle from "./shared/section-title";
 
 const Services = () => {
   return (
-    <section className="w-full border-b border-border-secondary flex flex-col gap-y-9xl py-9xl max-w-full-page border-x">
-      <div className="mx-auto w-full max-w-max-width-desktop">
-        <SectionTitle
-          title="What we offer"
-          description="Automation systems that win back your time, grow revenue, and keep your operations moving."
-        />
-      </div>
+    <section className="w-full border-b border-border-secondary flex flex-col gap-y-9xl max-w-full-page border-x">
+      <SectionTitle
+        subTitle="Services"
+        title="What we offer"
+        description="Automation systems that win back your time, grow revenue, and keep your operations moving."
+      />
       <div className="w-full mx-auto max-w-256">
         {/* card - row */}
         <div className="border border-border-secondary w-full flex h-96">
@@ -32,7 +31,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
+                "w-min",
               )}
             >
               <span>Learn more</span>
@@ -77,7 +76,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
+                "w-min",
               )}
             >
               <span>Learn more</span>
@@ -121,7 +120,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
+                "w-min",
               )}
             >
               <span>Learn more</span>
@@ -149,7 +148,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
+                "w-min",
               )}
             >
               <span>Learn more</span>
