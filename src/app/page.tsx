@@ -24,10 +24,10 @@ export default function Home() {
         <SocialProof />
         <Services />
         <Process />
+        <Team />
         <Testimonials />
         <Guarantees />
         <CaseStudies />
-        <Team />
         <CTA />
       </main>
       <Footer />

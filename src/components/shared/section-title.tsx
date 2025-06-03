@@ -9,7 +9,7 @@ interface Props {
 
 const SectionTitle: FC<Props> = ({ title, description, subTitle }) => {
   return (
-    <div className="w-full border-y border-border-secondary">
+    <div className="w-full border-b border-border-secondary">
       <div className="w-full px-container-padding-desktop py-9xl max-w-max-width-desktop mx-auto">
         <div className="flex flex-col space-y-lg max-w-192">
           <div className="flex gap-x-xs">

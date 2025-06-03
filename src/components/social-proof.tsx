@@ -3,7 +3,7 @@ import React from "react";
 
 const SocialProof = () => {
   return (
-    <section className="w-full flex flex-col max-w-full-page border-x border-border-secondary items-center">
+    <section className="w-full flex flex-col max-w-full-page border-x border-b border-border-secondary items-center">
       <div className="w-full flex border-b border-border-secondary">
         <div className="w-full max-w-120 h-7xl flex pr-4xl pl-[112px] items-center flex">
           <span className="text-text-quaternary text-xs leading-xs font-medium">

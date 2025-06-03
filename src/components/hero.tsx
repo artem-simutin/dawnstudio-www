@@ -11,7 +11,8 @@ import {
   useTransform,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "untitledui-js/react";
+import { ArrowRight, Figma } from "untitledui-js/react";
+import { Code01 } from "untitledui-js/react";
 
 const Hero = () => {
   return (
@@ -33,7 +34,7 @@ const Hero = () => {
       </div>
 
       {/* central */}
-      <div className="border-y border-border-secondary w-full flex h-[600px]">
+      <div className="border-y border-border-secondary w-full flex h-[600px] relative">
         {/* decoration column */}
         <div className="w-[120px] flex flex-col border-r border-border-secondary shrink-0">
           {Array.from({ length: 5 }).map((_, idx, arr) => {
@@ -124,6 +125,11 @@ const Hero = () => {
                   Our Projects
                 </Button>
               </div>
+            </div>
+
+            <div className="absolute top-4 right-4 flex flex-col space-y-4 text-utility-gray-100">
+              <Code01 size={20} />
+              <Figma size={20} />
             </div>
           </div>
 
