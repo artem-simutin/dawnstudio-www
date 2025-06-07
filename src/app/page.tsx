@@ -1,5 +1,6 @@
 import CaseStudies from "@/components/case-studies";
 import CTA from "@/components/cta";
+import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
 import Guarantees from "@/components/guarantees";
 import Header from "@/components/header";
@@ -12,7 +13,7 @@ import Testimonials from "@/components/testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dawn Studio | AI Automation Agency",
+  title: "Dawn Studio | B2B SaaS From Idea to First Customers",
 };
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
         <Testimonials />
         <Guarantees />
         <CaseStudies />
+        <FAQ />
         <CTA />
       </main>
       <Footer />

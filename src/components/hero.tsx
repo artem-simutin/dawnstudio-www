@@ -90,7 +90,7 @@ const Hero = () => {
                       </span>
                     </div>
                     <div className="px-3xl py-sm border-dashed border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] flex items-center">
-                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                      <span className="text-display-xl leading-display-xl text-utility-green-400 font-bold">
                         <ArrowRight size={48} />
                       </span>
                     </div>

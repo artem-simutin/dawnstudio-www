@@ -47,6 +47,7 @@ const Process = () => {
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
                     ]}
+                    dot
                   />
                   <Image
                     src="/decorations/process-first-arrows.svg"
@@ -115,6 +116,32 @@ const Process = () => {
                     people={["/people/denis-simutin.jpg"]}
                   />
                 </div>
+
+                {/* cubes */}
+                <Image
+                  src="/illustrations/process-cube.svg"
+                  alt="Cube decoration"
+                  width={96}
+                  height={96}
+                  className="bottom-6 left-6 absolute"
+                />
+                <div className="flex gap-x-8 absolute top-[65px] left-[1253px]">
+                  <div className="flex">
+                    <Image
+                      src="/illustrations/process-cube.svg"
+                      alt="Cube decoration"
+                      width={64}
+                      height={64}
+                    />
+                    <Image
+                      src="/illustrations/process-cube-long.svg"
+                      alt="Cube decoration"
+                      width={128}
+                      height={96}
+                    />
+                  </div>
+                  <div className="w-[452px] h-7xl bg-background-primary border border-dashed border-border-secondary bg-[url(/patterns/slash.svg)]"></div>
+                </div>
               </div>
             </div>
             <Button
@@ -142,6 +169,7 @@ interface CardProps {
   description: string;
   people: string[];
   duration?: string;
+  dot?: boolean;
 }
 
 const Card: FC<CardProps> = (props) => {
@@ -152,7 +180,7 @@ const Card: FC<CardProps> = (props) => {
         props.className,
       )}
     >
-      <div className="w-full flex flex-col p-2xl pr-4xl space-y-2xl">
+      <div className="w-full flex flex-col p-2xl pr-4xl gap-y-2xl relative">
         <div className="flex flex-col w-full space-y-sm">
           <div className="w-full flex gap-x-md items-center">
             <Image src={props.icon} width={32} height={32} alt="Icon" />
@@ -191,6 +219,11 @@ const Card: FC<CardProps> = (props) => {
             })}
           </div>
         </div>
+
+        {/* dot decoration */}
+        {props.dot && (
+          <div className="bg-utility-success-500 rounded-full h-1.5 w-1.5 absolute top-4 right-4"></div>
+        )}
       </div>
 
       <div className="w-4xl bg-[url(/patterns/slash.svg)] border-l border-border-tertiary relative flex items-center rounded-r-lg">

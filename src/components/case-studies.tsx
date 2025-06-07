@@ -9,16 +9,17 @@ import { ArrowRight } from "untitledui-js/react";
 const CaseStudies = () => {
   return (
     <section className="w-full border-y border-border-secondary flex flex-col">
-      <div className="border-border-secondary border-x max-w-full-page pt-9xl pb-6xl mx-auto w-full">
+      <div className="border-border-secondary border-x max-w-full-page mx-auto w-full">
         <div className="w-full mx-auto max-w-max-width-desktop">
           <SectionTitle
-            title="How we helped business grow."
-            description="Read our case studies."
+            subTitle="Case studies"
+            title="How we helped our clients "
+            description="Discover how we've helped companies overcome challenges, streamline operations, and drive real results through tailored solutions."
+            className="border-none"
           />
         </div>
       </div>
-
-      <div className="w-full mx-auto border-y border-border-secondary flex">
+      <div className="w-full mx-auto border-t border-border-secondary flex">
         <div className="w-full max-w-full-page mx-auto flex border-x border-border-secondary">
           <div className="bg-[url(/patterns/slash.svg)] grow" />
           <div className="w-full mx-auto max-w-max-width-desktop">
@@ -35,7 +36,6 @@ const CaseStudies = () => {
           <div className="bg-[url(/patterns/slash.svg)] grow" />
         </div>
       </div>
-      <div className="h-10xl max-w-full-page border-x border-border-secondary w-full mx-auto"></div>
     </section>
   );
 };
@@ -92,7 +92,7 @@ const CaseStudyPreview: FC<CaseStudyProps> = (props) => {
               href={props.href}
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min flex gap-x-sm"
+                "w-min flex gap-x-sm",
               )}
             >
               <span className="font-semibold">Read case study</span>
