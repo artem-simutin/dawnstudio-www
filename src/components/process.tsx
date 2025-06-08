@@ -35,10 +35,10 @@ const Process = () => {
               ref={scrollableContainer}
               className=" h-[678px] overflow-x-auto overflow-y-hidden bg-[url(/patterns/dot.svg)] "
             >
-              <div className="h-full relative w-[2185px]">
-                <div className="relative top-16 left-16 w-96 h-[162px]">
+              <div className="h-full relative w-[1392px] desktop:w-[2185px]">
+                <div className="relative top-6 left-6 desktop:top-16 desktop:left-16 w-[304px] desktop:w-96 h-[162px]">
                   <Card
-                    className="w-96 absolute top-0 left-0"
+                    className="w-[304px] desktop:w-96 absolute top-0 left-0"
                     title="Discovery call"
                     description="Discuss scope of the project, idea, requirements, etc."
                     duration="45 minutes"
@@ -53,13 +53,20 @@ const Process = () => {
                     src="/decorations/process-first-arrows.svg"
                     width={113}
                     height={390}
-                    className="absolute top-[81px] -right-[115px]"
+                    className="absolute top-[81px] -right-[115px] hidden desktop:block"
+                    alt="Arrows"
+                  />
+                  <Image
+                    src="/decorations/process-first-arrows-mobile.svg"
+                    width={220}
+                    height={356}
+                    className="absolute top-[73px] -right-[64px] block desktop:hidden"
                     alt="Arrows"
                   />
                 </div>
-                <div className="top-16 absolute left-[562px] flex space-y-8 flex-col">
+                <div className="top-6 desktop:top-16 absolute left-[392px] desktop:left-[562px] flex space-y-8 flex-col">
                   <Card
-                    className="w-[579px]"
+                    className="w-[456px] desktop:w-[579px]"
                     title="MVP Development"
                     description="Receive a full functional  MVP with frequent progress updates. The app is deployed to your cloud infrastructure."
                     duration="21 day"
@@ -70,7 +77,7 @@ const Process = () => {
                     ]}
                   />
                   <Card
-                    className="w-96"
+                    className="w-[304px] desktop:w-96"
                     title="Branding foundations"
                     description="Get a complete strategy with a fundamental assets for your upcoming brand."
                     duration="7 days"
@@ -78,7 +85,7 @@ const Process = () => {
                     people={["/people/denis-simutin.jpg"]}
                   />
                   <Card
-                    className="w-96"
+                    className="w-[304px] desktop:w-96"
                     title="Market research"
                     description="Get complete customer profile and “go-to market” strategies. "
                     duration="7 days"
@@ -92,13 +99,20 @@ const Process = () => {
                     src="/decorations/process-second-arrows.svg"
                     width={308}
                     height={389}
-                    className="absolute top-[81px] -right-[115px]"
+                    className="absolute top-[81px] -right-[115px] hidden desktop:block"
+                    alt="Arrows"
+                  />
+                  <Image
+                    src="/decorations/process-second-arrows-mobile.svg"
+                    width={219}
+                    height={356}
+                    className="absolute top-[73px] -right-[64px] block desktop:hidden"
                     alt="Arrows"
                   />
                 </div>
-                <div className="absolute top-[161px] left-[1253px] flex-col space-y-8">
+                <div className="absolute top-[113px] desktop:top-[161px] left-[912px] desktop:left-[1253px] flex-col space-y-8">
                   <Card
-                    className="w-[836.5px]"
+                    className="w-[456px] desktop:w-[836.5px]"
                     title="Ongoing development"
                     description="Discuss scope of the project, idea, requirements, etc."
                     icon="/products/linear.svg"
@@ -108,7 +122,7 @@ const Process = () => {
                     ]}
                   />
                   <Card
-                    className="w-96"
+                    className="w-[456px] desktop:w-96"
                     title="Complete brand design"
                     description="Get a complete branding including"
                     duration="21 days"
@@ -123,9 +137,9 @@ const Process = () => {
                   alt="Cube decoration"
                   width={96}
                   height={96}
-                  className="bottom-6 left-6 absolute"
+                  className="bottom-6 left-6 absolute hidden desktop:block"
                 />
-                <div className="flex gap-x-8 absolute top-[65px] left-[1253px]">
+                <div className="flex gap-x-8 absolute top-[65px] left-[1253px] hidden desktop:block">
                   <div className="flex">
                     <Image
                       src="/illustrations/process-cube.svg"
@@ -180,9 +194,9 @@ const Card: FC<CardProps> = (props) => {
         props.className,
       )}
     >
-      <div className="w-full flex flex-col p-2xl pr-4xl gap-y-2xl relative">
-        <div className="flex flex-col w-full space-y-sm">
-          <div className="w-full flex gap-x-md items-center">
+      <div className="w-full flex flex-col p-xl desktop:p-2xl desktop:pr-4xl gap-y-xl desktop:gap-y-2xl relative">
+        <div className="flex flex-col w-full space-y-xxs desktop:space-y-sm">
+          <div className="w-full flex gap-x-sm desktop:gap-x-md items-center">
             <Image src={props.icon} width={32} height={32} alt="Icon" />
             <span className="text-text-primary text-lg leading-lg font-semibold">
               {props.title}
@@ -222,7 +236,7 @@ const Card: FC<CardProps> = (props) => {
 
         {/* dot decoration */}
         {props.dot && (
-          <div className="bg-utility-success-500 rounded-full h-1.5 w-1.5 absolute top-4 right-4"></div>
+          <div className="bg-utility-success-500 rounded-full h-1.5 w-1.5 absolute top-4 right-4 hidden desktop:block"></div>
         )}
       </div>
 

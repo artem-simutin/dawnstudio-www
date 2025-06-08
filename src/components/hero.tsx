@@ -16,15 +16,15 @@ import { Code01 } from "untitledui-js/react";
 
 const Hero = () => {
   return (
-    <section className="w-full flex flex-col max-w-full-page border-x border-border-secondary">
+    <section className="w-full flex flex-col max-w-full-page border-x border-border-secondary overflow-hidden">
       {/* first decoration row */}
-      <div className="flex w-full h-[120px] border-border-secondary">
+      <div className="flex w-full h-0 tablet:h-8 desktop:h-[120px] border-border-secondary">
         {Array.from({ length: 12 }).map((_, idx, arr) => {
           return (
             <div
               key={`first-row-decoration-box-${idx}`}
               className={cn(
-                "w-[120px] h-[120px] border-border-secondary",
+                "w-[120px] h-0 tablet:h-8 desktop:h-[120px] border-border-secondary",
                 idx !== arr.length - 1 && "border-r",
                 idx === 1 && "bg-[url(/patterns/slash.svg)]",
               )}
@@ -34,15 +34,15 @@ const Hero = () => {
       </div>
 
       {/* central */}
-      <div className="border-y border-border-secondary w-full flex h-[600px] relative">
+      <div className="border-y border-border-secondary w-full flex py-6xl tablet:py-4xl desktop:py-0 h-auto desktop:h-[600px] relative px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-auto">
         {/* decoration column */}
-        <div className="w-[120px] flex flex-col border-r border-border-secondary shrink-0">
+        <div className="hidden desktop:flex w-[120px] flex-col border-r border-border-secondary shrink-0">
           {Array.from({ length: 5 }).map((_, idx, arr) => {
             return (
               <div
                 key={`first-central-column-decoration-box-${idx}`}
                 className={cn(
-                  "w-[120px] h-[120px] border-border-secondary",
+                  "w-0 desktop:w-[120px] h-[120px] border-border-secondary",
                   idx !== arr.length - 1 && "border-b",
                   idx === 0 && "bg-[url(/patterns/slash.svg)]",
                 )}
@@ -53,49 +53,53 @@ const Hero = () => {
 
         {/* main content */}
         <div className="w-full flex justify-center items-center relative">
-          <div className="flex flex-col items-center space-y-3xl">
+          <div className="flex flex-col items-center gap-y-xl tablet:gap-y-2xl desktop:gap-y-3xl">
             {/* badge */}
             <div className="p-xs pr-md rounded-lg border border-border-primary flex gap-x-md items-center">
               <div className="flex items-center py-xxs px-sm rounded-sm border border-border-secondary gap-x-xs">
                 <div className="h-3 w-3 rounded-full bg-utility-success-500 border-3 border-utility-success-100"></div>
-                <span className="text-text-secondary font-medium text-xs leading-xs">
+                <span className="text-text-secondary font-medium text-sm leading-sm">
                   2/5
                 </span>
               </div>
-              <span className="text-text-secondary font-medium text-xs leading-xs">
+              <span className="text-text-secondary font-medium text-sm leading-sm">
                 Two slots available
               </span>
             </div>
 
-            <div className="w-full flex flex-col space-y-6xl">
+            <div className="w-full flex flex-col space-y-3xl tablet:space-y-4xl desktop:space-y-6xl items-center">
               <div className="flex items-center space-y-3xl flex-col">
                 {/* title */}
-                <div className="flex flex-col space-y-lg items-center">
+                <div className="flex flex-col space-y-sm tablet:space-y-md desktop:space-y-lg items-center">
                   <div className="flex gap-x-lg">
-                    <div className="px-3xl py-sm border border-border-primary rounded-md bg-[url(/patterns/slash.svg)]">
-                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                    <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] shadow-xs">
+                      <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
                         B2B SasS
                       </span>
                     </div>
-                    <div className="px-3xl py-sm border border-border-primary rounded-md">
-                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+                    <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
+                      <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
                         From
                       </span>
                     </div>
                   </div>
-                  <div className="flex gap-x-lg">
-                    <div className="px-3xl py-sm border border-border-primary rounded-md">
-                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
-                        Idea
-                      </span>
+                  <div className="flex gap-x-lg gap-y-sm tablet:flex-row flex-col tablet:w-auto w-full">
+                    <div className="flex gap-x-lg">
+                      <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
+                        <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
+                          Idea
+                        </span>
+                      </div>
+                      <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border-dashed border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] flex items-center shadow-xs w-full tablet:w-auto flex justify-center">
+                        <ArrowRight
+                          size={24}
+                          className="text-utility-green-400 tablet:scale-50 desktop:scale-100"
+                        />
+                      </div>
                     </div>
-                    <div className="px-3xl py-sm border-dashed border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] flex items-center">
-                      <span className="text-display-xl leading-display-xl text-utility-green-400 font-bold">
-                        <ArrowRight size={48} />
-                      </span>
-                    </div>
-                    <div className="px-3xl py-sm border border-border-primary rounded-md">
-                      <span className="text-display-xl leading-display-xl text-text-primary font-bold">
+
+                    <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
+                      <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
                         First Customers
                       </span>
                     </div>
@@ -103,14 +107,14 @@ const Hero = () => {
                 </div>
 
                 {/* subtitle */}
-                <p className="w-full text-center text-text-primary text-xl leading-xl max-w-140">
+                <p className="w-full text-center text-text-primary desktop:text-xl text-md leading-md tablet:text-lg tablet:leading-lg desktop:leading-xl max-w-140">
                   We develop your MVP, create your brand, and help you acquire
                   your first customers.
                 </p>
               </div>
 
               {/* buttons */}
-              <div className="flex gap-x-lg w-full justify-center">
+              <div className="max-w-96 flex gap-x-lg w-full justify-center desktop:flex-row flex-col gap-y-lg">
                 <Link
                   href={config.calComLink}
                   className={buttonVariants({
@@ -121,13 +125,14 @@ const Hero = () => {
                 >
                   Book a call
                 </Link>
-                <Button variant="secondary" className="font-semibold">
+                <Button variant="secondary" className="font-semibold gap-x-xs">
+                  <Code01 size={20} className="block desktop:hidden" />
                   Our Projects
                 </Button>
               </div>
             </div>
 
-            <div className="absolute top-4 right-4 flex flex-col space-y-4 text-utility-gray-100">
+            <div className="absolute top-4 right-4 flex-col space-y-4 text-utility-gray-100 hidden tablet:flex">
               <Code01 size={20} />
               <Figma size={20} />
             </div>
@@ -138,27 +143,27 @@ const Hero = () => {
             width={174}
             height={215}
             alt="Gameboy"
-            className="absolute bottom-[103px] -left-[56px]"
+            className="absolute bottom-[103px] -left-[56px] hidden desktop:block"
           />
           <InteractiveIllustration
             src="/illustrations/domino.svg"
             alt="Domino"
             width={55}
             height={80}
-            className="absolute -left-[56px] -bottom-[40px]"
+            className="absolute -left-[56px] -bottom-[40px] hidden desktop:block"
           />
           <InteractiveIllustration
             src="/illustrations/cubes.svg"
             width={235}
             height={143}
             alt="Cubes"
-            className="left-[31px] -bottom-[71px] absolute"
+            className="left-[31px] -bottom-[71px] absolute hidden desktop:block"
           />
           <InteractiveIllustration
             src="/illustrations/hero-phone.svg"
             width={181}
             height={273}
-            className="-right-[56px] absolute bottom-[68px]"
+            className="right-auto -left-8 desktop:left-auto desktop:-right-[56px] absolute -bottom-[136px] -scale-x-100 desktop:scale-x-100 desktop:bottom-[68px] hidden tablet:block desktop:w-[181px] w-[164px] desktop:h-[273px] h-[255px]"
             alt="Phone"
           />
           <InteractiveIllustration
@@ -166,25 +171,25 @@ const Hero = () => {
             alt="Social Media Integrations"
             width={179}
             height={93}
-            className="absolute -right-[56px] -bottom-[56px]"
+            className="absolute -right-[56px] -bottom-[56px] hidden desktop:block"
           />
           <InteractiveIllustration
             src="/illustrations/debit-card.svg"
             alt="Card"
             width={123}
             height={161}
-            className="absolute -bottom-[72px] right-[173px]"
+            className="absolute -bottom-[94px] desktop:-bottom-[72px] -right-[18px] desktop:right-[173px] hidden tablet:block"
           />
         </div>
 
         {/* decoration column */}
-        <div className="w-[120px] flex flex-col border-l border-border-secondary shrink-0">
+        <div className="hidden w-[120px] desktop:flex flex-col border-l border-border-secondary shrink-0">
           {Array.from({ length: 5 }).map((_, idx, arr) => {
             return (
               <div
                 key={`second-central-column-decoration-box-${idx}`}
                 className={cn(
-                  "w-[120px] h-[120px] border-border-secondary",
+                  "w-0 desktop:w-[120px] h-[120px] border-border-secondary",
                   idx !== arr.length - 1 && "border-b",
                 )}
               ></div>
@@ -194,13 +199,13 @@ const Hero = () => {
       </div>
 
       {/* last decoration row */}
-      <div className="flex w-full h-[120px] border-b border-border-secondary">
+      <div className="flex w-full h-0 tablet:h-8 desktop:h-[120px] border-b border-border-secondary">
         {Array.from({ length: 12 }).map((_, idx, arr) => {
           return (
             <div
               key={`last-row-decoration-box-${idx}`}
               className={cn(
-                "w-[120px] h-[120px] border-border-secondary",
+                "w-[120px] h-0 tablet:h-8 desktop:h-[120px] border-border-secondary",
                 idx !== arr.length - 1 && "border-r",
               )}
             ></div>

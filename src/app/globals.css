@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  min-width: 0px;
+  /* min-width: 0px; */
 }
 
 @theme {
@@ -404,6 +404,7 @@
   --spacing-480: 1920px;
 
   --spacing-container-padding-mobile: var(--spacing-4);
+  --spacing-container-padding-tablet: var(--spacing-6);
   --spacing-container-padding-desktop: var(--spacing-8);
 
   --container-max-width-desktop: var(--spacing-320);
@@ -426,6 +427,10 @@
   --spacing-9xl: var(--spacing-24);
   --spacing-10xl: var(--spacing-32);
   --spacing-11xl: var(--spacing-40);
+
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 640px;
+  --breakpoint-desktop: 1024px;
 
   --radius-none: 0px;
   --radius-xxs: 2px;
