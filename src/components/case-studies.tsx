@@ -9,7 +9,7 @@ import { ArrowRight } from "untitledui-js/react";
 const CaseStudies = () => {
   return (
     <section className="w-full border-y border-border-secondary flex flex-col">
-      <div className="border-border-secondary border-x max-w-full-page mx-auto w-full">
+      <div className="border-border-secondary desktop:border-x max-w-full-page mx-auto w-full">
         <div className="w-full mx-auto max-w-max-width-desktop">
           <SectionTitle
             subTitle="Case studies"

@@ -5,15 +5,15 @@ import SectionTitle from "./shared/section-title";
 
 const Testimonials = () => {
   return (
-    <section className="w-full flex border-b border-border-secondary flex-col max-w-full-page border-x">
+    <section className="w-full flex border-b border-border-secondary flex-col max-w-full-page desktop:border-x">
       <SectionTitle
         subTitle="Testimonials"
         title="What do our customers say?"
         description="Hear directly from the founders of companies that have utilized our service."
       />
-      <div className="w-full flex flex-col mx-auto space-y-4xl p-8xl bg-[url(/patterns/dot.svg)]">
+      <div className="w-full flex flex-col mx-auto space-y-4xl px-xl py-6xl tablet:px-3xl tablet:py-7xl desktop:p-8xl bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)]">
         <VideoCard />
-        <div className="w-full flex gap-x-4xl">
+        <div className="w-full flex gap-x-4xl space-y-lg flex-col desktop:flex-row">
           <TextCard />
           <TextCard />
           <TextCard />
@@ -26,19 +26,30 @@ const Testimonials = () => {
 const VideoCard = () => {
   return (
     <div className="w-full flex flex-col rounded-xs shadow-xs border border-border-secondary bg-background-primary">
-      <div className="flex w-full gap-x-7xl p-4xl border-b border-border-secondary">
-        <div className="max-w-[577px] p-xs rounded-xs border border-border-secondary shadow-xs w-full">
+      <div className="flex flex-col desktop:flex-row w-full gap-x-7xl p-0 desktop:p-4xl border-b border-border-secondary">
+        <div className="w-full p-xl flex border-b border-dashed border-border-secondary desktop:hidden">
           <Image
-            src="/illustrations/testimonial-thumbnail.png"
-            width={569}
-            height={320}
-            className="object-cover h-[320px] w-full rounded-[2px]"
-            alt="Video"
+            src="/companies/warpspeed.svg"
+            width={134}
+            height={32}
+            alt="Warpspeed"
           />
         </div>
-        <div className="w-full pt-4xl pb-xl flex flex-col justify-between">
+        <div className="max-w-full desktop:max-w-[577px] w-full p-xl desktop:p-0 border-b border-border-secondary desktop:border-none">
+          <div className="p-xs rounded-xs border border-border-secondary shadow-xs w-full desktop:p-0">
+            <Image
+              src="/illustrations/testimonial-thumbnail.png"
+              width={569}
+              height={320}
+              className="object-cover w-full rounded-[2px]"
+              alt="Video"
+            />
+          </div>
+        </div>
+
+        <div className="w-full p-xl desktop:pt-4xl pb-xl flex flex-col justify-between space-y-3xl desktop:space-y-0">
           <div className="flex flex-col space-y-xl">
-            <div className="flex gap-x-4xl">
+            <div className="hidden gap-x-4xl desktop:flex">
               <Image
                 src="/illustrations/quotes.svg"
                 width={27}
@@ -47,7 +58,7 @@ const VideoCard = () => {
               />
               <div className="h-4 w-10xl bg-[url(/patterns/slash-darker.svg)]"></div>
             </div>
-            <p className="text-text-secondary text-xl leading-xl font-medium">
+            <p className="text-text-secondary text-md leading-md tablet:text-lg tablet:leading-lg desktop:text-xl desktop:leading-xl font-medium">
               Yes! Now I can have shortcuts to run and debug tests. Ever since
               snippets were added, Dawn has all of the features I could ask for
               in an editor.
@@ -75,6 +86,7 @@ const VideoCard = () => {
               width={134}
               height={32}
               alt="Warpspeed"
+              className="hidden desktop:block"
             />
           </div>
         </div>
@@ -96,8 +108,8 @@ const TextCard: FC<Props> = ({ className }) => {
         className,
       )}
     >
-      <div className="w-full flex flex-col space-y-6xl p-4xl border-b border-border-secondary">
-        <div className="flex flex-col space-y-lg">
+      <div className="w-full flex flex-col space-y-3xl desktop:space-y-6xl p-xl desktop:p-4xl border-b border-border-secondary">
+        <div className="flex flex-col space-y-md desktop:space-y-lg">
           <Image
             src="/companies/powersurge.svg"
             width={130}
@@ -131,7 +143,7 @@ const TextCard: FC<Props> = ({ className }) => {
                 alt="Verified Tick"
               />
             </div>
-            <span className="text-text-tertiary text-md leading-md">
+            <span className="text-text-tertiary text-sm desktop:text-md leading-md">
               Principal Engineer, Powersurge
             </span>
           </div>

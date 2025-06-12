@@ -21,7 +21,7 @@ const Process = () => {
   };
 
   return (
-    <section className="w-full border-b border-border-secondary flex flex-col max-w-full-page border-x">
+    <section className="w-full border-b border-border-secondary flex flex-col max-w-full-page desktop:border-x">
       <SectionTitle
         subTitle="Our Plan"
         title="How we work"
@@ -30,7 +30,7 @@ const Process = () => {
       <div className="w-full flex">
         <div className="w-full flex">
           <div className="grow bg-[url(/patterns/slash.svg)]"></div>
-          <div className="w-full max-w-max-width-desktop border-x border-border-secondary relative">
+          <div className="w-full max-w-max-width-desktop desktop:border-x border-border-secondary relative">
             <div
               ref={scrollableContainer}
               className=" h-[678px] overflow-x-auto overflow-y-hidden bg-[url(/patterns/dot.svg)] "

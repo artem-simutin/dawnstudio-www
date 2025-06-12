@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col items-center pt-20">
         <Hero />
         <SocialProof />
         <Services />

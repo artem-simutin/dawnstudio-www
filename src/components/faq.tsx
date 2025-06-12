@@ -53,16 +53,16 @@ const FAQ = () => {
   const currentOpenItemIndex = items.findIndex((i) => i.value === openItem);
   return (
     <section className="w-full flex flex-col">
-      <div className="mx-auto border-x border-border-secondary flex flex-col w-full max-w-full-page">
+      <div className="mx-auto desktop:border-x border-border-secondary flex flex-col w-full max-w-full-page">
         <SectionTitle
           subTitle="FAQ"
           title="Have Questions?"
           description="Get quick answers to common questions about our services, process, and how we work with businesses like yours."
         />
       </div>
-      <div className="w-full px-4xl bg-[url(/patterns/dot.svg)] max-w-full-page mx-auto border-x border-border-secondary border-b border-border-secondary">
-        <div className="py-8xl w-full max-w-max-width-desktop flex gap-x-xl">
-          <div className="flex flex-col max-w-140 w-full">
+      <div className="w-full py-6xl px-container-padding-mobile tablet:py-7xl tablet:px-container-padding-tablet desktop:py-8xl desktop:px-4xl bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)] max-w-full-page mx-auto desktop:border-x border-b border-border-secondary">
+        <div className="w-full max-w-max-width-desktop flex gap-x-xl">
+          <div className="flex flex-col tablet:max-w-full desktop:max-w-140 w-full">
             <Accordion
               type="single"
               value={openItem}
@@ -83,7 +83,7 @@ const FAQ = () => {
               ))}
             </Accordion>
           </div>
-          <div className="w-full flex items-center justify-center bg-background-primary border border-border-secondary shadow-xs relative bg-[url(/patterns/square-small.svg)] rounded-xs">
+          <div className="w-full hidden items-center justify-center bg-background-primary border border-border-secondary shadow-xs relative bg-[url(/patterns/square-small.svg)] rounded-xs desktop:flex">
             <Image
               src="/illustrations/guarantees.svg"
               alt="Illustration"
@@ -119,17 +119,17 @@ const Item: FC<ItemProps> = ({ onClick, content, title, value, icon }) => {
       onClick={onClick}
       className="cursor-pointer border border-border-secondary bg-background-primary rounded-xs shadow-xs"
     >
-      <AccordionTrigger className="!p-3xl mb-1 cursor-pointer border-b border-dashed border-border-secondary rounded-none">
+      <AccordionTrigger className="!p-3xl cursor-pointer rounded-none">
         <div className="w-full flex gap-x-xl items-center">
           <div className="p-xs rounded-xs border border-border-secondary bg-background-primary shadow-xs">
             <Icon size="20px" className="text-text-primary" />
           </div>
-          <span className="text-text-primary font-semibold text-lg leading-lg font-medium">
+          <span className="text-text-primary text-lg leading-lg font-medium">
             {title}
           </span>
         </div>
       </AccordionTrigger>
-      <AccordionContent className="text-md leading-md font-normal text-text-tertiary !p-3xl">
+      <AccordionContent className="text-md leading-md font-normal text-text-tertiary !p-3xl border-t border-dashed border-border-secondary ">
         {content}
       </AccordionContent>
       <div className="w-full h-1.5 bg-[url(/patterns/slash-darker.svg)] border-t border-border-tertiary"></div>

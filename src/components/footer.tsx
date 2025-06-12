@@ -7,40 +7,48 @@ const Footer = () => {
   return (
     <footer className="w-full flex flex-col">
       {/* decoration */}
-      <div className="border border-border-secondary h-4 bg-[url(/patterns/slash.svg)]"></div>
+      <div className="border-y desktop:border border-border-secondary h-4 bg-[url(/patterns/slash.svg)]"></div>
 
       {/* main content */}
-      <div className="max-w-container-desktop px-container-desktop py-8xl">
-        <div className="w-full max-w-max-width-desktop px-container-padding-desktop flex justify-between mx-auto">
-          <div className="space-y-4xl w-80">
-            <Image
-              src="/logo-light.svg"
-              width={179}
-              height={32}
-              alt="Dawn Studio"
-            />
+      <div className="max-w-container-desktop px-container-desktop py-6xl desktop:py-8xl">
+        <div className="w-full max-w-max-width-desktop px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-container-padding-desktop flex flex-col desktop:flex-row justify-between mx-auto gap-y-6xl">
+          <div className="space-y-3xl w-full max-w-full desktop:max-w-80">
+            <div className="w-full justify-between items-center flex">
+              <div className="p-0 desktop:p-xl">
+                <Image
+                  src="/logo-light.svg"
+                  width={121}
+                  height={32}
+                  alt="Dawn Studio"
+                />
+              </div>
+              <div className="block desktop:hidden">
+                <Socials />
+              </div>
+            </div>
+
             <span className="text-md leading-md text-text-tertiary">
-              Scalable automation solutions tailored to your needs.
+              We develop your MVP, create your brand, and help you acquire your
+              first customers.
             </span>
           </div>
-
-          <div className="flex gap-x-4xl">
+          <div className="flex gap-x-4xl flex-col tablet:flex-row gap-y-4xl">
             <div className="space-y-xl flex flex-col w-80">
               <span className="text-text-quaternary font-semibold text-sm">
                 Services
               </span>
               <div className="flex flex-col space-y-lg">
-                <NavigationItem href="">Cold Email System</NavigationItem>
-                <NavigationItem href="">Customized CRM System</NavigationItem>
+                <NavigationItem href="">MVP development</NavigationItem>
+                <NavigationItem href="">Ongoing development</NavigationItem>
+                <NavigationItem href="">Branding design</NavigationItem>
                 <NavigationItem
                   href=""
                   badge={{
                     text: "New",
                   }}
                 >
-                  Onboarding Systems
+                  Market research
                 </NavigationItem>
-                <NavigationItem href="">Content Systems</NavigationItem>
               </div>
             </div>
 
@@ -60,28 +68,13 @@ const Footer = () => {
 
       {/* sub footer */}
       <div className="w-full pb-6xl pt-6xl border-border-secondary border-t">
-        <div className="max-w-max-width-desktop flex justify-between items-center mx-auto px-container-padding-desktop">
+        <div className="max-w-max-width-desktop flex justify-between items-center mx-auto px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-container-padding-desktop">
           <span className="text-text-quaternary">
             © 2025 Dawn Studio. All rights reserved.
           </span>
           {/* icons */}
-          <div className="flex gap-x-3xl">
-            <Link href="https://x.com" target="_blank">
-              <Image
-                src="/social-media-icons/x.svg"
-                width={24}
-                height={24}
-                alt="X.com"
-              />
-            </Link>
-            <Link href="https://linkedin.com" target="_blank">
-              <Image
-                src="/social-media-icons/linkedin.svg"
-                width={24}
-                height={24}
-                alt="LinkedIn"
-              />
-            </Link>
+          <div className="hidden desktop:block">
+            <Socials />
           </div>
         </div>
       </div>
@@ -110,6 +103,29 @@ const NavigationItem: FC<PropsWithChildren<NavigationItemProps>> = (props) => {
         </div>
       )}
     </Link>
+  );
+};
+
+const Socials = () => {
+  return (
+    <div className="flex gap-x-3xl">
+      <Link href="https://x.com" target="_blank">
+        <Image
+          src="/social-media-icons/x.svg"
+          width={24}
+          height={24}
+          alt="X.com"
+        />
+      </Link>
+      <Link href="https://linkedin.com" target="_blank">
+        <Image
+          src="/social-media-icons/linkedin.svg"
+          width={24}
+          height={24}
+          alt="LinkedIn"
+        />
+      </Link>
+    </div>
   );
 };
 

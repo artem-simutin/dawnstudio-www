@@ -16,7 +16,7 @@ import { Code01 } from "untitledui-js/react";
 
 const Hero = () => {
   return (
-    <section className="w-full flex flex-col max-w-full-page border-x border-border-secondary overflow-hidden">
+    <section className="w-full flex flex-col max-w-full-page desktop:border-x border-border-secondary overflow-hidden">
       {/* first decoration row */}
       <div className="flex w-full h-0 tablet:h-8 desktop:h-[120px] border-border-secondary">
         {Array.from({ length: 12 }).map((_, idx, arr) => {
@@ -34,7 +34,7 @@ const Hero = () => {
       </div>
 
       {/* central */}
-      <div className="border-y border-border-secondary w-full flex py-6xl tablet:py-4xl desktop:py-0 h-auto desktop:h-[600px] relative px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-auto">
+      <div className="tablet:border-y border-border-secondary w-full flex py-6xl tablet:py-4xl desktop:py-0 h-auto desktop:h-[600px] relative px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-auto">
         {/* decoration column */}
         <div className="hidden desktop:flex w-[120px] flex-col border-r border-border-secondary shrink-0">
           {Array.from({ length: 5 }).map((_, idx, arr) => {
