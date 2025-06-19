@@ -1,15 +1,10 @@
 "use client";
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState } from "react";
 import Image from "next/image";
 import { Button, buttonVariants } from "./ui/button";
 import Link from "next/link";
 import config from "@/config";
-import {
-  motion,
-  MotionValue,
-  useMotionValue,
-  useTransform,
-} from "motion/react";
+import { motion, useMotionValue, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Figma } from "untitledui-js/react";
 import { Code01 } from "untitledui-js/react";
@@ -26,7 +21,7 @@ const Hero = () => {
               className={cn(
                 "w-[120px] h-0 tablet:h-8 desktop:h-[120px] border-border-secondary",
                 idx !== arr.length - 1 && "border-r",
-                idx === 1 && "bg-[url(/patterns/slash.svg)]",
+                idx === 1 && "bg-[url(/patterns/slash.svg)]"
               )}
             ></div>
           );
@@ -44,7 +39,7 @@ const Hero = () => {
                 className={cn(
                   "w-0 desktop:w-[120px] h-[120px] border-border-secondary",
                   idx !== arr.length - 1 && "border-b",
-                  idx === 0 && "bg-[url(/patterns/slash.svg)]",
+                  idx === 0 && "bg-[url(/patterns/slash.svg)]"
                 )}
               ></div>
             );
@@ -190,7 +185,7 @@ const Hero = () => {
                 key={`second-central-column-decoration-box-${idx}`}
                 className={cn(
                   "w-0 desktop:w-[120px] h-[120px] border-border-secondary",
-                  idx !== arr.length - 1 && "border-b",
+                  idx !== arr.length - 1 && "border-b"
                 )}
               ></div>
             );
@@ -206,7 +201,7 @@ const Hero = () => {
               key={`last-row-decoration-box-${idx}`}
               className={cn(
                 "w-[120px] h-0 tablet:h-8 desktop:h-[120px] border-border-secondary",
-                idx !== arr.length - 1 && "border-r",
+                idx !== arr.length - 1 && "border-r"
               )}
             ></div>
           );
@@ -237,27 +232,39 @@ const InteractiveIllustration: FC<InteractiveIllustrationProps> = ({
   className = "",
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const x: MotionValue<number> = useMotionValue(0);
-  const y: MotionValue<number> = useMotionValue(0);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const tiltSensitivity = 20; // Lower number = stronger tilt
+  const tiltSensitivity = 15; // Lower number = stronger tilt
   const rotateX = useTransform(y, (v: number) => -v / tiltSensitivity);
   const rotateY = useTransform(x, (v: number) => v / tiltSensitivity);
 
-  const moveSensitivity = 25; // Lower number = more movement
+  const moveSensitivity = 20; // Lower number = more movement
   const translateX = useTransform(x, (v: number) => v / moveSensitivity);
   const translateY = useTransform(y, (v: number) => v / moveSensitivity);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    const px = event.clientX - (rect.left + rect.width / 2);
-    const py = event.clientY - (rect.top + rect.height / 2);
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const px = event.clientX - centerX;
+    const py = event.clientY - centerY;
+
+    // Use animate for smooth interpolation
     x.set(px);
     y.set(py);
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
   const handleMouseLeave = () => {
+    setIsHovered(false);
+    // Smooth return to center
     x.set(0);
     y.set(0);
   };
@@ -267,6 +274,7 @@ const InteractiveIllustration: FC<InteractiveIllustrationProps> = ({
       ref={containerRef}
       className={className}
       onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
         width,
@@ -284,7 +292,15 @@ const InteractiveIllustration: FC<InteractiveIllustrationProps> = ({
           y: translateY,
           transformStyle: "preserve-3d",
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+        animate={{
+          scale: isHovered ? 1.05 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+          mass: 0.8,
+        }}
       >
         <Image
           src={src}
