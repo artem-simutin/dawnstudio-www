@@ -91,13 +91,17 @@ const CaseStudyPreview: FC<
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
               className="p-6xl flex flex-col gap-y-6xl"
             >
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15, duration: 0.25 }}
+                transition={{
+                  delay: 0.15,
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
                 className="h-[48px] w-[168px]"
               >
                 <Image
@@ -111,19 +115,23 @@ const CaseStudyPreview: FC<
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.2,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
                 className="flex w-full flex-col gap-y-md overflow-hidden"
               >
                 <div className="flex gap-x-lg">
                   {props.tags.map((t, i) => (
                     <motion.div
                       key={`case-study-${props.href}-tag-${t}`}
-                      initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                      initial={{ opacity: 0, y: 8, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{
-                        delay: 0.25 + i * 0.05,
-                        duration: 0.25,
-                        ease: "easeOut",
+                        delay: 0.25 + i * 0.06,
+                        duration: 0.35,
+                        ease: [0.4, 0, 0.2, 1],
                       }}
                       className="py-xs px-lg rounded-full text-component-utility-gray-700 font-medium text-xs leading-xs border border-component-utility-gray-200 bg-component-utility-gray-50 line-clamp-1"
                     >
@@ -132,31 +140,35 @@ const CaseStudyPreview: FC<
                   ))}
                 </div>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.3, ease: "easeOut" }}
+                  transition={{
+                    delay: 0.35,
+                    duration: 0.4,
+                    ease: [0.4, 0, 0.2, 1],
+                  }}
                   className="w-full flex flex-col space-y-4xl"
                 >
                   <div className="flex flex-col space-y-xl">
                     <motion.h3
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        delay: 0.35,
-                        duration: 0.25,
-                        ease: "easeOut",
+                        delay: 0.4,
+                        duration: 0.35,
+                        ease: [0.4, 0, 0.2, 1],
                       }}
                       className="text-text-secondary text-display-md leading-display-md font-bold line-clamp-1"
                     >
                       {props.title}
                     </motion.h3>
                     <motion.p
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        delay: 0.4,
-                        duration: 0.25,
-                        ease: "easeOut",
+                        delay: 0.45,
+                        duration: 0.35,
+                        ease: [0.4, 0, 0.2, 1],
                       }}
                       className="text-text-tertiary text-md leading-md line-clamp-2"
                     >
@@ -164,12 +176,12 @@ const CaseStudyPreview: FC<
                     </motion.p>
                   </div>
                   <motion.div
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      delay: 0.45,
-                      duration: 0.25,
-                      ease: "easeOut",
+                      delay: 0.5,
+                      duration: 0.35,
+                      ease: [0.4, 0, 0.2, 1],
                     }}
                   >
                     <Link
