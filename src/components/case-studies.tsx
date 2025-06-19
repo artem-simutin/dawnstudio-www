@@ -8,11 +8,11 @@ import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "untitledui-js/react";
 import config, { CaseStudy } from "@/config";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 const CaseStudies = () => {
   const [activeStudy, setActiveStudy] = useState<string>(
-    config.caseStudies[0].href ?? "",
+    config.caseStudies[0].href ?? ""
   );
   return (
     <section className="w-full border-y border-border-secondary flex flex-col">
@@ -56,14 +56,14 @@ const CaseStudyPreview: FC<
     <div
       className={cn(
         "flex border-r border-border-secondary h-[389px]",
-        !props.active && "cursor-pointer",
+        !props.active && "cursor-pointer"
       )}
       onClick={props.onClick}
     >
       <motion.div
         className={cn(
           "flex items-center border-r border-border-secondary shrink-0",
-          !props.active && "border-none",
+          !props.active && "border-none"
         )}
         animate={{ width: props.active ? "312px" : "90px" }}
         transition={{ duration: 0.15, ease: [0.75, 0.5, 0.3, 0.3] }}
@@ -84,85 +84,113 @@ const CaseStudyPreview: FC<
         }}
         transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
       >
-        <div className="p-6xl flex flex-col gap-y-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.3 }}
-            className="h-[48px] w-[168px]"
-          >
-            <Image
-              src={props.companyLogoUrl}
-              width={168}
-              height={48}
-              alt={props.companyName}
-              className="h-[48px] w-[168px]"
-            />
-          </motion.div>
-          <motion.div
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="flex w-full flex-col gap-y-md overflow-hidden"
-          >
-            <div className="flex gap-x-lg">
-              {props.tags.map((t, i) => (
-                <motion.div
-                  key={`case-study-${props.href}-tag-${t}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + i * 0.05, duration: 0.3 }}
-                  className="py-xs px-lg rounded-full text-component-utility-gray-700 font-medium text-xs leading-xs border border-component-utility-gray-200 bg-component-utility-gray-50 line-clamp-1"
-                >
-                  {t}
-                </motion.div>
-              ))}
-            </div>
+        <AnimatePresence mode="wait">
+          {props.active && (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.75, duration: 0.3 }}
-              className="w-full flex flex-col space-y-4xl"
+              key={`content-${props.href}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
+              className="p-6xl flex flex-col gap-y-6xl"
             >
-              <div className="flex flex-col space-y-xl">
-                <motion.h3
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.3 }}
-                  className="text-text-secondary text-display-md leading-display-md font-bold line-clamp-1"
-                >
-                  {props.title}
-                </motion.h3>
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.3 }}
-                  className="text-text-tertiary text-md leading-md line-clamp-2"
-                >
-                  {props.description}
-                </motion.p>
-              </div>
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.3 }}
+                transition={{ delay: 0.15, duration: 0.25 }}
+                className="h-[48px] w-[168px]"
               >
-                <Link
-                  href={props.href}
-                  className={cn(
-                    buttonVariants({ variant: "linkGray", size: "link" }),
-                    "w-min flex gap-x-sm",
-                  )}
+                <Image
+                  src={props.companyLogoUrl}
+                  width={168}
+                  height={48}
+                  alt={props.companyName}
+                  className="h-[48px] w-[168px]"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
+                className="flex w-full flex-col gap-y-md overflow-hidden"
+              >
+                <div className="flex gap-x-lg">
+                  {props.tags.map((t, i) => (
+                    <motion.div
+                      key={`case-study-${props.href}-tag-${t}`}
+                      initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{
+                        delay: 0.25 + i * 0.05,
+                        duration: 0.25,
+                        ease: "easeOut",
+                      }}
+                      className="py-xs px-lg rounded-full text-component-utility-gray-700 font-medium text-xs leading-xs border border-component-utility-gray-200 bg-component-utility-gray-50 line-clamp-1"
+                    >
+                      {t}
+                    </motion.div>
+                  ))}
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.3, ease: "easeOut" }}
+                  className="w-full flex flex-col space-y-4xl"
                 >
-                  <span className="font-semibold">Read case study</span>
-                  <ArrowRight
-                    size="20px"
-                    className="text-component-icons-icons-icon-brand"
-                  />
-                </Link>
+                  <div className="flex flex-col space-y-xl">
+                    <motion.h3
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: 0.35,
+                        duration: 0.25,
+                        ease: "easeOut",
+                      }}
+                      className="text-text-secondary text-display-md leading-display-md font-bold line-clamp-1"
+                    >
+                      {props.title}
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: 0.4,
+                        duration: 0.25,
+                        ease: "easeOut",
+                      }}
+                      className="text-text-tertiary text-md leading-md line-clamp-2"
+                    >
+                      {props.description}
+                    </motion.p>
+                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.45,
+                      duration: 0.25,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <Link
+                      href={props.href}
+                      className={cn(
+                        buttonVariants({ variant: "linkGray", size: "link" }),
+                        "w-min flex gap-x-sm"
+                      )}
+                    >
+                      <span className="font-semibold">Read case study</span>
+                      <ArrowRight
+                        size="20px"
+                        className="text-component-icons-icons-icon-brand"
+                      />
+                    </Link>
+                  </motion.div>
+                </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </div>
   );
