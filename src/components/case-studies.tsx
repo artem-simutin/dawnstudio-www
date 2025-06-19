@@ -66,7 +66,7 @@ const CaseStudyPreview: FC<
           !props.active && "border-none"
         )}
         animate={{ width: props.active ? "312px" : "90px" }}
-        transition={{ duration: 0.15, ease: [0.75, 0.5, 0.3, 0.3] }}
+        transition={{ duration: 0.15, ease: [0.86, 0, 0.07, 1] }}
       >
         <Image
           src={props.illustrationUrl}
