@@ -22,6 +22,7 @@ export interface CaseStudy {
   companyName: string;
   companyLogoUrl: string;
   illustrationUrl: string;
+  faviconUrl: string;
 }
 
 interface Config {
@@ -111,6 +112,7 @@ const config: Config = {
       companyName: "Nietzssche",
       companyLogoUrl: "/companies/nietzsche.svg",
       illustrationUrl: "/illustrations/card.svg",
+      faviconUrl: "/companies/nietzsche-fav.svg",
     },
     {
       title: "How Nietzsche increased their sales 2X",
@@ -121,6 +123,7 @@ const config: Config = {
       companyName: "Nietzssche",
       companyLogoUrl: "/companies/nietzsche.svg",
       illustrationUrl: "/illustrations/card.svg",
+      faviconUrl: "/companies/nietzsche-fav.svg",
     },
     {
       title: "How Nietzsche increased their sales 2X",
@@ -131,6 +134,7 @@ const config: Config = {
       companyName: "Nietzssche",
       companyLogoUrl: "/companies/nietzsche.svg",
       illustrationUrl: "/illustrations/card.svg",
+      faviconUrl: "/companies/nietzsche-fav.svg",
     },
   ],
 };

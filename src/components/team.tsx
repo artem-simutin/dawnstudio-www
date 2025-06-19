@@ -15,7 +15,7 @@ const Team = () => {
       />
       <div className="w-full bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)] py-6xl px-container-padding-mobile tablet:p-3xl desktop:p-8xl">
         <div className="flex w-full max-w-max-width-desktop space-y-3xl desktop:space-y-4xl flex-col mx-auto">
-          <div className="flex flex-col space-y-3xl desktop:flex-row gap-x-4xl">
+          <div className="flex flex-col gap-y-3xl desktop:flex-row gap-x-4xl">
             <TeamMemberCard
               name="Kristian Veter"
               position="Business Development Lead"
@@ -96,7 +96,7 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
         {/* top row */}
         <div className="w-full flex border-b tablet:border-r desktop:border-b border-solid tablet:border-dashed desktop:border-solid border-border-secondary">
           <div className="flex flex-col shrink-0 border-r border-border-secondary">
-            <div className="p-3 desktop:p-4xl bg-[url(/patterns/square-small.svg)] border-none desktop:border-b border-dashed border-border-secondary">
+            <div className="p-3 desktop:p-4xl bg-[url(/patterns/square-small.svg)] desktop:border-b border-dashed border-border-secondary">
               <div className="bg-background-primary shadow-xs p-1 rounded-xs border border-border-secondary relative">
                 <Image
                   src={props.avatarUrl}
@@ -110,7 +110,7 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
                 </div>
               </div>
             </div>
-            <div className="flex tablet:hidden desktop:flex flex-1 w-full bg-[url(/patterns/slash-darker.svg)] justify-center items-center min-h-16">
+            <div className="flex tablet:hidden desktop:hidden flex-1 w-full bg-[url(/patterns/slash-darker.svg)] justify-center items-center min-h-16">
               <div className="bg-background-primary border border-border-primary p-md rounded-xs shadow-xs w-min">
                 <CpuChip02 size={20} className="text-graytrue-400" />
               </div>
@@ -134,7 +134,7 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
 
         {/* socials */}
         <div className="w-full tablet:w-auto desktop:w-full flex items-center border-b border-border-secondary flex-row tablet:flex-col desktop:flex-row">
-          <div className="w-full p-xl tablet:p-3xl desktop:p-4xl flex gap-x-3xl flex-row tablet:flex-col desktop:flex-row shrink-0 gap-y-3xl">
+          <div className="w-full min-w-0 p-xl tablet:p-3xl desktop:p-4xl flex gap-x-3xl flex-row tablet:flex-col desktop:flex-row gap-y-3xl">
             {props.socialMediaLinks.map((sml) => {
               return (
                 <Link
@@ -148,7 +148,7 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
               );
             })}
           </div>
-          <div className="px-4xl hidden desktop:block">
+          <div className="px-4xl hidden desktop:flex min-w-0 shrink-0">
             <Colors size={24} className="text-utility-gray-100" />
           </div>
         </div>

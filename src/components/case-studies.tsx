@@ -6,13 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "untitledui-js/react";
+import { ArrowRight, ArrowUpRight } from "untitledui-js/react";
 import config, { CaseStudy } from "@/config";
 import { motion, AnimatePresence } from "motion/react";
 
 const CaseStudies = () => {
   const [activeStudy, setActiveStudy] = useState<string>(
-    config.caseStudies[0].href ?? ""
+    config.caseStudies[config.caseStudies.length - 1].href ?? ""
   );
   return (
     <section className="w-full border-y border-border-secondary flex flex-col">
@@ -62,8 +62,9 @@ const CaseStudyPreview: FC<
     >
       <motion.div
         className={cn(
-          "flex items-center border-r border-border-secondary shrink-0",
-          !props.active && "border-none"
+          "flex items-center border-r border-border-secondary shrink-0 relative",
+          !props.active &&
+            "border-none hover:bg-background-primary_hover/50 duration-100 transition-colors"
         )}
         animate={{ width: props.active ? "312px" : "90px" }}
         transition={{ duration: 0.15, ease: [0.86, 0, 0.07, 1] }}
@@ -75,6 +76,20 @@ const CaseStudyPreview: FC<
           alt="Illustration"
           className="h-[289px] w-[512px] object-cover"
         />
+        <motion.div
+          className="w-5 h-5 absolute left-xl top-xl grayscale-100"
+          animate={{
+            opacity: !props.active ? 1 : 0,
+          }}
+        >
+          <Image
+            src={props.faviconUrl}
+            width={20}
+            height={20}
+            alt={`${props.companyName} favicon`}
+            className="h-5 w-5"
+          />
+        </motion.div>
       </motion.div>
       <motion.div
         className="min-w-0 overflow-hidden"
@@ -123,17 +138,30 @@ const CaseStudyPreview: FC<
                 className="flex w-full flex-col gap-y-md overflow-hidden"
               >
                 <div className="flex gap-x-lg">
+                  <motion.div
+                    key={`case-study-${props.href}-tag-link`}
+                    initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{
+                      delay: 0.25,
+                      duration: 0.35,
+                      ease: [0.4, 0, 0.2, 1],
+                    }}
+                    className="py-xs px-lg rounded-sm border-border-primary border shadow-xs text-xs leading-xs text-bluelight-500 font-medium flex items-center"
+                  >
+                    <ArrowUpRight size={12} className="shrink-0" />
+                  </motion.div>
                   {props.tags.map((t, i) => (
                     <motion.div
                       key={`case-study-${props.href}-tag-${t}`}
                       initial={{ opacity: 0, y: 8, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{
-                        delay: 0.25 + i * 0.06,
+                        delay: 0.35 + i * 0.06,
                         duration: 0.35,
                         ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="py-xs px-lg rounded-full text-component-utility-gray-700 font-medium text-xs leading-xs border border-component-utility-gray-200 bg-component-utility-gray-50 line-clamp-1"
+                      className="py-xs px-lg rounded-sm border-border-primary border shadow-xs text-xs leading-xs text-text-secondary font-medium"
                     >
                       {t}
                     </motion.div>
@@ -158,7 +186,7 @@ const CaseStudyPreview: FC<
                         duration: 0.35,
                         ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="text-text-secondary text-display-md leading-display-md font-bold line-clamp-1"
+                      className="text-text-primary text-display-md leading-display-md font-bold line-clamp-1"
                     >
                       {props.title}
                     </motion.h3>
@@ -170,7 +198,7 @@ const CaseStudyPreview: FC<
                         duration: 0.35,
                         ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="text-text-tertiary text-md leading-md line-clamp-2"
+                      className="text-text-tertiary text-md leading-md line-clamp-2 max-w-140"
                     >
                       {props.description}
                     </motion.p>
