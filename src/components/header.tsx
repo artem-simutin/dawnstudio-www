@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import {
   NavigationMenu,
@@ -25,6 +25,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import useScrollDirection from "@/hooks/use-scroll-direction";
 import { ChevronUp } from "untitledui-js/react";
+import { Link as LinkType } from "@/config";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
         animate={{
           y: scrollDir === "down" ? "-100%" : "0%",
         }}
-        className="fixed w-full border-b border-border-secondary h-20 flex items-center mx-auto desktop:border-x bg-background-primary z-50 overflow-y-hidden"
+        className="fixed w-full border-b border-border-secondary h-20 flex items-center mx-auto desktop:border-x bg-background-primary z-50"
         transition={{
           duration: 0.3,
         }}
@@ -57,74 +58,49 @@ const Header = () => {
               </div>
               <NavigationMenu className="hidden desktop:flex">
                 <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-3">
-                          <NavigationMenuLink asChild>
-                            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                            <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href="/"
-                            >
-                              {/* <Icons.logo className="h-6 w-6" /> */}
-                              <div className="mb-2 mt-4 text-lg font-medium">
-                                shadcn/ui
-                              </div>
-                              <p className="text-sm leading-tight text-muted-foreground">
-                                Beautifully designed components built with Radix
-                                UI and Tailwind CSS.
-                              </p>
-                            </a>
+                  {config.navigationLinks.map((link) => {
+                    if (link.subLinks) {
+                      return (
+                        <NavigationMenuItem key={`link-${link.href}`}>
+                          <NavigationMenuTrigger>
+                            {link.title}
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent className="flex-col p-0 w-full max-w-[400px]">
+                            {link.subMenuTitle && (
+                              <>
+                                <div className="py-xl px-4xl">
+                                  <span className="text-text-quaternary text-sm leading-sm font-semibold">
+                                    {link.subMenuTitle}
+                                  </span>
+                                </div>
+                                <div className="border-y border-border-tertiary h-1.5 w-full bg-[url(/patterns/slash-darker.svg)]"></div>
+                              </>
+                            )}
+                            <ul className="grid gap-3 p-2xl md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                              {link.subLinks.map((subLink) => (
+                                <ListItem
+                                  key={`sublink-${subLink.href}`}
+                                  {...subLink}
+                                />
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                      );
+                    }
+
+                    return (
+                      <NavigationMenuItem key={`link-${link.href}`}>
+                        <Link href={link.href} legacyBehavior passHref>
+                          <NavigationMenuLink
+                            className={navigationMenuTriggerStyle()}
+                          >
+                            {link.title}
                           </NavigationMenuLink>
-                        </li>
-                        <ListItem href="/docs" title="Introduction">
-                          Re-usable components built using Radix UI and Tailwind
-                          CSS.
-                        </ListItem>
-                        <ListItem
-                          href="/docs/installation"
-                          title="Installation"
-                        >
-                          How to install dependencies and structure your app.
-                        </ListItem>
-                        <ListItem
-                          href="/docs/primitives/typography"
-                          title="Typography"
-                        >
-                          Styles for headings, paragraphs, lists...etc
-                        </ListItem>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/customers" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        Customers
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/blog" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        Blog
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        About Us
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
+                        </Link>
+                      </NavigationMenuItem>
+                    );
+                  })}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
@@ -135,7 +111,7 @@ const Header = () => {
                 buttonVariants({
                   variant: "primary",
                 }),
-                "hidden desktop:flex"
+                "hidden desktop:flex",
               )}
             >
               Book a call
@@ -173,7 +149,7 @@ const Header = () => {
             transition={{
               duration: 0.3,
             }}
-            className="w-full bg-background-primary fixed z-40 left-0 bottom-0 right-0 top-20 shadow-md"
+            className="w-full bg-background-primary fixed z-40 left-0 bottom-0 right-0 top-20 shadow-sm"
             variants={{
               hidden: {
                 y: "-100%",
@@ -280,30 +256,38 @@ const MobileMenuNavItem = () => {
   );
 };
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+const ListItem: FC<Omit<LinkType, "subLinks">> = (props) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+        <a className="flex flex-row">
+          {props.illustration && (
+            <div className="w-8xl bg-[url(/patterns/square-small.svg)] shrink-0 items-center flex relative">
+              <Image
+                src={props.illustration.src}
+                width={props.illustration.width}
+                height={props.illustration.height}
+                alt={props.illustration.alt}
+                className={cn(
+                  "shrink-0 absolute left-3xl",
+                  props.illustration.className,
+                )}
+              />
+            </div>
           )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
+
+          <div className="px-3xl py-xl flex-col flex space-y-xs w-full">
+            <div className="text-md leading-md font-semibold text-text-primary line-clamp-1">
+              {props.title}
+            </div>
+            <p className="line-clamp-2 text-sm leading-sm text-text-tertiary">
+              {props.description}
+            </p>
+          </div>
         </a>
       </NavigationMenuLink>
     </li>
   );
-});
-ListItem.displayName = "ListItem";
+};
 
 export default Header;

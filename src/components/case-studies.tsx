@@ -1,12 +1,19 @@
-import React, { FC } from "react";
+"use client";
+
+import React, { FC, useState } from "react";
 import SectionTitle from "./shared/section-title";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "untitledui-js/react";
+import config, { CaseStudy } from "@/config";
+import { motion } from "motion/react";
 
 const CaseStudies = () => {
+  const [activeStudy, setActiveStudy] = useState<string>(
+    config.caseStudies[0].href ?? "",
+  );
   return (
     <section className="w-full border-y border-border-secondary flex flex-col">
       <div className="border-border-secondary desktop:border-x max-w-full-page mx-auto w-full">
@@ -21,17 +28,16 @@ const CaseStudies = () => {
       </div>
       <div className="w-full mx-auto border-t border-border-secondary flex">
         <div className="w-full max-w-full-page mx-auto flex border-x border-border-secondary">
-          <div className="bg-[url(/patterns/slash.svg)] grow" />
-          <div className="w-full mx-auto max-w-max-width-desktop">
-            <CaseStudyPreview
-              companyLogoUrl="/companies/nietzsche.svg"
-              tags={["+50% Lead Generation", "$6.2M Series A"]}
-              title="How Nietzsche increased their sales 2X"
-              description="By channeling Nietzschean boldness into its branding, the company doubled sales through a fearless, value-driven campaign."
-              companyName="Nietzssche"
-              href="/"
-              illustrationUrl="/illustrations/card.svg"
-            />
+          <div className="bg-[url(/patterns/slash.svg)] grow border-r border-border-secondary" />
+          <div className="w-full mx-auto max-w-max-width-desktop flex ">
+            {config.caseStudies.map((c) => (
+              <CaseStudyPreview
+                key={`case-study-${c.href}`}
+                active={activeStudy === c.href}
+                onClick={() => setActiveStudy(c.href)}
+                {...c}
+              />
+            ))}
           </div>
           <div className="bg-[url(/patterns/slash.svg)] grow" />
         </div>
@@ -40,70 +46,124 @@ const CaseStudies = () => {
   );
 };
 
-interface CaseStudyProps {
-  illustrationUrl: string;
-  companyLogoUrl: string;
-  title: string;
-  description: string;
-  href: string;
-  tags: string[];
-  companyName: string;
-}
-
-const CaseStudyPreview: FC<CaseStudyProps> = (props) => {
+const CaseStudyPreview: FC<
+  CaseStudy & {
+    active: boolean;
+    onClick: () => void;
+  }
+> = (props) => {
   return (
-    <div className="w-full flex border-x border-border-secondary">
-      <div className="w-[312px] flex items-center border-r border-border-secondary">
+    <div
+      className={cn(
+        "flex border-r border-border-secondary h-[389px]",
+        !props.active && "cursor-pointer",
+      )}
+      onClick={props.onClick}
+    >
+      <motion.div
+        className={cn(
+          "flex items-center border-r border-border-secondary shrink-0",
+          !props.active && "border-none",
+        )}
+        animate={{ width: props.active ? "312px" : "90px" }}
+        transition={{ duration: 0.15, ease: [0.75, 0.5, 0.3, 0.3] }}
+      >
         <Image
           src={props.illustrationUrl}
           width={512}
           height={289}
           alt="Illustration"
+          className="h-[289px] w-[512px] object-cover"
         />
-      </div>
-      <div className="p-6xl flex flex-col space-y-6xl">
-        <Image
-          src={props.companyLogoUrl}
-          width={168}
-          height={48}
-          alt={props.companyName}
-        />
-        <div className="flex w-full flex-col gap-y-md">
-          <div className="flex gap-x-lg">
-            {props.tags.map((t) => (
-              <div
-                key={`case-study-${props.href}-tag-${t}`}
-                className="py-xs px-lg rounded-full text-component-utility-gray-700 font-medium text-xs leading-xs border border-component-utility-gray-200 bg-component-utility-gray-50"
-              >
-                {t}
-              </div>
-            ))}
-          </div>
-          <div className="w-full flex flex-col space-y-4xl">
-            <div className="flex flex-col space-y-xl">
-              <h3 className="text-text-secondary text-display-md leading-display-md font-bold">
-                {props.title}
-              </h3>
-              <p className="text-text-tertiary text-md leading-md">
-                {props.description}
-              </p>
+      </motion.div>
+      <motion.div
+        className="min-w-0 overflow-hidden"
+        animate={{
+          width: props.active ? "auto" : "0px",
+          pointerEvents: props.active ? "auto" : "none",
+        }}
+        transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+      >
+        <div className="p-6xl flex flex-col gap-y-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.3 }}
+            className="h-[48px] w-[168px]"
+          >
+            <Image
+              src={props.companyLogoUrl}
+              width={168}
+              height={48}
+              alt={props.companyName}
+              className="h-[48px] w-[168px]"
+            />
+          </motion.div>
+          <motion.div
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="flex w-full flex-col gap-y-md overflow-hidden"
+          >
+            <div className="flex gap-x-lg">
+              {props.tags.map((t, i) => (
+                <motion.div
+                  key={`case-study-${props.href}-tag-${t}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + i * 0.05, duration: 0.3 }}
+                  className="py-xs px-lg rounded-full text-component-utility-gray-700 font-medium text-xs leading-xs border border-component-utility-gray-200 bg-component-utility-gray-50 line-clamp-1"
+                >
+                  {t}
+                </motion.div>
+              ))}
             </div>
-            <Link
-              href={props.href}
-              className={cn(
-                buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min flex gap-x-sm",
-              )}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.75, duration: 0.3 }}
+              className="w-full flex flex-col space-y-4xl"
             >
-              <span className="font-semibold">Read case study</span>
-              <ArrowRight
-                size="20px"
-                className="text-component-icons-icons-icon-brand"
-              />
-            </Link>
-          </div>
+              <div className="flex flex-col space-y-xl">
+                <motion.h3
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.3 }}
+                  className="text-text-secondary text-display-md leading-display-md font-bold line-clamp-1"
+                >
+                  {props.title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.3 }}
+                  className="text-text-tertiary text-md leading-md line-clamp-2"
+                >
+                  {props.description}
+                </motion.p>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.3 }}
+              >
+                <Link
+                  href={props.href}
+                  className={cn(
+                    buttonVariants({ variant: "linkGray", size: "link" }),
+                    "w-min flex gap-x-sm",
+                  )}
+                >
+                  <span className="font-semibold">Read case study</span>
+                  <ArrowRight
+                    size="20px"
+                    className="text-component-icons-icons-icon-brand"
+                  />
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
