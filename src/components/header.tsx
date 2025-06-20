@@ -111,7 +111,7 @@ const Header = () => {
                 buttonVariants({
                   variant: "primary",
                 }),
-                "hidden desktop:flex",
+                "hidden desktop:flex"
               )}
             >
               Book a call
@@ -270,7 +270,7 @@ const ListItem: FC<Omit<LinkType, "subLinks">> = (props) => {
                 alt={props.illustration.alt}
                 className={cn(
                   "shrink-0 absolute left-3xl",
-                  props.illustration.className,
+                  props.illustration.className
                 )}
               />
             </div>

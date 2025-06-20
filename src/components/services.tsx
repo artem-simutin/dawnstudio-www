@@ -43,7 +43,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min",
+                "w-min"
               )}
             >
               <span>Learn more</span>
@@ -103,7 +103,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min",
+                "w-min"
               )}
             >
               <span>Learn more</span>
@@ -156,7 +156,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min",
+                "w-min"
               )}
             >
               <span>Learn more</span>
@@ -198,7 +198,7 @@ const Services = () => {
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min",
+                "w-min"
               )}
             >
               <span>Learn more</span>

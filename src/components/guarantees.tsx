@@ -12,16 +12,16 @@ const guarantees: ItemCardProps[] = [
     tags: ["100% Satisfaction", "Money back"],
   },
   {
-    title: "Complete Satisfaction",
+    title: "On-Time Delivery",
     description:
-      "If you're not completely satisfied with our service, we'll refund 100% of your investment.",
-    tags: ["100% Satisfaction", "Money back"],
+      "If we miss the deadline, you get 50% back and we keep working for free until it's done.",
+    tags: ["50% Refund", "Free work"],
   },
   {
-    title: "Complete Satisfaction",
+    title: "Post-Launch Included",
     description:
-      "If you're not completely satisfied with our service, we'll refund 100% of your investment.",
-    tags: ["100% Satisfaction", "Money back"],
+      "One week of bug fixes and technical support included with every project. ",
+    tags: ["1 Week Support", "Bug fixes"],
   },
 ];
 
@@ -40,7 +40,7 @@ const NewGuarantees = () => {
         </div>
       </div>
       <div className="w-full flex max-w-full-page bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)] px-container-padding-mobile py-6xl desktop:px-4xl desktop:py-8xl desktop:border-x border-border-secondary mx-auto">
-        <div className="flex space-y-lg gap-x-4xl w-full max-w-max-width-desktop mx-auto flex-col desktop:flex-row">
+        <div className="flex gap-y-lg gap-x-4xl w-full max-w-max-width-desktop mx-auto flex-col desktop:flex-row">
           {guarantees.map((g) => (
             <ItemCard key={`guarantee-card-${g.title}`} {...g} />
           ))}

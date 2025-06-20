@@ -13,37 +13,38 @@ import { Code01, UntitledIcon } from "untitledui-js/react";
 const items: ItemProps[] = [
   {
     value: "1",
-    title: "Share team inboxes",
+    title: "How can you build an MVP in just 3 weeks when others take months?",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "We focus on one core feature and leverage modern software development approaches, including AI-assisted development. While others get stuck in endless planning cycles, we start building immediately and iterate based on real feedback.",
     icon: Code01,
   },
   {
     value: "2",
-    title: "Share team inboxes",
+    title: "Can you build any type of B2B SaaS?",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "We've worked across many different industries, but we specialize in B2B SaaS applications with AI integrations. During our discovery call, we'll honestly tell you if your idea is a good fit for our 3-week process and help you strip away extra features to focus on one core solution.",
     icon: Code01,
   },
   {
     value: "3",
-    title: "Share team inboxes",
+    title: "How do you limit to only 5 clients at a time?",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "We deliberately keep our concurrent client limit to 5 to ensure each founder gets sufficient attention to detail. When we're at capacity, new founders join our waitlist.",
     icon: Code01,
   },
   {
     value: "4",
-    title: "Share team inboxes",
+    title:
+      "How is this different from hiring a traditional development agency?",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "Traditional agencies focus on extensive documentation, preparation, and planning phases. While this might seem thorough, our focus is helping you launch to customers and iterate as fast as possible based on real market feedback.",
     icon: Code01,
   },
   {
     value: "5",
-    title: "Share team inboxes",
+    title: "How involved do I need to be during the 3-week process?",
     content:
-      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+      "About 30 minutes maximum every other day for feedback on demo videos, plus weekly strategy check-ins. We handle the heavy lifting while keeping you in the loop on all major decisions.",
     icon: Code01,
   },
 ];

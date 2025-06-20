@@ -99,7 +99,7 @@ const config: Config = {
     },
     {
       title: "About",
-      href: "/about",
+      href: "/about-us",
     },
   ],
   caseStudies: [
