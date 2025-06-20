@@ -44,7 +44,7 @@ const AboutUs = () => {
               <div className="h-14 text-text-secondary hidden text-md font-semibold desktop:flex items-center px-3xl border-b border-border-secondary">
                 Content:
               </div>
-              <SidebarItem href="/about-us#about" title="Why we started" />
+              <SidebarItem href="/about-us#about" title="About us" />
               <SidebarItem href="/about-us#offers" title="Offers" />
               <SidebarItem href="/about-us#values" title="Values" />
               <SidebarItem href="/about-us#team" title="Team" />
