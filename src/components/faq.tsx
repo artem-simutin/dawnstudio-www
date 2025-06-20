@@ -61,8 +61,8 @@ const FAQ = () => {
           description="Get quick answers to common questions about our services, process, and how we work with businesses like yours."
         />
       </div>
-      <div className="w-full py-6xl px-container-padding-mobile tablet:py-7xl tablet:px-container-padding-tablet desktop:py-8xl desktop:px-4xl bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)] max-w-full-page mx-auto desktop:border-x border-b border-border-secondary">
-        <div className="w-full max-w-max-width-desktop flex gap-x-xl">
+      <div className="w-full py-6xl px-container-padding-mobile tablet:py-7xl tablet:px-container-padding-tablet desktop:py-7xl desktop:px-4xl bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)] max-w-full-page mx-auto desktop:border-x border-b border-border-secondary">
+        <div className="w-full max-w-max-width-desktop flex gap-x-xl mx-auto">
           <div className="flex flex-col tablet:max-w-full desktop:max-w-140 w-full">
             <Accordion
               type="single"

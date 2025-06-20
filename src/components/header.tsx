@@ -164,10 +164,9 @@ const Header = () => {
           >
             <div className="w-full flex h-full flex-col">
               <div className="py-2xl flex-1 space-y-xs">
-                <MobileMenuNavItem />
-                <MobileMenuNavItem />
-                <MobileMenuNavItem />
-                <MobileMenuNavItem />
+                {config.navigationLinks.map((link) => (
+                  <MobileMenuNavItem key={`link-${link.href}`} {...link} />
+                ))}
               </div>
               <div className="w-full pt-md pb-container-padding-mobile px-container-padding-mobile">
                 <Button className="w-full">
@@ -184,7 +183,7 @@ const Header = () => {
   );
 };
 
-const MobileMenuNavItem = () => {
+const MobileMenuNavItem: FC<LinkType> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -193,15 +192,19 @@ const MobileMenuNavItem = () => {
         variant="tertiary"
         className="py-lg px-container-padding-mobile tablet:px-container-padding-tablet gap-x-xl w-full h-auto justify-between"
         onClick={() => {
-          setIsOpen((p) => !p);
+          if (props.subLinks && props.subLinks.length > 0) {
+            setIsOpen((p) => !p);
+          }
         }}
       >
         <span className="text-text-secondary text-md leading-md font-semibold">
-          Services
+          {props.title}
         </span>
-        <div className="">
-          {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-        </div>
+        {props.subLinks && props.subLinks.length > 0 && (
+          <div className="">
+            {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </div>
+        )}
       </Button>
       <motion.div
         initial={{
@@ -218,37 +221,42 @@ const MobileMenuNavItem = () => {
         <div className="py-lg flex flex-col gap-y-lg">
           <div className="w-full flex gap-x-[10px] text-text-quaternary px-container-padding-mobile tablet:px-container-padding-tablet text-xs leading-xs">
             <span>{"///"}</span>
-            <span>Services</span>
+            <span>{props.title}</span>
           </div>
           <div className="w-full flex flex-col gap-y-xs">
-            <Link
-              href=""
-              className="flex px-container-padding-mobile tablet:px-container-padding-tablet py-lg"
-            >
-              <div className="pl-xl pr-md bg-[url(/patterns/square-small.svg)] flex items-center">
-                <Image
-                  src="/illustrations/cube.svg"
-                  width={40}
-                  height={32}
-                  alt="Cube"
-                />
-              </div>
-              <div className="w-full flex items-center pl-md gap-x-3xl">
-                <div className="w-full flex flex-col gap-y-xs">
-                  <span className="text-text-primary text-md leading-md font-semibold">
-                    MVP development
-                  </span>
-                  <span className="text-text-tertiary text-sm leading-sm line-clamp-2">
-                    We develop you minimal viable product in 3 weeks. We develop
-                    you minimal viable product in 3 weeks.
-                  </span>
-                </div>
-                <LinkExternal01
-                  size={16}
-                  className="text-foreground-fg-quaternary"
-                />
-              </div>
-            </Link>
+            {props.subLinks &&
+              props.subLinks.map((subLink) => (
+                <Link
+                  key={`sublink-${subLink.href}`}
+                  href={subLink.href}
+                  className="flex px-container-padding-mobile tablet:px-container-padding-tablet py-lg"
+                >
+                  <div className="pl-xl pr-md bg-[url(/patterns/square-small.svg)] flex items-center">
+                    <Image
+                      src="/illustrations/cube.svg"
+                      width={40}
+                      height={32}
+                      alt="Cube"
+                    />
+                  </div>
+                  <div className="w-full flex items-center pl-md gap-x-3xl">
+                    <div className="w-full flex flex-col gap-y-xs">
+                      <span className="text-text-primary text-md leading-md font-semibold">
+                        {subLink.title}
+                      </span>
+                      {subLink.description && (
+                        <span className="text-text-tertiary text-sm leading-sm line-clamp-2">
+                          {subLink.description}
+                        </span>
+                      )}
+                    </div>
+                    <LinkExternal01
+                      size={16}
+                      className="text-foreground-fg-quaternary"
+                    />
+                  </div>
+                </Link>
+              ))}
           </div>
         </div>
       </motion.div>
