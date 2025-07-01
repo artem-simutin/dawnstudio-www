@@ -1,5 +1,56 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { FC } from "react";
+import { LinkExternal01 } from "untitledui-js/react";
+
+interface Company {
+  name: string;
+  logoSrc: string;
+  logoWidth: number;
+  logoHeight: number;
+  href: string;
+  tags: string[];
+  websiteScreenshotSrc: string;
+}
+
+const companies: Company[] = [
+  {
+    name: "Docutiv",
+    logoSrc: "/companies/docutiv.svg",
+    logoWidth: 101,
+    logoHeight: 32,
+    href: "https://www.docutiv.net/",
+    tags: ["Web", "SaaS", "Healthcare"],
+    websiteScreenshotSrc: "/companies/landings/docutiv.net.png",
+  },
+  {
+    name: "Paperfly",
+    logoSrc: "/companies/paperfly.svg",
+    logoWidth: 101,
+    logoHeight: 32,
+    href: "https://www.paperfly.app/",
+    tags: ["Web", "SaaS", "B2B", "Procrutment"],
+    websiteScreenshotSrc: "/companies/landings/paperfly.app.png",
+  },
+  {
+    name: "ADL Activigram",
+    logoSrc: "/companies/cananeurology.svg",
+    logoWidth: 101,
+    logoHeight: 32,
+    href: "https://apps.apple.com/us/app/adl-activigram/id6741215124",
+    tags: ["Mobile", "Study", "Healthcare"],
+    websiteScreenshotSrc: "/companies/landings/adl.png",
+  },
+  {
+    name: "Prxy.ai",
+    logoSrc: "/companies/prxyai.svg",
+    logoWidth: 101,
+    logoHeight: 32,
+    href: "https://www.prxyai.com/",
+    tags: ["Web", "B2B", "Marketing"],
+    websiteScreenshotSrc: "/companies/landings/prxyai.com.png",
+  },
+];
 
 const SocialProof = () => {
   return (
@@ -12,40 +63,45 @@ const SocialProof = () => {
         </div>
         <div className="border-l border-border-secondary flex bg-[url(/patterns/slash.svg)] w-full"></div>
       </div>
-      <div className="flex w-full py-8xl flex justify-between px-4xl max-w-max-width-desktop">
-        {/* <Image */}
-        {/*   src="/companies/docutiv.svg" */}
-        {/*   width={133} */}
-        {/*   height={42} */}
-        {/*   alt="Docutiv" */}
-        {/* /> */}
-        {/* <Image */}
-        {/*   src="/companies/paperfly.svg" */}
-        {/*   width={157} */}
-        {/*   height={36} */}
-        {/*   alt="Paperfly" */}
-        {/* /> */}
-        {/* <Image */}
-        {/*   src="/companies/prxyai.svg" */}
-        {/*   width={192} */}
-        {/*   height={32} */}
-        {/*   alt="Prxy.ai" */}
-        {/* /> */}
-        {/* <Image */}
-        {/*   src="/companies/cana.png" */}
-        {/*   width={101} */}
-        {/*   height={80} */}
-        {/*   alt="Cana Neurology" */}
-        {/*   quality={100} */}
-        {/* /> */}
-        <Image
-          src="/companies/linguai.svg"
-          width={137}
-          height={42}
-          alt="LinguAI"
-        />
+      <div className="flex w-full py-8xl px-4xl gap-x-4xl bg-background-secondary/50">
+        {companies.map((c) => (
+          <Card key={c.href} {...c} />
+        ))}
       </div>
     </section>
+  );
+};
+
+const Card: FC<Company> = (props) => {
+  return (
+    <Link
+      href={props.href}
+      className="flex flex-col border border-border-secondary rounded-xs w-[400px] bg-background-primary shadow-[0_4px_1px_0_var(--color-effects-shadow-xs)]"
+      target="_blank"
+    >
+      <div className="w-full flex items-center justify-between p-4xl border-b border-border-secondary">
+        <Image src={props.logoSrc} width={101} height={32} alt={props.name} />
+        <LinkExternal01 size={20} className="text-text-quaternary" />
+      </div>
+      <Image
+        src={props.websiteScreenshotSrc}
+        width={400}
+        height={192}
+        alt={props.name}
+        className="w-full border-b border-border-secondary"
+      />
+      <div className="flex w-full gap-x-md p-xl border-border-secondary border-b">
+        {props.tags.map((tag) => (
+          <span
+            key={`company-tag-${props.name}-tag-${tag}`}
+            className="border border-border-secondary rounded-lg py-xs px-md text-xs font-medium text-text-secondary leading-xs"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+      <div className="w-full bg-[url(/patterns/slash-darker.svg)] h-1.5"></div>
+    </Link>
   );
 };
 

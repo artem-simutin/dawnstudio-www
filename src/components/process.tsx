@@ -1,9 +1,9 @@
 "use client";
 
-import React, { FC, useRef } from "react";
+import React, { FC, PropsWithChildren, useRef } from "react";
 import SectionTitle from "./shared/section-title";
 import { cn } from "@/lib/utils";
-import { Clock, Infinity } from "untitledui-js/react";
+import { Clock, Infinity, Plus, Rocket02 } from "untitledui-js/react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import Image from "next/image";
 import { Button } from "./ui/button";
@@ -33,12 +33,12 @@ const Process = () => {
           <div className="w-full max-w-max-width-desktop desktop:border-x border-border-secondary relative">
             <div
               ref={scrollableContainer}
-              className=" h-[678px] overflow-x-auto overflow-y-hidden bg-[url(/patterns/dot.svg)] "
+              className=" h-[698px] overflow-x-auto overflow-y-hidden bg-[url(/patterns/dot.svg)] "
             >
-              <div className="h-full relative w-[1392px] desktop:w-[2185px]">
-                <div className="relative top-6 left-6 desktop:top-16 desktop:left-16 w-[304px] desktop:w-96 h-[162px]">
+              <div className="h-full relative w-[2869px] tablet:w-[3369px] desktop:w-[3443px]">
+                <div className="relative top-8 left-8 tablet:top-12 tablet:left-12 desktop:top-16 desktop:left-16 w-[324px] tablet:w-[392px]">
                   <Card
-                    className="w-[304px] desktop:w-96 absolute top-0 left-0"
+                    className="w-[324px] tablet:w-[392px] absolute top-0 left-0"
                     title="Discovery call"
                     description="Discuss scope of the project, idea, requirements, etc."
                     duration="45 minutes"
@@ -47,26 +47,49 @@ const Process = () => {
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
                     ]}
-                    dot
+                    notification={0}
                   />
-                  <Image
-                    src="/decorations/process-first-arrows.svg"
-                    width={113}
-                    height={390}
-                    className="absolute top-[81px] -right-[115px] hidden desktop:block"
-                    alt="Arrows"
-                  />
-                  <Image
-                    src="/decorations/process-first-arrows-mobile.svg"
-                    width={220}
-                    height={356}
-                    className="absolute top-[73px] -right-[64px] block desktop:hidden"
-                    alt="Arrows"
+                  <Tag className="absolute left-[424px] top-[63px] z-30">
+                    Proposal Document
+                  </Tag>
+                  <Arrow
+                    className="absolute tablet:top-[74px] desktop:top-[81px] left-[392px]"
+                    num={1}
+                    width={187}
+                    height={1}
+                    tabletWidth={187}
+                    tabletHeight={1}
+                    mobileWidth={187}
+                    mobileHeight={1}
                   />
                 </div>
-                <div className="top-6 desktop:top-16 absolute left-[392px] desktop:left-[562px] flex space-y-8 flex-col">
+                <div className="absolute top-8 tablet:top-12 desktop:top-16 left-[551px] tablet:left-[627px] desktop:left-[643px] w-[324px] tablet:w-[392px]">
                   <Card
-                    className="w-[456px] desktop:w-[579px]"
+                    className="w-[324px] tablet:w-[392px] absolute top-0 left-0"
+                    title="Kickoff Call"
+                    description="Discuss scope of the project, idea, requirements, etc."
+                    duration="45 minutes"
+                    icon="/products/slack.svg"
+                    people={[
+                      "/people/artem-simutin.jpeg",
+                      "/people/kristian-veter.jpg",
+                    ]}
+                    notification={0}
+                  />
+                  <Arrow
+                    className="absolute tablet:top-[73px] desktop:top-[81px] left-[392px]"
+                    num={2}
+                    width={96}
+                    height={389}
+                    tabletWidth={80}
+                    tabletHeight={389}
+                    mobileWidth={64}
+                    mobileHeight={389}
+                  />
+                </div>
+                <div className="absolute top-8 tablet:top-12 desktop:top-16 left-[947px] tablet:left-[1099px] desktop:left-[1131px] w-[472px] tablet:w-[552px]">
+                  <Card
+                    className="w-[472px] tablet:w-[552px] absolute top-0 left-0"
                     title="MVP Development"
                     description="Receive a full functional  MVP with frequent progress updates. The app is deployed to your cloud infrastructure."
                     duration="21 day"
@@ -75,86 +98,132 @@ const Process = () => {
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
                     ]}
+                    notification={1}
                   />
                   <Card
-                    className="w-[304px] desktop:w-96"
-                    title="Branding foundations"
+                    className="w-[324px] tablet:w-[392px] absolute top-[194px] left-0"
+                    title="Brand Strategy"
                     description="Get a complete strategy with a fundamental assets for your upcoming brand."
                     duration="7 days"
-                    icon="/products/figma.svg"
+                    icon="/products/word.svg"
                     people={["/people/denis-simutin.jpg"]}
+                    notification={0}
                   />
                   <Card
-                    className="w-[304px] desktop:w-96"
-                    title="Market research"
-                    description="Get complete customer profile and “go-to market” strategies. "
+                    className="w-[324px] tablet:w-[392px] absolute top-[388px] left-0"
+                    title="Market Research"
+                    description="Get complete customer profile and “go-to market” strategies."
                     duration="7 days"
                     icon="/products/google-ads.svg"
+                    people={["/people/denis-simutin.jpg"]}
+                    notification={0}
+                  />
+                  <Tag className="absolute tablet:top-[256px] desktop:top-[264px] left-[374px] tablet:left-[424px] z-30">
+                    Strategy
+                  </Tag>
+                  <Tag className="absolute tablet:top-[450px] desktop:top-[458px] left-[374px] tablet:left-[424px] z-30">
+                    Data
+                  </Tag>
+                  <Arrow
+                    className="absolute tablet:top-[73px] desktop:top-[81px] left-[342px] tablet:left-[392px]"
+                    num={3}
+                    width={256}
+                    height={389}
+                    tabletWidth={240}
+                    tabletHeight={389}
+                    mobileWidth={212}
+                    mobileHeight={389}
+                  />
+                </div>
+                <div className="absolute top-[45px] tablet:top-[61px] desktop:top-[77px] left-[1664px] w-[324px] tablet:w-[392px]">
+                  <NotificationCard
+                    className="w-[280px] absolute top-0 tablet:left-[55px] desktop:left-[89px]"
+                    avatarSrc="/people/denis-simutin.jpg"
+                    name="Olivia Rhye"
+                    email="olivia.rhye@gmail.com"
+                    time="at 12:00 AM"
+                    content="Wow... This is exactly what we were looking for! Looking forward to the full product!"
+                    notification={2}
+                  />
+                  <Card
+                    className="w-[304px] desktop:w-[392px] absolute top-[278px] left-0"
+                    title="Branding + Website"
+                    description="Get the full brand design package and see it implemented on the website."
+                    duration="14 days"
+                    icon="/products/figma.svg"
+                    people={["/people/denis-simutin.jpg"]}
+                    notification={1}
+                  />
+                  <Tag className="absolute top-[57px] left-[465px] z-30">
+                    MVP
+                  </Tag>
+                  <Tag className="absolute top-[348px] left-[424px] z-30">
+                    Assets
+                  </Tag>
+                  <Tag className="absolute top-[348px] left-[483px] z-30">
+                    Use Guide
+                  </Tag>
+                  <Arrow
+                    className="absolute top-[68px] tablet:left-[347px] desktop:left-[369px]"
+                    num={4}
+                    width={280}
+                    height={292}
+                    tabletWidth={286}
+                    tabletHeight={292}
+                    mobileWidth={225}
+                    mobileHeight={292}
+                  />
+                </div>
+                <div className="absolute top-[161px] left-[2279px] w-[392px]">
+                  <Card
+                    className="w-[324px] desktop:w-[392px] absolute top-0 left-0"
+                    title="Launch"
+                    description="We are delivering all of the product elements to you..."
+                    duration="0"
+                    icon="/products/producthunt.svg"
                     people={[
+                      "/people/denis-simutin.jpg",
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
                     ]}
+                    notification={0}
                   />
-                  <Image
-                    src="/decorations/process-second-arrows.svg"
-                    width={308}
-                    height={389}
-                    className="absolute top-[81px] -right-[115px] hidden desktop:block"
-                    alt="Arrows"
+                  <Card
+                    className="w-[304px] desktop:w-[392px] absolute top-[194px] left-0"
+                    title="Social Media Design"
+                    description="Get a complete strategy with a fundamental assets for your upcoming brand."
+                    duration="7 days"
+                    icon="/products/linkedin.svg"
+                    people={["/people/denis-simutin.jpg"]}
+                    notification={0}
                   />
-                  <Image
-                    src="/decorations/process-second-arrows-mobile.svg"
-                    width={219}
-                    height={356}
-                    className="absolute top-[73px] -right-[64px] block desktop:hidden"
-                    alt="Arrows"
+                  <Arrow
+                    className="absolute top-[81px] left-[392px]"
+                    num={5}
+                    width={96}
+                    height={292}
+                    tabletWidth={80}
+                    tabletHeight={292}
+                    mobileWidth={64}
+                    mobileHeight={292}
                   />
                 </div>
-                <div className="absolute top-[113px] desktop:top-[161px] left-[912px] desktop:left-[1253px] flex-col space-y-8">
+                <div className="absolute top-[258px] left-[2769px]">
                   <Card
-                    className="w-[456px] desktop:w-[836.5px]"
+                    className="w-[304px] desktop:w-[392px] absolute left-0"
                     title="Ongoing development"
-                    description="Discuss scope of the project, idea, requirements, etc."
+                    description="Receive a full functional  MVP with frequent progress updates. The app is deployed to your cloud infrastructure."
                     icon="/products/linear.svg"
                     people={[
+                      "/people/denis-simutin.jpg",
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
                     ]}
+                    notification={0}
                   />
-                  <Card
-                    className="w-[456px] desktop:w-96"
-                    title="Complete brand design"
-                    description="Get a complete branding including"
-                    duration="21 days"
-                    icon="/products/adobe.svg"
-                    people={["/people/denis-simutin.jpg"]}
-                  />
-                </div>
-
-                {/* cubes */}
-                <Image
-                  src="/illustrations/process-cube.svg"
-                  alt="Cube decoration"
-                  width={96}
-                  height={96}
-                  className="bottom-6 left-6 absolute hidden desktop:block"
-                />
-                <div className="flex gap-x-8 absolute top-[65px] left-[1253px] hidden desktop:block">
-                  <div className="flex">
-                    <Image
-                      src="/illustrations/process-cube.svg"
-                      alt="Cube decoration"
-                      width={64}
-                      height={64}
-                    />
-                    <Image
-                      src="/illustrations/process-cube-long.svg"
-                      alt="Cube decoration"
-                      width={128}
-                      height={96}
-                    />
+                  <div className="shadow-xs bg-background-primary rounded-sm border border-border-primary top-[264px] absolute left-0 p-[5px]">
+                    <Plus size={12} className="text-utility-gray-500" />
                   </div>
-                  <div className="w-[452px] h-7xl bg-background-primary border border-dashed border-border-secondary bg-[url(/patterns/slash.svg)]"></div>
                 </div>
               </div>
             </div>
@@ -183,7 +252,7 @@ interface CardProps {
   description: string;
   people: string[];
   duration?: string;
-  dot?: boolean;
+  notification: number;
 }
 
 const Card: FC<CardProps> = (props) => {
@@ -209,10 +278,17 @@ const Card: FC<CardProps> = (props) => {
         <div className="w-full justify-between items-center flex">
           {!!props.duration ? (
             <div className="flex items-center gap-x-md text-text-quaternary">
-              <Clock size={20} />
-              <span className="font-semibold text-sm leading-sm text-text-tertiary">
-                {props.duration}
-              </span>
+              {props.duration === "0" ? (
+                <Rocket02 size={20} />
+              ) : (
+                <Clock size={20} />
+              )}
+
+              {props.duration !== "0" && (
+                <span className="font-semibold text-sm leading-sm text-text-tertiary">
+                  {props.duration}
+                </span>
+              )}
             </div>
           ) : (
             <div>
@@ -233,17 +309,135 @@ const Card: FC<CardProps> = (props) => {
             })}
           </div>
         </div>
-
-        {/* dot decoration */}
-        {props.dot && (
-          <div className="bg-utility-success-500 rounded-full h-1.5 w-1.5 absolute top-4 right-4 hidden desktop:block"></div>
-        )}
       </div>
 
       <div className="w-4xl bg-[url(/patterns/slash.svg)] border-l border-border-tertiary relative flex items-center rounded-r-lg">
         <div className="w-4 h-4 rounded-full bg-background-primary border border-border-secondary -right-2 absolute"></div>
       </div>
+
+      {/* notification decoration */}
+      {props.notification > 0 && (
+        <div className="rounded-full h-8 w-8 absolute -top-4 -right-4 hidden desktop:block z-30">
+          <Avatar className="w-8 h-8">
+            <AvatarImage src="/people/artem-simutin.jpeg" />
+          </Avatar>
+          <div className="absolute -bottom-[3px] -right-[3px] bg-utility-blue-light-500 rounded-full h-4 w-4 flex items-center justify-center">
+            <span className="text-xs leading-xs text-white">
+              {props.notification}
+            </span>
+          </div>
+        </div>
+      )}
     </div>
+  );
+};
+
+interface TagProps {
+  className?: string;
+}
+
+const Tag: FC<PropsWithChildren<TagProps>> = (props) => {
+  return (
+    <span
+      className={cn(
+        "py-xxs px-sm border border-border-primary rounded-sm shadow-xs text-text-secondary text-xs leading-xs font-medium text-nowrap bg-background-primary",
+        props.className,
+      )}
+    >
+      {props.children}
+    </span>
+  );
+};
+
+interface NotificationCardProps {
+  className?: string;
+  avatarSrc: string;
+  name: string;
+  email: string;
+  time: string;
+  content: string;
+  notification: number;
+}
+
+const NotificationCard: FC<NotificationCardProps> = (props) => {
+  return (
+    <div
+      className={cn(
+        "border border-border-secondary bg-background-primary shadow-xs rounded-xs relative flex flex-col",
+        props.className,
+      )}
+    >
+      <div className="px-xl flex justify-between pt-xl pb-lg items-center border-b border-border-tertiary border-dashed w-full">
+        <div className="gap-x-md flex items-center">
+          <Avatar className="w-8 h-8">
+            <AvatarImage src={props.avatarSrc} />
+          </Avatar>
+          <div className="flex flex-col">
+            <span className="text-sm leading-sm font-semibold text-text-primary">
+              {props.name}
+            </span>
+            <span className="text-xs leading-xs text-text-tertiary">
+              {props.email}
+            </span>
+          </div>
+        </div>
+        <span className="text-text-quaternary text-xs leading-xs font-medium">
+          {props.time}
+        </span>
+      </div>
+      <div className="w-full pt-lg pb-xl px-xl border-b border-border-tertiary">
+        <p className="text-xs leading-xs text-text-tertiary">{props.content}</p>
+      </div>
+      <div className="w-full h-1.5 bg-[url(/patterns/slash-darker.svg)]"></div>
+      {/* notification decoration */}
+      {props.notification > 0 && (
+        <div className="rounded-full bg-utility-blue-light-500 w-4 h-4 absolute -top-2 -right-2 text-xs text-text-white leading-xs flex items-center justify-center">
+          {props.notification}
+        </div>
+      )}
+    </div>
+  );
+};
+
+interface ArrowProps {
+  className?: string;
+  num: number;
+  width: number;
+  height: number;
+  tabletWidth: number;
+  tabletHeight: number;
+  mobileWidth: number;
+  mobileHeight: number;
+}
+
+const Arrow: FC<ArrowProps> = (props) => {
+  return (
+    <>
+      {/* desktop */}
+      <Image
+        src={`/decorations/process-${props.num}-arrows.svg`}
+        width={props.width}
+        height={props.height}
+        className={cn("hidden desktop:block", props.className)}
+        alt="Arrows"
+      />
+      {/* tablet */}
+      <Image
+        src={`/decorations/process-${props.num}-arrows-tablet.svg`}
+        width={props.tabletWidth}
+        height={props.tabletHeight}
+        className={cn("hidden tablet:block desktop:hidden", props.className)}
+        alt="Arrows"
+      />
+      {/* mobile */}
+      <Image
+        src={`/decorations/process-${props.num}-arrows-mobile.svg`}
+        width={props.mobileWidth}
+        height={props.mobileHeight}
+        className={cn("block tablet:hidden", props.className)}
+        alt="Arrows"
+      />
+    </>
   );
 };
 
