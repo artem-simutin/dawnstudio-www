@@ -268,7 +268,7 @@ const ListItem: FC<Omit<LinkType, "subLinks">> = (props) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a className="flex flex-row">
+        <a className="flex flex-row" href={props.href}>
           {props.illustration && (
             <div className="w-8xl bg-[url(/patterns/square-small.svg)] shrink-0 items-center flex relative">
               <Image

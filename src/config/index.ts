@@ -41,7 +41,7 @@ const config: Config = {
       subLinks: [
         {
           title: "MVP development",
-          href: "/services/mvp-development",
+          href: "#mvp-development",
           description:
             "We develop you minimal viable product in 3 weeks. We develop you minimal viable product in 3 weeks.",
           illustration: {
@@ -53,7 +53,7 @@ const config: Config = {
         },
         {
           title: "Ongoing development",
-          href: "/services/ongoing-development",
+          href: "#ongoing-development",
           description:
             "We go beyond MVP stages to support ongoing needs and keep up with the growth.",
           illustration: {
@@ -65,7 +65,7 @@ const config: Config = {
         },
         {
           title: "Branding design",
-          href: "/services/branding-design",
+          href: "#branding-design",
           description:
             "We design you a strong recognizable brand tailored to your product.",
           illustration: {
@@ -77,7 +77,7 @@ const config: Config = {
         },
         {
           title: "Market research",
-          href: "/services/market-research",
+          href: "#market-research",
           description:
             "We partner with market research company to help you understand your product’s market fit.",
           illustration: {

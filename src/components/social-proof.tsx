@@ -54,16 +54,16 @@ const companies: Company[] = [
 
 const SocialProof = () => {
   return (
-    <section className="w-full flex flex-col max-w-full-page desktop:border-x border-b border-border-secondary items-center">
-      <div className="w-full flex border-b border-border-secondary">
-        <div className="w-full max-w-120 h-6xl desktop:h-7xl flex pr-4xl pl-container-padding-mobile tablet:pl-4xl desktop:pl-[112px] items-center flex">
+    <section className="w-full flex flex-col max-w-full-page overflow-x-hidden desktop:border-x border-b border-border-secondary items-center">
+      <div className="w-full flex border-b border-border-secondary min-w-full">
+        <div className="w-full max-w-120 h-6xl desktop:h-7xl flex pr-4xl pl-container-padding-mobile tablet:pl-4xl desktop:pl-[112px] items-center flex-shrink-0">
           <span className="text-text-quaternary text-xs leading-xs font-medium">
             Among our clients:
           </span>
         </div>
-        <div className="border-l border-border-secondary flex bg-[url(/patterns/slash.svg)] w-full"></div>
+        <div className="border-l border-border-secondary flex bg-[url(/patterns/slash.svg)] min-w-full flex-1"></div>
       </div>
-      <div className="flex w-full py-8xl px-4xl gap-x-4xl bg-background-secondary/50">
+      <div className="flex py-8xl px-4xl gap-x-4xl bg-background-secondary/50 w-full flex-1 overflow-x-auto">
         {companies.map((c) => (
           <Card key={c.href} {...c} />
         ))}
@@ -76,7 +76,7 @@ const Card: FC<Company> = (props) => {
   return (
     <Link
       href={props.href}
-      className="flex flex-col border border-border-secondary rounded-xs w-[400px] bg-background-primary shadow-[0_4px_1px_0_var(--color-effects-shadow-xs)]"
+      className="flex flex-col border border-border-secondary rounded-xs min-w-[400px]  flex-shrink-0 bg-background-primary shadow-[0_4px_1px_0_var(--color-effects-shadow-xs)]"
       target="_blank"
     >
       <div className="w-full flex items-center justify-between p-4xl border-b border-border-secondary">

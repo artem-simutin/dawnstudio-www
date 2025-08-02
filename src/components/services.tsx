@@ -18,7 +18,10 @@ const Services = () => {
       />
       <div className="w-full mx-auto max-w-256">
         {/* card - row */}
-        <div className="border-y desktop:border border-border-secondary w-full flex min-h-80 flex-col tablet:flex-row">
+        <div
+          id="mvp-development"
+          className="border-y desktop:border border-border-secondary w-full flex min-h-80 flex-col tablet:flex-row"
+        >
           <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
             <div className="w-full flex flex-col space-y-lg max-w-96">
               <div className="flex gap-x-lg items-center">
@@ -39,7 +42,7 @@ const Services = () => {
                 gathering feedback from your customers.
               </p>
             </div>
-            <Link
+            {/* <Link
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
@@ -48,7 +51,7 @@ const Services = () => {
             >
               <span>Learn more</span>
               <ArrowRight size="20px" />
-            </Link>
+            </Link> */}
 
             <Code01
               size={20}
@@ -69,7 +72,10 @@ const Services = () => {
         <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
 
         {/* card - row */}
-        <div className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col">
+        <div
+          id="ongoing-development"
+          className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col"
+        >
           <div className="relative overflow-hidden border-r border-dashed border-border-secondary items-center bg-[url(/patterns/square-small.svg)] w-[280px] shrink-0 hidden desktop:flex">
             <Image
               src="/illustrations/battery.svg"
@@ -99,7 +105,7 @@ const Services = () => {
                 with the growth.
               </p>
             </div>
-            <Link
+            {/* <Link
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
@@ -108,7 +114,7 @@ const Services = () => {
             >
               <span>Learn more</span>
               <ArrowRight size="20px" />
-            </Link>
+            </Link> */}
           </div>
           <div className="relative overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] desktop:w-[280px] shrink-0 w-full tablet:w-[240px] h-[240px] tablet:h-auto">
             <Image
@@ -124,7 +130,10 @@ const Services = () => {
         <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
 
         {/* card - row */}
-        <div className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col-reverse">
+        <div
+          id="branding-design"
+          className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col-reverse"
+        >
           <div className="relative w-full overflow-hidden border-t tablet:border-r border-dashed border-border-secondary flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px] h-[240px] tablet:h-auto">
             <Image
               src="/illustrations/ball-rolling.svg"
@@ -152,7 +161,7 @@ const Services = () => {
                 We help you design a strong recognizable brand tailored to your
               </p>
             </div>
-            <Link
+            {/* <Link
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
@@ -161,7 +170,7 @@ const Services = () => {
             >
               <span>Learn more</span>
               <ArrowRight size="20px" />
-            </Link>
+            </Link> */}
             <Drop
               size={20}
               className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
@@ -173,7 +182,10 @@ const Services = () => {
         <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
 
         {/* card - row */}
-        <div className="desktop:border-x border-t border-border-secondary w-full flex h-auto tablet:h-80 flex-col tablet:flex-row">
+        <div
+          id="market-research"
+          className="desktop:border-x border-t border-border-secondary w-full flex h-auto tablet:h-80 flex-col tablet:flex-row"
+        >
           <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8x tablet:px-4xl tablet:py-7xl space-y-4xl border-b tablet:border-r border-border-secondary px-xl py-6xl">
             <div className="w-full flex flex-col space-y-lg max-w-96">
               <div className="flex items-center gap-x-lg">
@@ -194,7 +206,7 @@ const Services = () => {
                 your product’s market fit.
               </p>
             </div>
-            <Link
+            {/* <Link
               href="/"
               className={cn(
                 buttonVariants({ variant: "linkGray", size: "link" }),
@@ -203,7 +215,7 @@ const Services = () => {
             >
               <span>Learn more</span>
               <ArrowRight size="20px" />
-            </Link>
+            </Link> */}
           </div>
           <div className="relative w-full overflow-hidden flex items-center max-w-[440px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-auto">
             <Image

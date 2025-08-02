@@ -10,6 +10,7 @@ import Services from "@/components/services";
 import SocialProof from "@/components/social-proof";
 import Team from "@/components/team";
 import Testimonials from "@/components/testimonials";
+import VideoPlayer from "@/components/video-player";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function Home() {
       <Header />
       <main className="flex flex-col items-center pt-20">
         <Hero />
+
         <SocialProof />
         <Services />
         <Process />
