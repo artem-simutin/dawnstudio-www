@@ -15,7 +15,13 @@ const Testimonials = () => {
       <div className="w-full flex flex-col mx-auto space-y-4xl px-xl py-6xl tablet:px-3xl tablet:py-7xl desktop:p-8xl bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)]">
         <VideoCard />
         <div className="w-full flex gap-x-4xl space-y-lg flex-col desktop:flex-row">
-          <TextCard />
+          <TextCard
+            imageUrl="/testimonials/prxy/prxy-founder.jpg"
+            name="Josh B."
+            role="Founder, Prxy"
+            logo="/companies/prxyai.svg"
+            text="We're working with these guys on various projects and love their creativity, problem-solving skills, and efficiency. Fast, quality work that keeps us moving forward."
+          />
           <TextCard />
           <TextCard />
         </div>
@@ -56,7 +62,7 @@ const VideoCard = () => {
                 alt="Quotes"
               />
 
-              <div className="h-4 w-10xl bg-[url(/patterns/slash-darker.svg)]"></div>
+              <div className="h-4 w-10xl bg-[url(/patterns/sash-darker.svg)]"></div>
             </div>
             <p className="text-text-secondary text-md leading-md tablet:text-lg tablet:leading-lg desktop:text-xl desktop:leading-xl font-medium">
               They not only delivered that product but offered help from go to
@@ -98,9 +104,21 @@ const VideoCard = () => {
 
 interface Props {
   className?: string;
+  text?: string;
+  imageUrl?: string;
+  name?: string;
+  logo?: string;
+  role?: string;
 }
 
-const TextCard: FC<Props> = ({ className }) => {
+const TextCard: FC<Props> = ({
+  className,
+  text = "My god it is so fast. Boot time, UI interaction, typing latency. I feel it. I knew VS Code always felt sluggish, but I didn't realize how good things could really be. I'm honestly astounded.",
+  imageUrl = "/avatars/man.png",
+  name = "Matt Baker",
+  logo = "/companies/powersurge.svg",
+  role = "Principal Engineer, Powersurge",
+}) => {
   return (
     <div
       className={cn(
@@ -110,31 +128,21 @@ const TextCard: FC<Props> = ({ className }) => {
     >
       <div className="w-full flex flex-col space-y-3xl desktop:space-y-6xl p-xl desktop:p-4xl border-b border-border-secondary">
         <div className="flex flex-col space-y-md desktop:space-y-lg">
-          <Image
-            src="/companies/powersurge.svg"
-            width={130}
-            height={32}
-            alt="Powersurge"
-          />
-          <p className="w-full text-text-tertiary text-md leading-md">
-            My god it is so fast. Boot time, UI interaction, typing latency. I
-            feel it. I knew VS Code always felt sluggish, but I didn&apos;t
-            realize how good things could really be. I&apos;m honestly
-            astounded.
-          </p>
+          <Image src={logo} width={130} height={32} alt="Company Logo" />
+          <p className="w-full text-text-tertiary text-md leading-md">{text}</p>
         </div>
         <div className="flex gap-x-lg">
           <Image
-            src="/avatars/man.png"
+            src={imageUrl}
             width={48}
             height={48}
             className="rounded-full border border-[rgba(0, 0, 0, 0.08)]"
-            alt="Person"
+            alt={name}
           />
           <div className="flex flex-col">
             <div className="flex gap-x-xs items-center">
               <span className="text-text-primary text-md leading-md font-semibold">
-                Matt Baker
+                {name}
               </span>
               <Image
                 src="/illustrations/verified-tick.svg"
@@ -144,7 +152,7 @@ const TextCard: FC<Props> = ({ className }) => {
               />
             </div>
             <span className="text-text-tertiary text-sm desktop:text-md leading-md">
-              Principal Engineer, Powersurge
+              {role}
             </span>
           </div>
         </div>
