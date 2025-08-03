@@ -12,9 +12,9 @@ const Testimonials = () => {
         title="What do our customers say?"
         description="Hear directly from the founders of companies that have utilized our service."
       />
-      <div className="w-full flex flex-col mx-auto space-y-4xl px-xl py-6xl tablet:px-3xl tablet:py-7xl desktop:p-8xl bg-[url(/patterns/square-small.svg)] desktop:bg-[url(/patterns/dot.svg)]">
+      <div className="w-full flex flex-col mx-auto gap-y-3 tablet:gap-y-4xl px-xl py-6xl tablet:px-3xl tablet:py-7xl desktop:p-8xl bg-background-secondary">
         <VideoCard />
-        <div className="w-full flex gap-x-4xl space-y-lg flex-col desktop:flex-row">
+        <div className="w-full flex gap-x-4xl gap-y-lg flex-col desktop:flex-row">
           <TextCard
             imageUrl="/testimonials/prxy/prxy-founder.jpg"
             name="Josh B."
@@ -22,7 +22,6 @@ const Testimonials = () => {
             logo="/companies/prxyai.svg"
             text="We're working with these guys on various projects and love their creativity, problem-solving skills, and efficiency. Fast, quality work that keeps us moving forward."
           />
-          <TextCard />
           <TextCard />
         </div>
       </div>
@@ -122,14 +121,22 @@ const TextCard: FC<Props> = ({
   return (
     <div
       className={cn(
-        "w-full flex flex-col border border-border-secondary shadow-xs rounded-xs bg-background-primary",
+        "w-full flex flex-col border flex-1 border-border-secondary shadow-xs rounded-xs bg-background-primary",
         className
       )}
     >
       <div className="w-full flex flex-col space-y-3xl desktop:space-y-6xl p-xl desktop:p-4xl border-b border-border-secondary">
         <div className="flex flex-col space-y-md desktop:space-y-lg">
-          <Image src={logo} width={130} height={32} alt="Company Logo" />
-          <p className="w-full text-text-tertiary text-md leading-md">{text}</p>
+          <Image
+            src={logo}
+            width={130}
+            height={32}
+            alt="Company Logo"
+            className="h-8"
+          />
+          <p className="w-full text-text-tertiary text-md leading-md tablet:line-clamp-3 tablet:h-[72px]">
+            {text}
+          </p>
         </div>
         <div className="flex gap-x-lg">
           <Image
