@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, ArrowUpRight } from "untitledui-js/react";
 import config, { CaseStudy } from "@/config";
 import { motion, AnimatePresence } from "motion/react";
-import { useMediaQuery } from "@uidotdev/usehooks";
 
 const CaseStudies = () => {
   const [activeStudy, setActiveStudy] = useState<string>(
