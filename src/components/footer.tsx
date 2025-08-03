@@ -58,7 +58,7 @@ const Footer = () => {
               </span>
               <div className="flex flex-col space-y-lg">
                 <NavigationItem href="">Case Studies</NavigationItem>
-                <NavigationItem href="">Blog</NavigationItem>
+                {/* <NavigationItem href="">Blog</NavigationItem> */}
                 <NavigationItem href="">Book a call</NavigationItem>
               </div>
             </div>

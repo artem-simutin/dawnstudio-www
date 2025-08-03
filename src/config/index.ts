@@ -93,10 +93,10 @@ const config: Config = {
       title: "Customers",
       href: "/customers",
     },
-    {
-      title: "Blog",
-      href: "/blog",
-    },
+    // {
+    //   title: "Blog",
+    //   href: "/blog",
+    // },
     {
       title: "About",
       href: "/about-us",

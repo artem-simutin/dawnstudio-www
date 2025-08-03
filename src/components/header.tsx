@@ -93,13 +93,12 @@ const Header = () => {
 
                     return (
                       <NavigationMenuItem key={`link-${link.href}`}>
-                        <Link href={link.href} legacyBehavior passHref>
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            {link.title}
-                          </NavigationMenuLink>
-                        </Link>
+                        <NavigationMenuLink
+                          href={link.href}
+                          className={navigationMenuTriggerStyle()}
+                        >
+                          {link.title}
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                     );
                   })}
@@ -113,7 +112,7 @@ const Header = () => {
                 buttonVariants({
                   variant: "primary",
                 }),
-                "hidden desktop:flex"
+                "hidden desktop:flex",
               )}
             >
               Book a call
@@ -280,7 +279,7 @@ const ListItem: FC<Omit<LinkType, "subLinks">> = (props) => {
                 alt={props.illustration.alt}
                 className={cn(
                   "shrink-0 absolute left-3xl",
-                  props.illustration.className
+                  props.illustration.className,
                 )}
               />
             </div>
