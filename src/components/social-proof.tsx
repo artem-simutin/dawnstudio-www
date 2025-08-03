@@ -94,7 +94,7 @@ const Card: FC<Company> = (props) => {
         width={400}
         height={192}
         alt={props.name}
-        className="w-full border-b border-border-secondary h-[192px]"
+        className="w-full border-b border-border-secondary h-[192px] object-cover"
       />
       <div className="flex w-full gap-x-md p-xl border-border-secondary border-b">
         {props.tags.map((tag) => (

@@ -4,7 +4,7 @@ import TeamMemberAccordion from "@/components/about-us/team-member-accordion";
 import WhatWeDoLink from "@/components/about-us/what-we-do-link";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import config from "@/config";
 import { Accordion } from "@radix-ui/react-accordion";
 import Link from "next/link";
@@ -20,13 +20,13 @@ const AboutUs = () => {
             <div className="max-w-140 tablet:pl-4xl pl-4 w-full">
               <p className="text-text-quaternary font-semibold text-sm">
                 <span className="text-text-quaternary pr-[10px] tablet:pr-[15px]">
-                  ///
+                  {"///"}
                 </span>
                 <span className="text-text-quaternary pr-[10px] ">
                   Landing Page
                 </span>
                 <span className="text-text-quaternary pr-[10px] tablet:pr-[15px]">
-                  //
+                  {"//"}
                 </span>
                 <span className="text-text-quaternary">About Us</span>
               </p>
@@ -72,11 +72,11 @@ const AboutUs = () => {
                       Most founders fail because they optimize for perfection
                       instead of feedback. They spend 6 months building features
                       nobody asked for while their competitors ship, learn, and
-                      iterate.After years of building products, we've developed
-                      a system that allows us to ship products fast. We're not
-                      reselling AI outputs (as you might think) - we built
-                      systems around AI that allow us to ship fast without
-                      compromising future scalability.
+                      iterate.After years of building products, we&apos;ve
+                      developed a system that allows us to ship products fast.
+                      We&apos;re not reselling AI outputs (as you might think) -
+                      we built systems around AI that allow us to ship fast
+                      without compromising future scalability.
                     </p>
                     {/* <p className="text-lg text-text-secondary">
                       We believe every successful business begins with a spark —
@@ -102,15 +102,15 @@ const AboutUs = () => {
                     History
                   </h3>
                   <p className="text-lg text-text-secondary">
-                    Over the past 5+ years, we've been in the trenches with
-                    founders, building software and launching products. We've
-                    shipped over 10 products during this time, learning what
-                    works, what doesn't, and most importantly - what founders
-                    actually need to succeed. Each launch taught us something
-                    new about the gap between what founders think they need and
-                    what actually moves the needle. This experience shaped our
-                    3-week process and our obsession with getting products to
-                    market fast.
+                    Over the past 5+ years, we&apos;ve been in the trenches with
+                    founders, building software and launching products.
+                    We&apos;ve shipped over 10 products during this time,
+                    learning what works, what doesn&apos;t, and most importantly
+                    - what founders actually need to succeed. Each launch taught
+                    us something new about the gap between what founders think
+                    they need and what actually moves the needle. This
+                    experience shaped our 3-week process and our obsession with
+                    getting products to market fast.
                   </p>
                 </div>
                 <div className="absolute -bottom-1.5 -right-1.5 z-10">
@@ -208,9 +208,9 @@ const AboutUs = () => {
                     Our Team
                   </h2>
                   <p className="text-text-secondary pl-4 text-lg font-normal  border-l-2 border-border-secondary">
-                    The people who'll actually build your product. We're
-                    founders who've launched our own stuff and learned the hard
-                    way what works and what doesn't
+                    The people who&apos;ll actually build your product.
+                    We&apos;re founders who&apos;ve launched our own stuff and
+                    learned the hard way what works and what doesn&apos;t
                   </p>
                 </div>
 

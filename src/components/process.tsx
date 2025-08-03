@@ -16,7 +16,7 @@ const Process = () => {
     if (!scrollableContainer.current) return;
     scrollableContainer.current.scroll({
       behavior: "smooth",
-      left: scrollableContainer.current.clientWidth,
+      left: scrollableContainer.current.scrollWidth,
     });
   };
 

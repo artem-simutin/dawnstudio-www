@@ -49,12 +49,14 @@ const Header = () => {
           <div className="w-full max-w-max-width-desktop mx-auto flex gap-x-xl px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-container-padding-desktop">
             <div className="flex items-center gap-x-6xl w-full">
               <div className="mb-[6px]">
-                <Image
-                  src="/logo-light.svg"
-                  alt="Dawn Studio"
-                  width={121}
-                  height={32}
-                />
+                <Link href="/">
+                  <Image
+                    src="/logo-light.svg"
+                    alt="Dawn Studio"
+                    width={121}
+                    height={32}
+                  />
+                </Link>
               </div>
               <NavigationMenu className="hidden desktop:flex">
                 <NavigationMenuList>

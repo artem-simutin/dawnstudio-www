@@ -35,10 +35,10 @@ const VideoCard = () => {
       <div className="flex flex-col desktop:flex-row w-full gap-x-7xl p-0 desktop:p-4xl border-b border-border-secondary">
         <div className="w-full p-xl flex border-b border-dashed border-border-secondary desktop:hidden">
           <Image
-            src="/companies/warpspeed.svg"
+            src="/companies/paperfly-color.svg"
             width={134}
             height={32}
-            alt="Warpspeed"
+            alt="Paperfly"
           />
         </div>
         <div className="max-w-full desktop:max-w-[577px] w-full p-xl desktop:p-0 border-b border-border-secondary desktop:border-none">
@@ -66,7 +66,7 @@ const VideoCard = () => {
             <p className="text-text-secondary text-md leading-md tablet:text-lg tablet:leading-lg desktop:text-xl desktop:leading-xl font-medium">
               They not only delivered that product but offered help from go to
               market strategy, innovation, research... my overall experience
-              with them has been stellar
+              with them has been stellar.
             </p>
           </div>
           <div className="w-full flex justify-between items-end">
@@ -87,7 +87,7 @@ const VideoCard = () => {
               </span>
             </div>
             <Image
-              src="/companies/paperfly.svg"
+              src="/companies/paperfly-color.svg"
               width={134}
               height={32}
               alt="Paperfly"
