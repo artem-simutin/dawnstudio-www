@@ -15,7 +15,7 @@ const items: ItemProps[] = [
     value: "1",
     title: "How can you build an MVP in just 3 weeks when others take months?",
     content:
-      "We focus on one core feature and leverage modern software development approaches, including AI-assisted development. While others get stuck in endless planning cycles, we start building immediately and iterate based on real feedback.",
+      "We focus on one core feature and leverage modern software development approaches. While others get stuck in endless planning cycles, we start building immediately and iterate based on real feedback.",
     icon: Code01,
   },
   {

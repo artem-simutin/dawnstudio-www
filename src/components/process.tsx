@@ -49,11 +49,11 @@ const Process = () => {
                     ]}
                     notification={0}
                   />
-                  <Tag className="absolute left-[424px] top-[63px] z-30">
+                  <Tag className="absolute left-[360px] tablet:left-[424px] top-[63px] desktop:top-[68px] z-30">
                     Proposal Document
                   </Tag>
                   <Arrow
-                    className="absolute tablet:top-[74px] desktop:top-[81px] left-[392px]"
+                    className="absolute top-[74px] desktop:top-[81px] left-[330px] tablet:left-[392px]"
                     num={1}
                     width={187}
                     height={1}
@@ -63,7 +63,7 @@ const Process = () => {
                     mobileHeight={1}
                   />
                 </div>
-                <div className="absolute top-8 tablet:top-12 desktop:top-16 left-[551px] tablet:left-[627px] desktop:left-[643px] w-[324px] tablet:w-[392px]">
+                <div className="absolute top-8 tablet:top-12 desktop:top-16 left-[548px] tablet:left-[627px] desktop:left-[643px] w-[324px] tablet:w-[392px]">
                   <Card
                     className="w-[324px] tablet:w-[392px] absolute top-0 left-0"
                     title="Kickoff Call"
@@ -77,7 +77,7 @@ const Process = () => {
                     notification={0}
                   />
                   <Arrow
-                    className="absolute tablet:top-[73px] desktop:top-[81px] left-[392px]"
+                    className="absolute top-[73px] desktop:top-[81px] left-[330px] tablet:left-[392px]"
                     num={2}
                     width={96}
                     height={389}
@@ -87,7 +87,7 @@ const Process = () => {
                     mobileHeight={389}
                   />
                 </div>
-                <div className="absolute top-8 tablet:top-12 desktop:top-16 left-[947px] tablet:left-[1099px] desktop:left-[1131px] w-[472px] tablet:w-[552px]">
+                <div className="absolute top-8 tablet:top-12 desktop:top-16 left-[940px] tablet:left-[1099px] desktop:left-[1131px] w-[472px] tablet:w-[552px]">
                   <Card
                     className="w-[472px] tablet:w-[552px] absolute top-0 left-0"
                     title="MVP Development"
@@ -118,14 +118,14 @@ const Process = () => {
                     people={["/people/denis-simutin.jpg"]}
                     notification={0}
                   />
-                  <Tag className="absolute tablet:top-[256px] desktop:top-[264px] left-[374px] tablet:left-[424px] z-30">
+                  <Tag className="absolute top-[256px] tablet:top-[256px] desktop:top-[264px] left-[360px] tablet:left-[424px] z-30">
                     Strategy
                   </Tag>
-                  <Tag className="absolute tablet:top-[450px] desktop:top-[458px] left-[374px] tablet:left-[424px] z-30">
+                  <Tag className="absolute top-[450px] tablet:top-[450px] desktop:top-[458px] left-[362px] tablet:left-[424px] z-30">
                     Data
                   </Tag>
                   <Arrow
-                    className="absolute tablet:top-[73px] desktop:top-[81px] left-[342px] tablet:left-[392px]"
+                    className="absolute top-[73px] desktop:top-[81px] left-[330px] tablet:left-[392px]"
                     num={3}
                     width={256}
                     height={389}
@@ -135,9 +135,9 @@ const Process = () => {
                     mobileHeight={389}
                   />
                 </div>
-                <div className="absolute top-[45px] tablet:top-[61px] desktop:top-[77px] left-[1664px] w-[324px] tablet:w-[392px]">
+                <div className="absolute top-[45px] tablet:top-[61px] desktop:top-[77px] left-[1426px] tablet:left-[1664px] w-[324px] tablet:w-[392px]">
                   <NotificationCard
-                    className="w-[280px] absolute top-0 tablet:left-[55px] desktop:left-[89px]"
+                    className="w-[280px] absolute top-0 left-[55px] tablet:left-[55px] desktop:left-[89px]"
                     avatarSrc="/people/denis-simutin.jpg"
                     name="Olivia Rhye"
                     email="olivia.rhye@gmail.com"
@@ -146,7 +146,7 @@ const Process = () => {
                     notification={2}
                   />
                   <Card
-                    className="w-[304px] desktop:w-[392px] absolute top-[278px] left-0"
+                    className="w-[304px] tablet:w-[360px] desktop:w-[392px] absolute top-[278px] left-0"
                     title="Branding + Website"
                     description="Get the full brand design package and see it implemented on the website."
                     duration="14 days"
@@ -154,29 +154,29 @@ const Process = () => {
                     people={["/people/denis-simutin.jpg"]}
                     notification={1}
                   />
-                  <Tag className="absolute top-[57px] left-[465px] z-30">
+                  <Tag className="absolute top-[48px] left-[390px] tablet:top-[55px] desktop:top-[57px] tablet:left-[400px] desktop:left-[465px] z-30">
                     MVP
                   </Tag>
-                  <Tag className="absolute top-[348px] left-[424px] z-30">
+                  <Tag className="absolute top-[340px] left-[340px] tablet:top-[340px] tablet:left-[385px] desktop:top-[348px] desktop:left-[424px] z-30">
                     Assets
                   </Tag>
-                  <Tag className="absolute top-[348px] left-[483px] z-30">
+                  <Tag className="absolute top-[340px] left-[400px] tablet:left-[440px] tablet:top-[340px] desktop:top-[348px] desktop:left-[483px] z-30">
                     Use Guide
                   </Tag>
                   <Arrow
-                    className="absolute top-[68px] tablet:left-[347px] desktop:left-[369px]"
+                    className="absolute top-[60px] tablet:top-[67px] left-[310px] tablet:left-[301px] desktop:left-[369px]"
                     num={4}
                     width={280}
                     height={292}
-                    tabletWidth={286}
+                    tabletWidth={280}
                     tabletHeight={292}
                     mobileWidth={225}
                     mobileHeight={292}
                   />
                 </div>
-                <div className="absolute top-[161px] left-[2279px] w-[392px]">
+                <div className="absolute left-[1960px] top-[130px] tablet:top-[147px] tablet:left-[2245px] desktop:top-[161px] desktop:left-[2289px] w-[392px]">
                   <Card
-                    className="w-[324px] desktop:w-[392px] absolute top-0 left-0"
+                    className="w-[324px] tablet:w-[392px] absolute top-0 left-0"
                     title="Launch"
                     description="We are delivering all of the product elements to you..."
                     duration="0"
@@ -189,7 +189,7 @@ const Process = () => {
                     notification={0}
                   />
                   <Card
-                    className="w-[304px] desktop:w-[392px] absolute top-[194px] left-0"
+                    className="w-[324px] tablet:w-[392px] absolute top-[194px] left-0"
                     title="Social Media Design"
                     description="Get a complete strategy with a fundamental assets for your upcoming brand."
                     duration="7 days"
@@ -198,7 +198,7 @@ const Process = () => {
                     notification={0}
                   />
                   <Arrow
-                    className="absolute top-[81px] left-[392px]"
+                    className="absolute left-[330px] top-[73px] tablet:top-[74px] desktop:top-[81px] tablet:left-[392px]"
                     num={5}
                     width={96}
                     height={292}
@@ -208,9 +208,9 @@ const Process = () => {
                     mobileHeight={292}
                   />
                 </div>
-                <div className="absolute top-[258px] left-[2769px]">
+                <div className="absolute left-[2354px] top-[227px] tablet:top-[244px] tablet:left-[2714px] desktop:top-[258px] desktop:left-[2769px]">
                   <Card
-                    className="w-[304px] desktop:w-[392px] absolute left-0"
+                    className="w-[472px] tablet:w-[552px] absolute left-0"
                     title="Ongoing development"
                     description="Receive a full functional  MVP with frequent progress updates. The app is deployed to your cloud infrastructure."
                     icon="/products/linear.svg"
@@ -221,7 +221,7 @@ const Process = () => {
                     ]}
                     notification={0}
                   />
-                  <div className="shadow-xs bg-background-primary rounded-sm border border-border-primary top-[264px] absolute left-0 p-[5px]">
+                  <div className="shadow-xs bg-background-primary rounded-sm border border-border-primary top-[255px] tablet:top-[256px] desktop:top-[264px] absolute left-0 p-[5px]">
                     <Plus size={12} className="text-utility-gray-500" />
                   </div>
                 </div>
@@ -260,7 +260,7 @@ const Card: FC<CardProps> = (props) => {
     <div
       className={cn(
         "rounded-lg flex border border-border-secondary z-20 shadow-xs bg-background-primary",
-        props.className,
+        props.className
       )}
     >
       <div className="w-full flex flex-col p-xl desktop:p-2xl desktop:pr-4xl gap-y-xl desktop:gap-y-2xl relative">
@@ -341,7 +341,7 @@ const Tag: FC<PropsWithChildren<TagProps>> = (props) => {
     <span
       className={cn(
         "py-xxs px-sm border border-border-primary rounded-sm shadow-xs text-text-secondary text-xs leading-xs font-medium text-nowrap bg-background-primary",
-        props.className,
+        props.className
       )}
     >
       {props.children}
@@ -363,8 +363,8 @@ const NotificationCard: FC<NotificationCardProps> = (props) => {
   return (
     <div
       className={cn(
-        "border border-border-secondary bg-background-primary shadow-xs rounded-xs relative flex flex-col",
-        props.className,
+        "border border-border-secondary bg-background-primary shadow-xs rounded-xs relative flex flex-col z-20",
+        props.className
       )}
     >
       <div className="px-xl flex justify-between pt-xl pb-lg items-center border-b border-border-tertiary border-dashed w-full">
