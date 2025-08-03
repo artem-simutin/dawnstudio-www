@@ -481,6 +481,7 @@
   --text-display-2xl: 72px;
 
   --shadow-xs: 0px 1px 2px 0px var(--color-effects-shadow-xs);
+  --shadow-sm-sharp: 0px 4px 1px 0px #0A0D120D;
   --shadow-sm: 0px 1px 2px -1px var(--color-effects-shadow-sm_02), 0px 1px 3px 0px var(--color-effects-shadow-sm_01);
   --shadow-md: 0px 2px 4px -2px var(--color-effects-shadow-md_02), 0px 4px 6px -1px var(--color-effects-shadow-md_01);
   --shadow-lg: 0px 2px 2px -1px var(--color-effects-shadow-lg_03), 0px 4px 6px -2px var(--color-effects-shadow-lg_02), 0px 12px 16px -4px var(--color-effects-shadow-lg_01);
