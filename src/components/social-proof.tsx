@@ -11,44 +11,49 @@ interface Company {
   href: string;
   tags: string[];
   websiteScreenshotSrc: string;
+  showLogoName: boolean;
 }
 
 const companies: Company[] = [
   {
     name: "Docutiv",
-    logoSrc: "/companies/docutiv.svg",
+    logoSrc: "/companies/docutiv-color.svg",
     logoWidth: 101,
     logoHeight: 32,
     href: "https://www.docutiv.net/",
     tags: ["Web", "SaaS", "Healthcare"],
     websiteScreenshotSrc: "/companies/landings/docutiv.net.png",
+    showLogoName: false,
   },
   {
     name: "Paperfly",
-    logoSrc: "/companies/paperfly.svg",
+    logoSrc: "/companies/paperfly-color.svg",
     logoWidth: 101,
     logoHeight: 32,
     href: "https://www.paperfly.app/",
     tags: ["Web", "SaaS", "B2B", "Procrutment"],
     websiteScreenshotSrc: "/companies/landings/paperfly.app.png",
+    showLogoName: false,
   },
   {
     name: "ADL Activigram",
-    logoSrc: "/companies/cananeurology.svg",
-    logoWidth: 101,
+    logoSrc: "/companies/cana.png",
+    logoWidth: 48,
     logoHeight: 32,
     href: "https://apps.apple.com/us/app/adl-activigram/id6741215124",
     tags: ["Mobile", "Study", "Healthcare"],
     websiteScreenshotSrc: "/companies/landings/adl.png",
+    showLogoName: true,
   },
   {
     name: "Prxy.ai",
-    logoSrc: "/companies/prxyai.svg",
+    logoSrc: "/companies/prxyai-color.svg",
     logoWidth: 101,
     logoHeight: 32,
     href: "https://www.prxyai.com/",
     tags: ["Web", "B2B", "Marketing"],
     websiteScreenshotSrc: "/companies/landings/prxyai.com.png",
+    showLogoName: false,
   },
 ];
 
@@ -80,13 +85,21 @@ const Card: FC<Company> = (props) => {
       target="_blank"
     >
       <div className="w-full flex items-center justify-between p-4xl border-b border-border-secondary">
-        <Image
-          src={props.logoSrc}
-          width={101}
-          height={32}
-          alt={props.name}
-          className="h-8"
-        />
+        <div className="flex gap-x-3 w-full items-center">
+          <Image
+            src={props.logoSrc}
+            width={props.logoWidth}
+            height={props.logoHeight}
+            alt={props.name}
+            className="h-8 object-contain object-left"
+          />
+          {props.showLogoName && (
+            <span className="text-md leading-md font-bold text-text-tertiary">
+              {props.name}
+            </span>
+          )}
+        </div>
+
         <LinkExternal01 size={20} className="text-text-quaternary" />
       </div>
       <Image

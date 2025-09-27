@@ -39,7 +39,7 @@ const CTA = () => {
         </div>
         <div className="tablet:max-w-[240px] desktop:max-w-[560px] tablet:flex items-center justify-center w-full relative bg-[url(/patterns/square-small.svg)] hidden">
           <Image
-            src="/illustrations/card.svg"
+            src="/illustrations/ball-rolling-2.svg"
             width={360}
             height={203}
             alt="Card"

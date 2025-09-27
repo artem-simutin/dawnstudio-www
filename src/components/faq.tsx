@@ -92,10 +92,10 @@ const FAQ = () => {
           </div>
           <div className="w-full hidden items-center justify-center bg-background-primary border border-border-secondary shadow-xs relative bg-[url(/patterns/square-small.svg)] rounded-xs desktop:flex">
             <Image
-              src="/illustrations/guarantees.svg"
+              src="/illustrations/cube-stack.svg"
               alt="Illustration"
-              width={526}
-              height={320}
+              width={246}
+              height={150}
             />
             <div className="absolute top-8 left-8 bg-background-primary rounded-sm shadow-xs py-xxs px-md flex items-center gap-x-sm border border-border-primary">
               <div className="rounded-full w-2 h-2 bg-utility-success-500"></div>

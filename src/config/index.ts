@@ -121,7 +121,7 @@ const config: Config = {
       tags: ["AI", "From Scratch"],
       companyName: "Docutiv",
       companyLogoUrl: "/companies/docutiv-color.svg",
-      illustrationUrl: "/illustrations/card.svg",
+      illustrationUrl: "/illustrations/voice-folder.svg",
       faviconUrl: "/companies/favicons/docutiv.svg",
     },
     {
@@ -132,7 +132,7 @@ const config: Config = {
       tags: ["AI", "From Scratch"],
       companyName: "Paperfly",
       companyLogoUrl: "/companies/paperfly-color.svg",
-      illustrationUrl: "/illustrations/card.svg",
+      illustrationUrl: "/illustrations/trophy.svg",
       faviconUrl: "/companies/favicons/paperfly.svg",
     },
   ],

@@ -88,7 +88,7 @@ const CaseStudyPreview: FC<
           width={512}
           height={289}
           alt="Illustration"
-          className="h-[289px] w-[512px] object-cover"
+          className="h-auto w-full max-w-[350px] max-h-[350px] object-fill"
         />
         <motion.div
           className="w-5 h-5 absolute left-xl top-xl grayscale-100"
@@ -276,14 +276,14 @@ const CaseStudyPreviewTablet: FC<
         <motion.div
           animate={{ opacity: props.active ? 1 : 0.25 }}
           transition={{ duration: 0.6, delay: 0.4, ease: [0.86, 0, 0.07, 1] }}
-          className="absolute h-[289px] w-[512px] max-w-[512px]"
+          className="absolute"
         >
           <Image
             src={props.illustrationUrl}
             width={512}
             height={289}
             alt="Illustration"
-            className="h-[289px] w-[512px] max-w-[512px]"
+            className="h-auto w-full max-w-[350px]"
           />
         </motion.div>
         <motion.div
@@ -469,14 +469,14 @@ const CaseStudyPreviewMobile: FC<
         <motion.div
           animate={{ opacity: props.active ? 1 : 0.25 }}
           transition={{ duration: 0.6, delay: 0.4, ease: [0.86, 0, 0.07, 1] }}
-          className="absolute h-[289px] w-[512px] max-w-[512px]"
+          className="absolute"
         >
           <Image
             src={props.illustrationUrl}
             width={512}
             height={289}
             alt="Illustration"
-            className="h-[289px] w-[512px] max-w-[512px]"
+            className="h-auto w-full max-w-[350px]"
           />
         </motion.div>
         <motion.div

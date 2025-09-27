@@ -1,271 +1,206 @@
-import React from "react";
+import React, { FC } from "react";
 import { Code01 } from "untitledui-js/react";
 import Image from "next/image";
 import SectionTitle from "./shared/section-title";
-import { Drop } from "untitledui-js/react";
 
 const Services = () => {
   return (
-    <section className="w-full border-b border-border-secondary flex flex-col max-w-full-page desktop:border-x">
+    <section className="w-full border-border-secondary flex flex-col max-w-full-page desktop:border-x border-b pb-8xl">
       <SectionTitle
         subTitle="Services"
         title="What we do"
         description="We help businesses build better digital products through design, development, and strategy."
         className="border-none"
       />
-      <div className="w-full mx-auto max-w-256">
-        {/* card - row */}
-        <div
-          id="ai-integration"
-          className="border-y desktop:border border-border-secondary w-full flex min-h-80 flex-col tablet:flex-row"
-        >
-          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
-            <div className="w-full flex flex-col space-y-lg max-w-96">
-              <div className="flex gap-x-lg items-center">
-                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
-                  <Image
-                    src="/products/github.svg"
-                    width={24}
-                    height={24}
-                    alt="AI Integration"
-                  />
-                </div>
-                <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
-                  AI integration
-                </h3>
-              </div>
-              <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We help you add AI to your business where it&apos;s needed.
-              </p>
-            </div>
-            {/* <Link
-              href="/"
-              className={cn(
-                buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
-              )}
-            >
-              <span>Learn more</span>
-              <ArrowRight size="20px" />
-            </Link> */}
-
-            <Code01
-              size={20}
-              className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
-            />
-          </div>
-          <div className="relative w-full overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px] h-[240px] tablet:h-auto">
-            <Image
-              src="/illustrations/cold-email-system.svg"
-              width={196}
-              height={236}
-              alt="Watch"
-            />
-          </div>
-        </div>
-
-        {/* separator */}
-        <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
-
-        {/* card - row */}
-        <div
-          id="web-development"
-          className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col"
-        >
-          <div className="relative overflow-hidden border-r border-dashed border-border-secondary items-center bg-[url(/patterns/square-small.svg)] w-[280px] shrink-0 hidden desktop:flex">
-            <Image
-              src="/illustrations/battery.svg"
-              width={114}
-              height={120}
-              className="absolute left-[63px]"
-              alt="Battery"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl space-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary tablet:px-4xl tablet:py-7xl min-w-auto tablet:min-w-96 desktop:min-w-auto px-xl py-6xl">
-            <div className="w-full flex flex-col space-y-lg max-w-96">
-              <div className="flex gap-x-lg items-center">
-                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
-                  <Image
-                    src="/products/react.svg"
-                    width={24}
-                    height={24}
-                    alt="React"
-                  />
-                </div>
-                <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
-                  Web development
-                </h3>
-              </div>
-              <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We build custom web applications that meet your business needs.
-              </p>
-            </div>
-            {/* <Link
-              href="/"
-              className={cn(
-                buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
-              )}
-            >
-              <span>Learn more</span>
-              <ArrowRight size="20px" />
-            </Link> */}
-          </div>
-          <div className="relative overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] desktop:w-[280px] shrink-0 w-full tablet:w-[240px] h-[240px] tablet:h-auto">
-            <Image
-              src="/illustrations/tumbler.svg"
-              width={191}
-              height={109}
-              alt="Tumbler"
-            />
-          </div>
-        </div>
-
-        {/* separator */}
-        <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
-
-        {/* card - row */}
-        <div
-          id="mobile-development"
-          className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col-reverse"
-        >
-          <div className="relative w-full overflow-hidden border-t tablet:border-r tablet:border-t-0 border-dashed border-border-secondary flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px] h-[240px] tablet:h-auto">
-            <Image
-              src="/illustrations/ball-rolling.svg"
-              width={241}
-              height={256}
-              alt="Ball rolling"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl tablet:px-4xl tablet:py-7xl gap-y-4xl relative px-xl py-6xl">
-            <div className="w-full flex flex-col space-y-lg max-w-96">
-              <div className="gap-x-lg flex items-center">
-                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
-                  <Image
-                    src="/products/figma.svg"
-                    width={24}
-                    height={24}
-                    alt="Mobile Development"
-                  />
-                </div>
-                <h3 className="text-text-primary text-display-sm leading-display-sm font-medium tablet:font-semibold">
-                  Mobile development
-                </h3>
-              </div>
-              <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We build iOS and Android apps that your users will actually want
-                to use.
-              </p>
-            </div>
-            {/* <Link
-              href="/"
-              className={cn(
-                buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
-              )}
-            >
-              <span>Learn more</span>
-              <ArrowRight size="20px" />
-            </Link> */}
-            <Drop
-              size={20}
-              className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
-            />
-          </div>
-        </div>
-
-        {/* separator */}
-        <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
-
-        {/* card - row */}
-        <div
-          id="product-company-design"
-          className="desktop:border-x border-t border-border-secondary w-full flex h-auto tablet:h-80 flex-col tablet:flex-row"
-        >
-          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8x tablet:px-4xl tablet:py-7xl space-y-4xl border-b tablet:border-r tablet:border-b-0 border-border-secondary px-xl py-6xl">
-            <div className="w-full flex flex-col space-y-lg max-w-96">
-              <div className="flex items-center gap-x-lg">
-                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
-                  <Image
-                    src="/products/figma.svg"
-                    width={24}
-                    height={24}
-                    alt="Design"
-                  />
-                </div>
-                <h3 className="text-text-primary text-display-sm leading-display-sm font-semibold">
-                  Product design
-                </h3>
-              </div>
-              <p className="text-text-tertiary text-md leading-md">
-                We help you with both your product and your brand
-              </p>
-            </div>
-            {/* <Link
-              href="/"
-              className={cn(
-                buttonVariants({ variant: "linkGray", size: "link" }),
-                "w-min"
-              )}
-            >
-              <span>Learn more</span>
-              <ArrowRight size="20px" />
-            </Link> */}
-          </div>
-          <div className="relative w-full overflow-hidden flex items-center justify-center max-w-[440px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-auto">
-            <Image
-              src="/illustrations/trees.svg"
-              width={189}
-              height={162}
-              alt="Design Strategy"
-            />
-          </div>
-        </div>
-
-        {/* separator */}
-        <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
-
-        {/* card - row */}
-        <div
-          id="research-strategy"
-          className="border-y desktop:border border-border-secondary w-full flex min-h-80 flex-col tablet:flex-row"
-        >
-          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
-            <div className="w-full flex flex-col space-y-lg max-w-96">
-              <div className="flex gap-x-lg items-center">
-                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
-                  <Image
-                    src="/products/google.svg"
-                    width={24}
-                    height={24}
-                    alt="Research"
-                  />
-                </div>
-                <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
-                  Research and strategy
-                </h3>
-              </div>
-              <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We provide clear insights on your market, competition, and
-                customers to guide product decisions.
-              </p>
-            </div>
-            <Code01
-              size={20}
-              className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
-            />
-          </div>
-          <div className="relative w-full overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px] h-[240px] tablet:h-auto">
-            <Image
-              src="/illustrations/trees.svg"
-              width={189}
-              height={162}
-              alt="Research"
-            />
-          </div>
-        </div>
+      <div className="w-full mx-auto flex flex-col border-border-secondary border-t max-w-max-width-desktop">
+        <Row
+          illustration={{
+            src: "/illustrations/battery.svg",
+            width: 133,
+            height: 140,
+            className: "absolute -left-[16px]",
+            alt: "Battery",
+          }}
+          items={[
+            {
+              logoSrc: "/products/openai.svg",
+              logoAlt: "OpenAI logo",
+              logoWidth: 20,
+              logoHeight: 20,
+              title: "AI integration",
+              content: "Helping you add AI to your business where it's needed.",
+            },
+            {
+              logoSrc: "/products/react.svg",
+              logoAlt: "React logo",
+              title: "Web development",
+              content:
+                "Dashboards, platforms, and internal tools built to be fast, reliable, and easy to use.",
+            },
+          ]}
+        />
+        <Row
+          illustration={{
+            src: "/illustrations/cold-email-system.svg",
+            width: 140,
+            height: 148,
+            alt: "Watch integrations",
+            className: "",
+          }}
+          items={[
+            {
+              logoSrc: "/products/expo.svg",
+              logoAlt: "Expo logo",
+              logoWidth: 20,
+              logoHeight: 20,
+              title: "Mobile development",
+              content:
+                "iOS and Android apps designed with performance and user experience in mind.",
+            },
+            {
+              logoSrc: "/products/figma.svg",
+              logoAlt: "Figma logo",
+              title: "Product design",
+              content:
+                "We help you shape both your product and your brand — from user experience to visual identity",
+            },
+          ]}
+        />
+        <Row
+          illustration={{
+            src: "/illustrations/ball-rolling.svg",
+            width: 163,
+            height: 173,
+            alt: "Watch integrations",
+            className: "",
+          }}
+          items={[
+            {
+              logoSrc: "/products/google.svg",
+              logoAlt: "Google logo",
+              title: "Research and strategy",
+              content:
+                "Clear insights on your market, competition, and customers to guide product decisions.",
+            },
+            {
+              logoSrc: "/products/google-ads.svg",
+              logoAlt: "Google Ads logo",
+              title: "Marketing support",
+              content:
+                "Visibility for your product through trusted marketing and branding partnerships.",
+            },
+          ]}
+        />
       </div>
     </section>
+  );
+};
+
+interface RowProps {
+  items: {
+    logoSrc: string;
+    logoAlt: string;
+    logoWidth?: number;
+    logoHeight?: number;
+    title: string;
+    content: string;
+  }[];
+  illustration: {
+    src: string;
+    width: number;
+    height: number;
+    className: string;
+    alt: string;
+  };
+}
+
+const Row: FC<RowProps> = ({ items, illustration }) => {
+  if (items.length !== 2) {
+    throw new Error("The item count must be 2 in the row");
+  }
+
+  const item1 = items[0];
+  const item2 = items[1];
+
+  return (
+    <div className="w-full flex border-b border-border-secondary desktop:border-x desktop:flex-row flex-col">
+      <div className="w-full flex flex-col justify-center desktop:px-4xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
+        <div className="w-full flex flex-col space-y-lg max-w-96">
+          <div className="flex gap-x-lg items-center">
+            <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
+              <Image
+                src={item1.logoSrc}
+                width={item1.logoWidth ?? 24}
+                height={item1.logoHeight ?? 24}
+                alt={item1.logoAlt}
+              />
+            </div>
+            <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
+              {item1.title}
+            </h3>
+          </div>
+          <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
+            {item1.content}
+          </p>
+        </div>
+        <Code01
+          size={20}
+          className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
+        />
+      </div>
+      <div className="w-full overflow-hidden flex items-center justify-center max-w-full desktop:max-w-[258px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-auto border-b desktop:border-b-0 desktop:border-r border-dashed border-border-secondary">
+        <div
+          className="relative"
+          style={{
+            width: illustration.width,
+            height: illustration.height,
+          }}
+        >
+          <Image
+            src={illustration.src}
+            width={illustration.width}
+            height={illustration.height}
+            alt={illustration.alt}
+            className={illustration.className}
+          />
+        </div>
+      </div>
+      <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
+        <div className="w-full flex flex-col space-y-lg max-w-96">
+          <div className="flex gap-x-lg items-center">
+            <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
+              <Image
+                src={item2.logoSrc}
+                width={item2.logoWidth ?? 24}
+                height={item2.logoHeight ?? 24}
+                alt={item2.logoAlt}
+              />
+            </div>
+            <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
+              {item2.title}
+            </h3>
+          </div>
+          <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
+            {item2.content}
+          </p>
+        </div>
+        {/* <Link
+              href="/"
+              className={cn(
+                buttonVariants({ variant: "linkGray", size: "link" }),
+                "w-min"
+              )}
+            >
+              <span>Learn more</span>
+              <ArrowRight size="20px" />
+            </Link> */}
+
+        <Code01
+          size={20}
+          className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
+        />
+      </div>
+    </div>
   );
 };
 

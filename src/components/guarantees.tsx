@@ -59,14 +59,14 @@ interface ItemCardProps {
 const ItemCard: FC<ItemCardProps> = (props) => {
   return (
     <div className="rounded-xs min-w-[320px] flex flex-col shadow-xs border border-border-secondary w-full bg-background-primary">
-      <div className="w-full h-[180px] bg-[url(/patterns/square-small.svg)] flex items-center justify-center border-b border-solid desktop:border-dashed border-border-secondary">
+      {/* <div className="w-full h-[180px] bg-[url(/patterns/square-small.svg)] flex items-center justify-center border-b border-solid desktop:border-dashed border-border-secondary">
         <Image
           src="/illustrations/tumbler.svg"
           width={191}
           height={109}
           alt="Tumbler"
         />
-      </div>
+      </div> */}
       <div className="flex space-y-xl desktop:space-y-4xl p-xl desktop:p-4xl flex-col border-b border-border-tertiary">
         <div className="w-full flex flex-col space-y-md">
           <div className="flex gap-x-md items-center">
