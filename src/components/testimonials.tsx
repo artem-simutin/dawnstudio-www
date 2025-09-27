@@ -20,14 +20,15 @@ const Testimonials = () => {
             name="Axel"
             role="CTO, Paperfly"
             logo="/companies/paperfly-color.svg"
+            logoObjectFit="contain"
             text="They not only delivered that product but offered help from go to market strategy, innovation, research... my overall experience with them has been stellar."
           />
           <TextCard
-            imageUrl="/testimonials/paperfly/axel.png"
+            imageUrl="/testimonials/adl/cana-founder.png"
             name="Eugene P."
             role="CEO, ADL Activigram"
-            logo="/companies/paperfly-color.svg"
-            text="They not only delivered that product but offered help from go to market strategy, innovation, research... my overall experience with them has been stellar."
+            logo="/companies/cana.png"
+            text="Working with these guys was exceptional. They handled everything - mobile development, architecture, data collection, and product design. Their communication was outstanding and the final product exceeded expectations."
           />
         </div>
       </div>
@@ -113,6 +114,7 @@ interface Props {
   name?: string;
   logo?: string;
   role?: string;
+  logoObjectFit?: "contain" | "cover";
 }
 
 const TextCard: FC<Props> = ({
@@ -122,6 +124,7 @@ const TextCard: FC<Props> = ({
   name = "Matt Baker",
   logo = "/companies/powersurge.svg",
   role = "Principal Engineer, Powersurge",
+  logoObjectFit = "cover",
 }) => {
   return (
     <div
@@ -137,7 +140,10 @@ const TextCard: FC<Props> = ({
             width={130}
             height={32}
             alt="Company Logo"
-            className="h-8"
+            className={cn(
+              "h-8 ",
+              logoObjectFit === "cover" ? "object-cover" : "object-contain"
+            )}
           />
           <p className="w-full text-text-tertiary text-md leading-md tablet:line-clamp-3 tablet:h-[72px]">
             {text}
