@@ -35,8 +35,7 @@ const Services = () => {
                 </h3>
               </div>
               <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We turn AI into practical tools for your business — from
-                automation to smarter workflows.
+                Helping you add AI to your business where it&apos;s needed.
               </p>
             </div>
             {/* <Link
