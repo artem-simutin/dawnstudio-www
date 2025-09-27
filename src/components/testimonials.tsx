@@ -16,13 +16,19 @@ const Testimonials = () => {
         <VideoCard />
         <div className="w-full flex gap-x-4xl gap-y-lg flex-col desktop:flex-row">
           <TextCard
-            imageUrl="/testimonials/prxy/prxy-founder.jpg"
-            name="Josh B."
-            role="Founder, Prxy"
-            logo="/companies/prxyai.svg"
-            text="We're working with these guys on various projects and love their creativity, problem-solving skills, and efficiency. Fast, quality work that keeps us moving forward."
+            imageUrl="/testimonials/paperfly/axel.png"
+            name="Axel"
+            role="CTO, Paperfly"
+            logo="/companies/paperfly-color.svg"
+            text="They not only delivered that product but offered help from go to market strategy, innovation, research... my overall experience with them has been stellar."
           />
-          <TextCard />
+          <TextCard
+            imageUrl="/testimonials/paperfly/axel.png"
+            name="Eugene P."
+            role="CEO, ADL Activigram"
+            logo="/companies/paperfly-color.svg"
+            text="They not only delivered that product but offered help from go to market strategy, innovation, research... my overall experience with them has been stellar."
+          />
         </div>
       </div>
     </section>
@@ -35,17 +41,17 @@ const VideoCard = () => {
       <div className="flex flex-col desktop:flex-row w-full gap-x-7xl p-0 desktop:p-4xl border-b border-border-secondary">
         <div className="w-full p-xl flex border-b border-dashed border-border-secondary desktop:hidden">
           <Image
-            src="/companies/paperfly-color.svg"
+            src="/companies/prxyai.svg"
             width={134}
             height={32}
-            alt="Paperfly"
+            alt="Prxy"
           />
         </div>
         <div className="max-w-full desktop:max-w-[577px] w-full p-xl desktop:p-0 border-b border-border-secondary desktop:border-none">
           <div className="p-xs rounded-xs border border-border-secondary shadow-xs w-full ">
             <VideoPlayer
-              videoSrc="/testimonials/paperfly/video.mp4"
-              thumbnailSrc="/testimonials/paperfly/thumbnail.png"
+              videoSrc="/testimonials/prxy/video.MOV"
+              thumbnailSrc="/testimonials/prxy/thumbnail.png"
               className="rounded-xs"
             />
           </div>
@@ -64,16 +70,15 @@ const VideoCard = () => {
               <div className="h-4 w-10xl bg-[url(/patterns/sash-darker.svg)]"></div>
             </div>
             <p className="text-text-secondary text-md leading-md tablet:text-lg tablet:leading-lg desktop:text-xl desktop:leading-xl font-medium">
-              They not only delivered that product but offered help from go to
-              market strategy, innovation, research... my overall experience
-              with them has been stellar.
+              They jumped in, asked smart questions, and shipped a sharp site in
+              days. Fast, proactive, and high‑quality—without hand‑holding.
             </p>
           </div>
           <div className="w-full flex justify-between items-end">
             <div className="flex flex-col">
               <div className="flex gap-x-xs items-center">
                 <span className="text-text-primary text-md leading-md font-semibold">
-                  Joel D.
+                  Josh B
                 </span>
                 <Image
                   src="/illustrations/verified-tick.svg"
@@ -83,14 +88,14 @@ const VideoCard = () => {
                 />
               </div>
               <span className="text-text-tertiary text-md leading-md">
-                Founder, Paperfly
+                Founder, Prxy
               </span>
             </div>
             <Image
-              src="/companies/paperfly-color.svg"
+              src="/companies/prxyai.svg"
               width={134}
               height={32}
-              alt="Paperfly"
+              alt="Prxy"
               className="hidden desktop:block"
             />
           </div>

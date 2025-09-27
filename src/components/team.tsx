@@ -62,7 +62,19 @@ const Team = () => {
                 },
               ]}
             />
-            <div className="w-[280px] hidden items-center bg-[url(/patterns/square-small.svg)] bg-background-primary border border-border-secondary rounded-xs shadow-xs relative shrink-0 desktop:flex">
+            <TeamMemberCard
+              name="Joel Dennis"
+              position="Lead Marketing"
+              description="The voice of our customers, ensuring that marketing efforts align with your needs."
+              avatarUrl="/people/joel-dennis.jpg"
+              socialMediaLinks={[
+                {
+                  icon: "/social-media-icons/x.svg",
+                  href: "https://x.com",
+                },
+              ]}
+            />
+            {/* <div className="w-[280px] hidden items-center bg-[url(/patterns/square-small.svg)] bg-background-primary border border-border-secondary rounded-xs shadow-xs relative shrink-0 desktop:flex">
               <Image
                 src="/illustrations/battery.svg"
                 width={114}
@@ -70,7 +82,7 @@ const Team = () => {
                 alt="Battery"
                 className="absolute left-16"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
