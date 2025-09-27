@@ -55,7 +55,7 @@ const Team = () => {
               ]}
             />
           </div>
-          <div className="w-full flex gap-x-4xl">
+          <div className="flex flex-col gap-y-3xl desktop:flex-row gap-x-4xl">
             <TeamMemberCard
               name="Denis Simutin"
               position="Lead Designer"
@@ -116,9 +116,9 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
     <div className="min-w-[240px] flex flex-col border border-border-secondary bg-background-primary rounded-xs shadow-xs w-full">
       <div className="flex desktop:flex-col tablet:flex-row flex-col w-full">
         {/* top row */}
-        <div className="w-full flex border-b tablet:border-r desktop:border-b border-solid tablet:border-dashed desktop:border-solid border-border-secondary">
+        <div className="w-full flex border-b tablet:border-r desktop:border-r-0 desktop:border-b border-solid tablet:border-dashed desktop:border-solid border-border-secondary">
           <div className="flex flex-col shrink-0 border-r border-border-secondary">
-            <div className="p-3 desktop:p-4xl bg-[url(/patterns/square-small.svg)] desktop:border-b border-dashed border-border-secondary">
+            <div className="p-3 desktop:p-4xl bg-[url(/patterns/square-small.svg)] border-b tablet:border-b-0 border-dashed border-border-secondary">
               <div className="bg-background-primary shadow-xs p-1 rounded-xs border border-border-secondary relative">
                 <Image
                   src={props.avatarUrl}
@@ -127,7 +127,7 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
                   height={128}
                   className="w-16 h-16 tablet:w-[128px] tablet:h-[128px] object-cover rounded-[2px]"
                 />
-                <div className="absolute -top-[14px] -right-[14px] bg-background-primary border border-border-primary p-md rounded-lg shadow-md text-foreground-fg-brand-primary hidden tablet:block">
+                <div className="absolute -top-[4px] -right-[4px] desktop:-top-[14px] desktop:-right-[14px] bg-background-primary border border-border-primary p-md rounded-lg shadow-md text-foreground-fg-brand-primary hidden tablet:block">
                   <Icon size={20} />
                 </div>
               </div>
