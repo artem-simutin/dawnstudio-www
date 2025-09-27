@@ -42,8 +42,7 @@ const config: Config = {
         {
           title: "AI integration",
           href: "/#ai-integration",
-          description:
-            "We help you add AI to your business where it's needed.",
+          description: "We help you add AI to your business where it's needed.",
           illustration: {
             src: "/illustrations/cube.svg",
             alt: "Cube",
@@ -78,8 +77,7 @@ const config: Config = {
         {
           title: "Product design",
           href: "/#product-company-design",
-          description:
-            "We help you with both your product and your brand",
+          description: "We help you with both your product and your brand",
           illustration: {
             src: "/illustrations/cube.svg",
             alt: "Cube",
@@ -101,10 +99,10 @@ const config: Config = {
         },
       ],
     },
-    {
-      title: "Customers",
-      href: "#",
-    },
+    // {
+    //   title: "Customers",
+    //   href: "#",
+    // },
     // {
     //   title: "Blog",
     //   href: "/blog",

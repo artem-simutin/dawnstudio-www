@@ -67,7 +67,7 @@ const Header = () => {
                           <NavigationMenuTrigger>
                             {link.title}
                           </NavigationMenuTrigger>
-                          <NavigationMenuContent className="flex-col p-0 w-full max-w-[400px]">
+                          <NavigationMenuContent className="flex-col p-0 w-full min-w-[400px]">
                             {link.subMenuTitle && (
                               <>
                                 <div className="py-xl px-4xl">
@@ -112,7 +112,7 @@ const Header = () => {
                 buttonVariants({
                   variant: "primary",
                 }),
-                "hidden desktop:flex",
+                "hidden desktop:flex"
               )}
             >
               Book a call
@@ -279,7 +279,7 @@ const ListItem: FC<Omit<LinkType, "subLinks">> = (props) => {
                 alt={props.illustration.alt}
                 className={cn(
                   "shrink-0 absolute left-3xl",
-                  props.illustration.className,
+                  props.illustration.className
                 )}
               />
             </div>
