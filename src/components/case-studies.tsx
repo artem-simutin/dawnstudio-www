@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 const CaseStudies = () => {
   const [activeStudy, setActiveStudy] = useState<string>(
-    config.caseStudies[config.caseStudies.length - 1].href ?? "",
+    config.caseStudies[config.caseStudies.length - 1].href ?? ""
   );
   return (
     <section className="w-full border-y border-border-secondary flex flex-col">
@@ -21,7 +21,7 @@ const CaseStudies = () => {
           <SectionTitle
             subTitle="Case studies"
             title="How we helped our clients "
-            description="Discover how we've helped companies overcome challenges, streamline operations, and drive real results through tailored solutions."
+            description="See how we’ve helped companies ship faster, cut risk, and achieve measurable results."
             className="border-none"
           />
         </div>
@@ -67,7 +67,7 @@ const CaseStudyPreview: FC<
     <div
       className={cn(
         "border-r border-border-secondary h-[389px] hidden desktop:flex",
-        !props.active && "cursor-pointer",
+        !props.active && "cursor-pointer"
       )}
       onClick={props.onClick}
     >
@@ -75,7 +75,7 @@ const CaseStudyPreview: FC<
         className={cn(
           "flex items-center border-r border-border-secondary shrink-0 relative",
           !props.active &&
-            "border-none hover:bg-background-primary_hover/50 duration-100 transition-colors",
+            "border-none hover:bg-background-primary_hover/50 duration-100 transition-colors"
         )}
         animate={{
           width: props.active ? "312px" : "90px",
@@ -217,7 +217,7 @@ const CaseStudyPreview: FC<
                       {props.description}
                     </motion.p>
                   </div>
-                  <motion.div
+                  {/* <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -230,7 +230,7 @@ const CaseStudyPreview: FC<
                       href={props.href}
                       className={cn(
                         buttonVariants({ variant: "linkGray", size: "link" }),
-                        "w-min flex gap-x-sm",
+                        "w-min flex gap-x-sm"
                       )}
                     >
                       <span className="font-semibold">Read case study</span>
@@ -239,7 +239,7 @@ const CaseStudyPreview: FC<
                         className="text-component-icons-icons-icon-brand"
                       />
                     </Link>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -266,7 +266,7 @@ const CaseStudyPreviewTablet: FC<
         className={cn(
           "flex items-center justify-center relative min-w-0 shrink-0 border-border-secondary h-full overflow-hidden bg-[url(/patterns/square-small.svg)]",
           !props.active && "border-none",
-          "border-r",
+          "border-r"
         )}
         animate={{
           width: props.active ? "160px" : "100%",
@@ -411,7 +411,7 @@ const CaseStudyPreviewTablet: FC<
                       {props.description}
                     </motion.p>
                   </div>
-                  <motion.div
+                  {/* <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -424,7 +424,7 @@ const CaseStudyPreviewTablet: FC<
                       href={props.href}
                       className={cn(
                         buttonVariants({ variant: "linkGray", size: "link" }),
-                        "w-min flex gap-x-sm",
+                        "w-min flex gap-x-sm"
                       )}
                     >
                       <span className="font-semibold">Read case study</span>
@@ -433,7 +433,7 @@ const CaseStudyPreviewTablet: FC<
                         className="text-component-icons-icons-icon-brand"
                       />
                     </Link>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -459,7 +459,7 @@ const CaseStudyPreviewMobile: FC<
       <motion.div
         className={cn(
           "flex items-center justify-center relative min-w-0 shrink-0 border-border-secondary h-full overflow-hidden bg-[url(/patterns/square-small.svg)]",
-          !props.active && "border-none",
+          !props.active && "border-none"
         )}
         animate={{
           width: props.active ? "0px" : "100%",
@@ -617,7 +617,7 @@ const CaseStudyPreviewMobile: FC<
                       href={props.href}
                       className={cn(
                         buttonVariants({ variant: "linkGray", size: "link" }),
-                        "w-min flex gap-x-sm",
+                        "w-min flex gap-x-sm"
                       )}
                     >
                       <span className="font-semibold">Read case study</span>

@@ -18,8 +18,8 @@ const Team = () => {
           <div className="flex flex-col gap-y-3xl desktop:flex-row gap-x-4xl">
             <TeamMemberCard
               name="Kristian Veter"
-              position="Business Development Lead"
-              description="Former co-founder of Opendoor. Early staff at Spotify and Clearbit."
+              position="AI Product Lead"
+              description="The mind behind our AI work, making features and integrations deliver real business value."
               avatarUrl="/people/kristian-veter.jpg"
               socialMediaLinks={[
                 {
@@ -35,7 +35,7 @@ const Team = () => {
             <TeamMemberCard
               name="Artem Simutin"
               position="Lead Developer"
-              description="Former co-founder of Opendoor. Early staff at Spotify and Clearbit."
+              description="The quiet force behind our stack, making everything run smoothly."
               avatarUrl="/people/artem-simutin.jpeg"
               socialMediaLinks={[
                 {
@@ -53,7 +53,7 @@ const Team = () => {
             <TeamMemberCard
               name="Denis Simutin"
               position="Lead Designer"
-              description="Former co-founder of Opendoor. Early staff at Spotify and Clearbit."
+              description="The eye behind our interface, making every screen clear and consistent."
               avatarUrl="/people/denis-simutin.jpg"
               socialMediaLinks={[
                 {

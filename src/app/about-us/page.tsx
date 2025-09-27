@@ -74,9 +74,6 @@ const AboutUs = () => {
                       nobody asked for while their competitors ship, learn, and
                       iterate.After years of building products, we&apos;ve
                       developed a system that allows us to ship products fast.
-                      We&apos;re not reselling AI outputs (as you might think) -
-                      we built systems around AI that allow us to ship fast
-                      without compromising future scalability.
                     </p>
                     {/* <p className="text-lg text-text-secondary">
                       We believe every successful business begins with a spark —
@@ -135,19 +132,29 @@ const AboutUs = () => {
                 </div>
                 <div className="space-y-1">
                   <WhatWeDoLink
-                    href="/"
-                    title="MVP Development"
-                    description="We develop you minimal viable product in 3 weeks to start gathering feedback from your customers."
+                    href="/#ai-integration"
+                    title="AI integration"
+                    description="We help you add AI to your business where it's needed."
                   />
                   <WhatWeDoLink
-                    href="/"
-                    title="Ongoing Development"
-                    description="We go beyond MVP stages to support ongoing needs and keep up with the growth."
+                    href="/#web-development"
+                    title="Web development"
+                    description="We build custom web applications that meet your business needs."
                   />
                   <WhatWeDoLink
-                    href="/"
-                    title="Branding Design"
-                    description="We design you a strong recognizable brand tailored to your product."
+                    href="/#mobile-development"
+                    title="Mobile development"
+                    description="We build iOS and Android apps that your users will actually want to use."
+                  />
+                  <WhatWeDoLink
+                    href="/#product-company-design"
+                    title="Product design"
+                    description="We help you with both your product and your brand"
+                  />
+                  <WhatWeDoLink
+                    href="/#research-strategy"
+                    title="Research and strategy"
+                    description="We provide clear insights on your market, competition, and customers to guide product decisions."
                   />
                 </div>
                 <div className="absolute -bottom-1.5 -right-1.5 z-10">

@@ -6,7 +6,7 @@ import Link from "next/link";
 import config from "@/config";
 import { motion, useMotionValue, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Figma } from "untitledui-js/react";
+import { Figma } from "untitledui-js/react";
 import { Code01 } from "untitledui-js/react";
 
 const Hero = () => {
@@ -54,11 +54,11 @@ const Hero = () => {
               <div className="flex items-center py-xxs px-sm rounded-sm border border-border-secondary gap-x-xs">
                 <div className="h-3 w-3 rounded-full bg-utility-success-500 border-3 border-utility-success-100"></div>
                 <span className="text-text-secondary font-medium text-sm leading-sm">
-                  2/5
+                  3 Weeks
                 </span>
               </div>
               <span className="text-text-secondary font-medium text-sm leading-sm">
-                Two slots available
+                MVP average
               </span>
             </div>
 
@@ -69,12 +69,12 @@ const Hero = () => {
                   <div className="flex gap-x-lg">
                     <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] shadow-xs">
                       <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
-                        B2B SasS
+                        We
                       </span>
                     </div>
                     <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
                       <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
-                        From
+                        Build
                       </span>
                     </div>
                   </div>
@@ -82,29 +82,23 @@ const Hero = () => {
                     <div className="flex gap-x-lg">
                       <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
                         <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
-                          Idea
+                          Digital Products
                         </span>
                       </div>
-                      <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border-dashed border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] flex items-center shadow-xs w-full tablet:w-auto flex justify-center">
+                      {/* <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border-dashed border border-border-primary rounded-md bg-[url(/patterns/slash.svg)] flex items-center shadow-xs w-full tablet:w-auto flex justify-center">
                         <ArrowRight
                           size={24}
                           className="text-utility-green-400 tablet:scale-50 desktop:scale-100"
                         />
-                      </div>
-                    </div>
-
-                    <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
-                      <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
-                        First Customers
-                      </span>
+                      </div> */}
                     </div>
                   </div>
                 </div>
 
                 {/* subtitle */}
                 <p className="w-full text-center text-text-primary desktop:text-xl text-md leading-md tablet:text-lg tablet:leading-lg desktop:leading-xl max-w-140">
-                  We develop your MVP, create your brand, and help you acquire
-                  your first customers.
+                  We handle the custom development, mobile apps, AI integration,
+                  and strategy so you can focus on your business
                 </p>
               </div>
 

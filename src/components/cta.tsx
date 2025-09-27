@@ -13,10 +13,10 @@ const CTA = () => {
         <div className="gap-y-4xl tablet:gap-y-6xl flex flex-col py-6xl tablet:py-7xl desktop:py-8xl px-container-padding-mobile tablet:px-lg desktop:px-0 tablet:border-r border-dashed border-border-secondary w-full tablet:pr-4xl desktop:pr-6xl">
           <div className="space-y-lg desktop:space-y-xl flex flex-col w-full">
             <h2 className="desktop:text-display-lg desktop:leading-display-lg tablet:text-display-md tablet:leading-display-md text-display-sm leading-display-sm font-semibold text-text-primary">
-              Start your business today
+              Move from idea to shipped.
             </h2>
             <p className="text-md leading-md tablet:text-lg tablet:leading-lg desktop:text-xl desktop:leading-xl text-text-tertiary">
-              Join us for a call to talk about our upcoming project.
+              Let’s map your next step—20 minutes.
             </p>
           </div>
           <div className="flex flex-col space-y-xs">
@@ -33,7 +33,7 @@ const CTA = () => {
               <Code01 size={20} />
             </Link>
             <span className="text-text-quaternary text-xs leading-xs">
-              *It&apos;s free
+              It’s free.
             </span>
           </div>
         </div>

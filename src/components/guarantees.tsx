@@ -12,10 +12,10 @@ const guarantees: ItemCardProps[] = [
     tags: ["100% Satisfaction", "Money back"],
   },
   {
-    title: "On-Time Delivery",
+    title: "Weekly Demos, Always",
     description:
-      "If we miss the deadline, you get 50% back and we keep working for free until it's done.",
-    tags: ["50% Refund", "Free work"],
+      "You see progress every week via live demos and transparent updates.",
+    tags: ["Weekly Updates", "Transparency"],
   },
   {
     title: "Post-Launch Included",

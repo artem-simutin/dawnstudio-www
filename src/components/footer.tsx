@@ -28,8 +28,8 @@ const Footer = () => {
             </div>
 
             <span className="text-md leading-md text-text-tertiary">
-              We develop your MVP, create your brand, and help you acquire your
-              first customers.
+              We handle the custom development, mobile apps, AI integration, and
+              strategy so you can focus on your business
             </span>
           </div>
           <div className="flex gap-x-4xl flex-col tablet:flex-row gap-y-4xl">
@@ -38,16 +38,17 @@ const Footer = () => {
                 Services
               </span>
               <div className="flex flex-col space-y-lg">
-                <NavigationItem href="">MVP development</NavigationItem>
-                <NavigationItem href="">Ongoing development</NavigationItem>
-                <NavigationItem href="">Branding design</NavigationItem>
+                <NavigationItem href="/#ai-integration">AI integration</NavigationItem>
+                <NavigationItem href="/#web-development">Web development</NavigationItem>
+                <NavigationItem href="/#mobile-development">Mobile development</NavigationItem>
+                <NavigationItem href="/#product-company-design">Product design</NavigationItem>
                 <NavigationItem
-                  href=""
+                  href="/#research-strategy"
                   badge={{
                     text: "New",
                   }}
                 >
-                  Market research
+                  Research and strategy
                 </NavigationItem>
               </div>
             </div>

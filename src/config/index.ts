@@ -40,10 +40,10 @@ const config: Config = {
       subMenuTitle: "What we offer",
       subLinks: [
         {
-          title: "MVP development",
-          href: "#mvp-development",
+          title: "AI integration",
+          href: "/#ai-integration",
           description:
-            "We develop you minimal viable product in 3 weeks. We develop you minimal viable product in 3 weeks.",
+            "We help you add AI to your business where it's needed.",
           illustration: {
             src: "/illustrations/cube.svg",
             alt: "Cube",
@@ -52,10 +52,10 @@ const config: Config = {
           },
         },
         {
-          title: "Ongoing development",
-          href: "#ongoing-development",
+          title: "Web development",
+          href: "/#web-development",
           description:
-            "We go beyond MVP stages to support ongoing needs and keep up with the growth.",
+            "We build custom web applications that meet your business needs.",
           illustration: {
             src: "/illustrations/cube.svg",
             alt: "Cube",
@@ -64,10 +64,10 @@ const config: Config = {
           },
         },
         {
-          title: "Branding design",
-          href: "#branding-design",
+          title: "Mobile development",
+          href: "/#mobile-development",
           description:
-            "We design you a strong recognizable brand tailored to your product.",
+            "We build iOS and Android apps that your users will actually want to use.",
           illustration: {
             src: "/illustrations/cube.svg",
             alt: "Cube",
@@ -76,10 +76,22 @@ const config: Config = {
           },
         },
         {
-          title: "Market research",
-          href: "#market-research",
+          title: "Product design",
+          href: "/#product-company-design",
           description:
-            "We partner with market research company to help you understand your product’s market fit.",
+            "We help you with both your product and your brand",
+          illustration: {
+            src: "/illustrations/cube.svg",
+            alt: "Cube",
+            width: 40,
+            height: 32,
+          },
+        },
+        {
+          title: "Research and strategy",
+          href: "/#research-strategy",
+          description:
+            "We provide clear insights on your market, competition, and customers to guide product decisions.",
           illustration: {
             src: "/illustrations/cube.svg",
             alt: "Cube",
@@ -91,7 +103,7 @@ const config: Config = {
     },
     {
       title: "Customers",
-      href: "/customers",
+      href: "#",
     },
     // {
     //   title: "Blog",
@@ -104,9 +116,9 @@ const config: Config = {
   ],
   caseStudies: [
     {
-      title: "Building an AI powered medical assistant",
+      title: "Medical assistant that saves clinician time",
       description:
-        "Docutiv is an AI-powered medical assistant that streamlines patient intake and interview processes, making documentation simpler with modern, customizable technologies for a seamless clinical workflow.",
+        "A clinical assistant that handles intake and patient interviews, reducing admin work and fitting cleanly into existing workflows.",
       href: "/1",
       tags: ["AI", "From Scratch"],
       companyName: "Docutiv",
@@ -115,9 +127,9 @@ const config: Config = {
       faviconUrl: "/companies/favicons/docutiv.svg",
     },
     {
-      title: "New way of managing RFP documents using AI",
+      title: "Managing RFPs without the busywork",
       description:
-        "How we build a tool that helps companies to generate and manage RFP documents using AI.",
+        " A tool that helps teams draft and organize RFP documents faster, reusing knowledge and keeping everything consistent.",
       href: "/2",
       tags: ["AI", "From Scratch"],
       companyName: "Paperfly",
