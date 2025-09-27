@@ -9,14 +9,14 @@ const Services = () => {
     <section className="w-full border-b border-border-secondary flex flex-col max-w-full-page desktop:border-x">
       <SectionTitle
         subTitle="Services"
-        title="What we offer"
-        description="Automation systems that win back your time, grow revenue, and keep your operations moving."
+        title="What we do"
+        description="We turn ideas into reality through strategic design, development, and growth solutions."
         className="border-none"
       />
       <div className="w-full mx-auto max-w-256">
         {/* card - row */}
         <div
-          id="mvp-development"
+          id="ai-integration"
           className="border-y desktop:border border-border-secondary w-full flex min-h-80 flex-col tablet:flex-row"
         >
           <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
@@ -27,16 +27,16 @@ const Services = () => {
                     src="/products/github.svg"
                     width={24}
                     height={24}
-                    alt="Github"
+                    alt="AI Integration"
                   />
                 </div>
                 <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
-                  MVP development
+                  AI integration
                 </h3>
               </div>
               <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We develop you minimal viable product in 3 weeks to start
-                gathering feedback from your customers.
+                We turn AI into practical tools for your business — from
+                automation to smarter workflows.
               </p>
             </div>
             {/* <Link
@@ -70,7 +70,7 @@ const Services = () => {
 
         {/* card - row */}
         <div
-          id="ongoing-development"
+          id="web-development"
           className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col"
         >
           <div className="relative overflow-hidden border-r border-dashed border-border-secondary items-center bg-[url(/patterns/square-small.svg)] w-[280px] shrink-0 hidden desktop:flex">
@@ -94,12 +94,12 @@ const Services = () => {
                   />
                 </div>
                 <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
-                  Ongoing development
+                  Web development
                 </h3>
               </div>
               <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We go beyond MVP stages to support ongoing needs and keep up
-                with the growth.
+                Dashboards, platforms, and internal tools built to be fast,
+                reliable, and easy to use.
               </p>
             </div>
             {/* <Link
@@ -128,7 +128,7 @@ const Services = () => {
 
         {/* card - row */}
         <div
-          id="branding-design"
+          id="mobile-development"
           className="border-y desktop:border border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col-reverse"
         >
           <div className="relative w-full overflow-hidden border-t tablet:border-r tablet:border-t-0 border-dashed border-border-secondary flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px] h-[240px] tablet:h-auto">
@@ -147,15 +147,16 @@ const Services = () => {
                     src="/products/figma.svg"
                     width={24}
                     height={24}
-                    alt="Figma"
+                    alt="Mobile Development"
                   />
                 </div>
                 <h3 className="text-text-primary text-display-sm leading-display-sm font-medium tablet:font-semibold">
-                  Branding design
+                  Mobile development
                 </h3>
               </div>
               <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
-                We help you design a strong recognizable brand tailored to your
+                iOS and Android apps designed with performance and user
+                experience in mind.
               </p>
             </div>
             {/* <Link
@@ -180,7 +181,7 @@ const Services = () => {
 
         {/* card - row */}
         <div
-          id="market-research"
+          id="product-company-design"
           className="desktop:border-x border-t border-border-secondary w-full flex h-auto tablet:h-80 flex-col tablet:flex-row"
         >
           <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8x tablet:px-4xl tablet:py-7xl space-y-4xl border-b tablet:border-r tablet:border-b-0 border-border-secondary px-xl py-6xl">
@@ -188,19 +189,19 @@ const Services = () => {
               <div className="flex items-center gap-x-lg">
                 <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
                   <Image
-                    src="/products/google.svg"
+                    src="/products/figma.svg"
                     width={24}
                     height={24}
-                    alt="Google"
+                    alt="Design"
                   />
                 </div>
                 <h3 className="text-text-primary text-display-sm leading-display-sm font-semibold">
-                  Market research
+                  Product design
                 </h3>
               </div>
               <p className="text-text-tertiary text-md leading-md">
-                We partner with market research company to help you understand
-                your product’s market fit.
+                We help you shape both your product and your brand — from user
+                experience to visual identity
               </p>
             </div>
             {/* <Link
@@ -214,13 +215,103 @@ const Services = () => {
               <ArrowRight size="20px" />
             </Link> */}
           </div>
-          <div className="relative w-full overflow-hidden flex items-center max-w-[440px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-auto">
+          <div className="relative w-full overflow-hidden flex items-center justify-center max-w-[440px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-auto">
             <Image
               src="/illustrations/trees.svg"
               width={189}
               height={162}
-              className="absolute left-[98px]"
-              alt="Trees"
+              alt="Design Strategy"
+            />
+          </div>
+        </div>
+
+        {/* separator */}
+        <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
+
+        {/* card - row */}
+        <div
+          id="research-strategy"
+          className="border-y desktop:border border-border-secondary w-full flex min-h-80 flex-col tablet:flex-row"
+        >
+          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
+            <div className="w-full flex flex-col space-y-lg max-w-96">
+              <div className="flex gap-x-lg items-center">
+                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
+                  <Image
+                    src="/products/google.svg"
+                    width={24}
+                    height={24}
+                    alt="Research"
+                  />
+                </div>
+                <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
+                  Research and strategy
+                </h3>
+              </div>
+              <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
+                Clear insights on your market, competition, and customers to
+                guide product decisions.
+              </p>
+            </div>
+            <Code01
+              size={20}
+              className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
+            />
+          </div>
+          <div className="relative w-full overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] max-w-[440px] h-[240px] tablet:h-auto">
+            <Image
+              src="/illustrations/trees.svg"
+              width={189}
+              height={162}
+              alt="Research"
+            />
+          </div>
+        </div>
+
+        {/* separator */}
+        <div className="w-full desktop:border-x border-dashed border-border-secondary h-4 tablet:h-4xl bg-[url(/patterns/slash.svg)]" />
+
+        {/* card - row */}
+        <div
+          id="marketing-support"
+          className="desktop:border-x border-t border-border-secondary w-full flex h-auto tablet:h-80 tablet:flex-row flex-col"
+        >
+          <div className="relative overflow-hidden border-r border-dashed border-border-secondary items-center bg-[url(/patterns/square-small.svg)] w-[280px] shrink-0 hidden desktop:flex">
+            <Image
+              src="/illustrations/cold-email-system.svg"
+              width={196}
+              height={236}
+              className="absolute left-[42px]"
+              alt="Marketing"
+            />
+          </div>
+          <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl space-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary tablet:px-4xl tablet:py-7xl min-w-auto tablet:min-w-96 desktop:min-w-auto px-xl py-6xl">
+            <div className="w-full flex flex-col space-y-lg max-w-96">
+              <div className="flex gap-x-lg items-center">
+                <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
+                  <Image
+                    src="/products/github.svg"
+                    width={24}
+                    height={24}
+                    alt="Marketing"
+                  />
+                </div>
+                <h3 className="text-text-primary text-display-xs leading-display-xs tablet:text-display-sm tablet:leading-display-sm font-medium desktop:font-semibold">
+                  Marketing support
+                </h3>
+              </div>
+              <p className="text-text-tertiary text-sm leading-sm tablet:text-md tablet:leading-md">
+                Visibility for your product through trusted marketing and
+                branding partnerships.
+              </p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden flex items-center justify-center bg-[url(/patterns/square-small.svg)] desktop:w-[280px] shrink-0 w-full tablet:w-[240px] h-[240px] tablet:h-auto">
+            <Image
+              src="/illustrations/tumbler.svg"
+              width={191}
+              height={109}
+              alt="Marketing Support"
             />
           </div>
         </div>

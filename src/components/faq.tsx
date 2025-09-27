@@ -13,38 +13,44 @@ import { Code01, UntitledIcon } from "untitledui-js/react";
 const items: ItemProps[] = [
   {
     value: "1",
-    title: "How can you build an MVP in just 3 weeks when others take months?",
+    title: "Do you only work with startups?",
     content:
-      "We focus on one core feature and leverage modern software development approaches. While others get stuck in endless planning cycles, we start building immediately and iterate based on real feedback.",
+      "No. We work with both early-stage founders and established companies. The common thread is that they need reliable software built with care.",
     icon: Code01,
   },
   {
     value: "2",
-    title: "Can you build any type of B2B SaaS?",
+    title: "Can you handle both product and company design?",
     content:
-      "We've worked across many different industries, but we specialize in B2B SaaS applications with AI integrations. During our discovery call, we'll honestly tell you if your idea is a good fit for our 3-week process and help you strip away extra features to focus on one core solution.",
+      "Yes. We design products (UX, UI, user flows) and brands (visual identity, style, positioning). This way your product and company feel consistent from day one.",
     icon: Code01,
   },
   {
     value: "3",
-    title: "How do you limit to only 5 clients at a time?",
+    title: "What makes you different from other agencies?",
     content:
-      "We deliberately keep our concurrent client limit to 5 to ensure each founder gets sufficient attention to detail. When we're at capacity, new founders join our waitlist.",
+      "We're small and hands-on. You'll work directly with the people building your product, not through layers of account managers. Our clients value speed, clarity, and long-term support.",
     icon: Code01,
   },
   {
     value: "4",
-    title:
-      "How is this different from hiring a traditional development agency?",
+    title: "Do you offer ongoing support after launch?",
     content:
-      "Traditional agencies focus on extensive documentation, preparation, and planning phases. While this might seem thorough, our focus is helping you launch to customers and iterate as fast as possible based on real market feedback.",
+      "Yes. We stay involved to fix bugs, add features, and help you grow. Many of our clients work with us for years, not just one project.",
     icon: Code01,
   },
   {
     value: "5",
-    title: "How involved do I need to be during the 3-week process?",
+    title: "How much involvement is expected from me?",
     content:
-      "About 30 minutes maximum every other day for feedback on demo videos, plus weekly strategy check-ins. We handle the heavy lifting while keeping you in the loop on all major decisions.",
+      "We handle the execution, but we do need your input at the start and at key decision points. Think of us as a product team working with you, not just for you.",
+    icon: Code01,
+  },
+  {
+    value: "6",
+    title: "Can you integrate with our existing tools and systems?",
+    content:
+      "Absolutely. Whether it's AI models, CRMs, payment systems, or internal tools, we build around what you already use to keep things smooth.",
     icon: Code01,
   },
 ];
