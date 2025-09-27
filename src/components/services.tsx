@@ -28,14 +28,14 @@ const Services = () => {
               logoWidth: 20,
               logoHeight: 20,
               title: "AI integration",
-              content: "Helping you add AI to your business where it's needed.",
+              content: "We help you add AI to your business where it's needed.",
             },
             {
               logoSrc: "/products/react.svg",
               logoAlt: "React logo",
               title: "Web development",
               content:
-                "Dashboards, platforms, and internal tools built to be fast, reliable, and easy to use.",
+                "We build custom web applications that meet your business needs.",
             },
           ]}
         />
@@ -55,14 +55,13 @@ const Services = () => {
               logoHeight: 20,
               title: "Mobile development",
               content:
-                "iOS and Android apps designed with performance and user experience in mind.",
+                "We build iOS and Android apps that your users will actually want to use.",
             },
             {
               logoSrc: "/products/figma.svg",
               logoAlt: "Figma logo",
               title: "Product design",
-              content:
-                "We help you shape both your product and your brand — from user experience to visual identity",
+              content: "We help you with both your product and your brand",
             },
           ]}
         />
@@ -80,7 +79,7 @@ const Services = () => {
               logoAlt: "Google logo",
               title: "Research and strategy",
               content:
-                "Clear insights on your market, competition, and customers to guide product decisions.",
+                "We provide clear insights on your market, competition, and customers to guide product decisions.",
             },
             {
               logoSrc: "/products/google-ads.svg",
