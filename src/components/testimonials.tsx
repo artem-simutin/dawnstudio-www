@@ -20,15 +20,17 @@ const Testimonials = () => {
             name="Axel"
             role="CTO, Paperfly"
             logo="/companies/paperfly-color.svg"
-            logoObjectFit="contain"
+            logoClassName="object-contain"
             text="They not only delivered that product but offered help from go to market strategy, innovation, research... my overall experience with them has been stellar."
           />
           <TextCard
             imageUrl="/testimonials/adl/cana-founder.png"
             name="Eugene P."
-            role="CEO, ADL Activigram"
+            role="CEO, Cana Neurology"
             logo="/companies/cana.png"
             text="Working with these guys was exceptional. They handled everything - mobile development, architecture, data collection, and product design. Their communication was outstanding and the final product exceeded expectations."
+            logoClassName="object-contain object-left w-[48px]"
+            companyName="Cana Neurology"
           />
         </div>
       </div>
@@ -114,7 +116,8 @@ interface Props {
   name?: string;
   logo?: string;
   role?: string;
-  logoObjectFit?: "contain" | "cover";
+  logoClassName?: string;
+  companyName?: string;
 }
 
 const TextCard: FC<Props> = ({
@@ -124,7 +127,8 @@ const TextCard: FC<Props> = ({
   name = "Matt Baker",
   logo = "/companies/powersurge.svg",
   role = "Principal Engineer, Powersurge",
-  logoObjectFit = "cover",
+  companyName,
+  logoClassName,
 }) => {
   return (
     <div
@@ -135,16 +139,20 @@ const TextCard: FC<Props> = ({
     >
       <div className="w-full flex flex-col space-y-3xl desktop:space-y-6xl p-xl desktop:p-4xl border-b border-border-secondary">
         <div className="flex flex-col space-y-md desktop:space-y-lg">
-          <Image
-            src={logo}
-            width={130}
-            height={32}
-            alt="Company Logo"
-            className={cn(
-              "h-8 ",
-              logoObjectFit === "cover" ? "object-cover" : "object-contain"
+          <div className="flex items-center gap-x-2">
+            <Image
+              src={logo}
+              width={130}
+              height={32}
+              alt="Company Logo"
+              className={cn("h-8", logoClassName)}
+            />
+            {!!companyName && (
+              <span className="font-semibold text-md leading-md text-text-secondary">
+                {companyName}
+              </span>
             )}
-          />
+          </div>
           <p className="w-full text-text-tertiary text-md leading-md tablet:line-clamp-3 tablet:h-[72px]">
             {text}
           </p>

@@ -46,6 +46,7 @@ const Process = () => {
                     people={[
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
+                      "/people/joel-dennis.jpg",
                     ]}
                     notification={0}
                   />
@@ -73,6 +74,7 @@ const Process = () => {
                     people={[
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
+                      "/people/joel-dennis.jpg",
                     ]}
                     notification={0}
                   />
@@ -106,7 +108,10 @@ const Process = () => {
                     description="Get a complete strategy with a fundamental assets for your upcoming brand."
                     duration="7 days"
                     icon="/products/word.svg"
-                    people={["/people/denis-simutin.jpg"]}
+                    people={[
+                      "/people/denis-simutin.jpg",
+                      "/people/joel-dennis.jpg",
+                    ]}
                     notification={0}
                   />
                   <Card
@@ -115,7 +120,10 @@ const Process = () => {
                     description="Get complete customer profile and “go-to market” strategies."
                     duration="7 days"
                     icon="/products/google-ads.svg"
-                    people={["/people/denis-simutin.jpg"]}
+                    people={[
+                      "/people/denis-simutin.jpg",
+                      "/people/joel-dennis.jpg",
+                    ]}
                     notification={0}
                   />
                   <Tag className="absolute top-[256px] tablet:top-[256px] desktop:top-[264px] left-[360px] tablet:left-[424px] z-30">
@@ -138,9 +146,9 @@ const Process = () => {
                 <div className="absolute top-[45px] tablet:top-[61px] desktop:top-[77px] left-[1426px] tablet:left-[1664px] w-[324px] tablet:w-[392px]">
                   <NotificationCard
                     className="w-[280px] absolute top-0 left-[55px] tablet:left-[55px] desktop:left-[89px]"
-                    avatarSrc="/people/denis-simutin.jpg"
-                    name="Olivia Rhye"
-                    email="olivia.rhye@gmail.com"
+                    avatarSrc="/people/loki-bright.jpg"
+                    name="Loki Bright"
+                    email="loki@company.com"
                     time="at 12:00 AM"
                     content="Wow... This is exactly what we were looking for! Looking forward to the full product!"
                     notification={2}
@@ -185,6 +193,7 @@ const Process = () => {
                       "/people/denis-simutin.jpg",
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
+                      "/people/joel-dennis.jpg",
                     ]}
                     notification={0}
                   />
@@ -218,6 +227,7 @@ const Process = () => {
                       "/people/denis-simutin.jpg",
                       "/people/artem-simutin.jpeg",
                       "/people/kristian-veter.jpg",
+                      "/people/joel-dennis.jpg",
                     ]}
                     notification={0}
                   />
@@ -353,7 +363,7 @@ interface NotificationCardProps {
   className?: string;
   avatarSrc: string;
   name: string;
-  email: string;
+  email?: string;
   time: string;
   content: string;
   notification: number;
@@ -376,9 +386,11 @@ const NotificationCard: FC<NotificationCardProps> = (props) => {
             <span className="text-sm leading-sm font-semibold text-text-primary">
               {props.name}
             </span>
-            <span className="text-xs leading-xs text-text-tertiary">
-              {props.email}
-            </span>
+            {!!props.email && (
+              <span className="text-xs leading-xs text-text-tertiary">
+                {props.email}
+              </span>
+            )}
           </div>
         </div>
         <span className="text-text-quaternary text-xs leading-xs font-medium">

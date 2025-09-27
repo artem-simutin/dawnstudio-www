@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import SectionTitle from "./shared/section-title";
 import Image from "next/image";
 import Link from "next/link";
-import { CpuChip02 } from "untitledui-js/react";
+import { Announcement01, CpuChip02, Figma, Star06 } from "untitledui-js/react";
 import { Colors } from "untitledui-js/react";
 
 const Team = () => {
@@ -21,6 +21,7 @@ const Team = () => {
               position="AI Product Lead"
               description="The mind behind our AI work, making features and integrations deliver real business value."
               avatarUrl="/people/kristian-veter.jpg"
+              icon={Star06}
               socialMediaLinks={[
                 {
                   icon: "/social-media-icons/x.svg",
@@ -30,6 +31,10 @@ const Team = () => {
                   icon: "/social-media-icons/linkedin.svg",
                   href: "https://www.linkedin.com/in/kristian-veter/",
                 },
+                {
+                  icon: "/social-media-icons/youtube.svg",
+                  href: "https://www.youtube.com/@kristianvtr",
+                },
               ]}
             />
             <TeamMemberCard
@@ -37,6 +42,7 @@ const Team = () => {
               position="Lead Developer"
               description="The quiet force behind our stack, making everything run smoothly."
               avatarUrl="/people/artem-simutin.jpeg"
+              icon={CpuChip02}
               socialMediaLinks={[
                 {
                   icon: "/social-media-icons/x.svg",
@@ -55,10 +61,11 @@ const Team = () => {
               position="Lead Designer"
               description="The eye behind our interface, making every screen clear and consistent."
               avatarUrl="/people/denis-simutin.jpg"
+              icon={Figma}
               socialMediaLinks={[
                 {
                   icon: "/social-media-icons/x.svg",
-                  href: "https://x.com",
+                  href: "https://x.com/denissimutin",
                 },
               ]}
             />
@@ -67,10 +74,11 @@ const Team = () => {
               position="Lead Marketing"
               description="The voice of our customers, ensuring that marketing efforts align with your needs."
               avatarUrl="/people/joel-dennis.jpg"
+              icon={Announcement01}
               socialMediaLinks={[
                 {
-                  icon: "/social-media-icons/x.svg",
-                  href: "https://x.com",
+                  icon: "/social-media-icons/linkedin.svg",
+                  href: "https://www.linkedin.com/in/joeladennis/",
                 },
               ]}
             />
@@ -99,9 +107,11 @@ interface TeamMemberProps {
     icon: string;
     href: string;
   }[];
+  icon: typeof CpuChip02;
 }
 
 const TeamMemberCard: FC<TeamMemberProps> = (props) => {
+  const Icon = props.icon ?? CpuChip02;
   return (
     <div className="min-w-[240px] flex flex-col border border-border-secondary bg-background-primary rounded-xs shadow-xs w-full">
       <div className="flex desktop:flex-col tablet:flex-row flex-col w-full">
@@ -118,13 +128,13 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
                   className="w-16 h-16 tablet:w-[128px] tablet:h-[128px] object-cover rounded-[2px]"
                 />
                 <div className="absolute -top-[14px] -right-[14px] bg-background-primary border border-border-primary p-md rounded-lg shadow-md text-foreground-fg-brand-primary hidden tablet:block">
-                  <CpuChip02 size={20} />
+                  <Icon size={20} />
                 </div>
               </div>
             </div>
             <div className="flex tablet:hidden desktop:hidden flex-1 w-full bg-[url(/patterns/slash-darker.svg)] justify-center items-center min-h-16">
               <div className="bg-background-primary border border-border-primary p-md rounded-xs shadow-xs w-min">
-                <CpuChip02 size={20} className="text-graytrue-400" />
+                <Icon size={20} className="text-graytrue-400" />
               </div>
             </div>
           </div>
@@ -153,9 +163,15 @@ const TeamMemberCard: FC<TeamMemberProps> = (props) => {
                   key={sml.href}
                   href={sml.href}
                   target="_blank"
-                  className="hover:opacity-80 transition-opacity duration-100 shrink-0 w-6 h-6"
+                  className="hover:opacity-80 transition-opacity duration-100 shrink-0 w-6 h-6 flex items-center"
                 >
-                  <Image src={sml.icon} width={24} height={24} alt={sml.href} />
+                  <Image
+                    src={sml.icon}
+                    width={24}
+                    height={24}
+                    alt={sml.href}
+                    className="object-center"
+                  />
                 </Link>
               );
             })}

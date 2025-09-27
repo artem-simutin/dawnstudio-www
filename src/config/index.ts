@@ -34,71 +34,71 @@ interface Config {
 const config: Config = {
   calComLink: "https://cal.com/dawn-studio-kristian/discovery-call",
   navigationLinks: [
-    {
-      title: "Services",
-      href: "/services",
-      subMenuTitle: "What we offer",
-      subLinks: [
-        {
-          title: "AI integration",
-          href: "/#ai-integration",
-          description: "We help you add AI to your business where it's needed.",
-          illustration: {
-            src: "/illustrations/cube.svg",
-            alt: "Cube",
-            width: 40,
-            height: 32,
-          },
-        },
-        {
-          title: "Web development",
-          href: "/#web-development",
-          description:
-            "We build custom web applications that meet your business needs.",
-          illustration: {
-            src: "/illustrations/cube.svg",
-            alt: "Cube",
-            width: 40,
-            height: 32,
-          },
-        },
-        {
-          title: "Mobile development",
-          href: "/#mobile-development",
-          description:
-            "We build iOS and Android apps that your users will actually want to use.",
-          illustration: {
-            src: "/illustrations/cube.svg",
-            alt: "Cube",
-            width: 40,
-            height: 32,
-          },
-        },
-        {
-          title: "Product design",
-          href: "/#product-company-design",
-          description: "We help you with both your product and your brand",
-          illustration: {
-            src: "/illustrations/cube.svg",
-            alt: "Cube",
-            width: 40,
-            height: 32,
-          },
-        },
-        {
-          title: "Research and strategy",
-          href: "/#research-strategy",
-          description:
-            "We provide clear insights on your market, competition, and customers to guide product decisions.",
-          illustration: {
-            src: "/illustrations/cube.svg",
-            alt: "Cube",
-            width: 40,
-            height: 32,
-          },
-        },
-      ],
-    },
+    // {
+    //   title: "Services",
+    //   href: "/services",
+    //   subMenuTitle: "What we offer",
+    //   subLinks: [
+    //     {
+    //       title: "AI integration",
+    //       href: "/#ai-integration",
+    //       description: "We help you add AI to your business where it's needed.",
+    //       illustration: {
+    //         src: "/illustrations/cube.svg",
+    //         alt: "Cube",
+    //         width: 40,
+    //         height: 32,
+    //       },
+    //     },
+    //     {
+    //       title: "Web development",
+    //       href: "/#web-development",
+    //       description:
+    //         "We build custom web applications that meet your business needs.",
+    //       illustration: {
+    //         src: "/illustrations/cube.svg",
+    //         alt: "Cube",
+    //         width: 40,
+    //         height: 32,
+    //       },
+    //     },
+    //     {
+    //       title: "Mobile development",
+    //       href: "/#mobile-development",
+    //       description:
+    //         "We build iOS and Android apps that your users will actually want to use.",
+    //       illustration: {
+    //         src: "/illustrations/cube.svg",
+    //         alt: "Cube",
+    //         width: 40,
+    //         height: 32,
+    //       },
+    //     },
+    //     {
+    //       title: "Product design",
+    //       href: "/#product-company-design",
+    //       description: "We help you with both your product and your brand",
+    //       illustration: {
+    //         src: "/illustrations/cube.svg",
+    //         alt: "Cube",
+    //         width: 40,
+    //         height: 32,
+    //       },
+    //     },
+    //     {
+    //       title: "Research and strategy",
+    //       href: "/#research-strategy",
+    //       description:
+    //         "We provide clear insights on your market, competition, and customers to guide product decisions.",
+    //       illustration: {
+    //         src: "/illustrations/cube.svg",
+    //         alt: "Cube",
+    //         width: 40,
+    //         height: 32,
+    //       },
+    //     },
+    //   ],
+    // },
     // {
     //   title: "Customers",
     //   href: "#",
@@ -127,7 +127,7 @@ const config: Config = {
     {
       title: "Managing RFPs without the busywork",
       description:
-        " A tool that helps teams draft and organize RFP documents faster, reusing knowledge and keeping everything consistent.",
+        "A tool that helps teams draft and organize RFP documents faster, reusing knowledge and keeping everything consistent.",
       href: "/2",
       tags: ["AI", "From Scratch"],
       companyName: "Paperfly",
