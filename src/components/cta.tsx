@@ -47,7 +47,6 @@ const CTA = () => {
           />
           <div className="absolute top-6 right-6 flex gap-x-xl text-utility-gray-100">
             <Colors size={24} />
-            <Colors size={24} />
           </div>
         </div>
       </div>

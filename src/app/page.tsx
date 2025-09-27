@@ -13,7 +13,9 @@ import Testimonials from "@/components/testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dawn Studio | B2B SaaS From Idea to First Customers",
+  title: "Dawn Studio | We Build Digital Products",
+  description:
+    "We handle the custom development, mobile apps, AI integration, and strategy so you can focus on your business",
 };
 
 export default function Home() {

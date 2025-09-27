@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="w-full max-w-max-width-desktop px-container-padding-mobile tablet:px-container-padding-tablet desktop:px-container-padding-desktop flex flex-col desktop:flex-row justify-between mx-auto gap-y-6xl">
           <div className="space-y-3xl w-full max-w-full desktop:max-w-80">
             <div className="w-full justify-between items-center flex">
-              <div className="p-0 desktop:p-xl">
+              <div className="p-0">
                 <Image
                   src="/logo-light.svg"
                   width={121}
@@ -33,15 +33,23 @@ const Footer = () => {
             </span>
           </div>
           <div className="flex gap-x-4xl flex-col tablet:flex-row gap-y-4xl">
-            <div className="space-y-xl flex flex-col w-80">
+            {/* <div className="space-y-xl flex flex-col w-80">
               <span className="text-text-quaternary font-semibold text-sm">
                 Services
               </span>
               <div className="flex flex-col space-y-lg">
-                <NavigationItem href="/#ai-integration">AI integration</NavigationItem>
-                <NavigationItem href="/#web-development">Web development</NavigationItem>
-                <NavigationItem href="/#mobile-development">Mobile development</NavigationItem>
-                <NavigationItem href="/#product-company-design">Product design</NavigationItem>
+                <NavigationItem href="/#ai-integration">
+                  AI integration
+                </NavigationItem>
+                <NavigationItem href="/#web-development">
+                  Web development
+                </NavigationItem>
+                <NavigationItem href="/#mobile-development">
+                  Mobile development
+                </NavigationItem>
+                <NavigationItem href="/#product-company-design">
+                  Product design
+                </NavigationItem>
                 <NavigationItem
                   href="/#research-strategy"
                   badge={{
@@ -51,7 +59,7 @@ const Footer = () => {
                   Research and strategy
                 </NavigationItem>
               </div>
-            </div>
+            </div> */}
 
             <div className="gap-y-xl flex flex-col w-80">
               <span className="text-text-quaternary font-semibold text-sm">
@@ -110,7 +118,7 @@ const NavigationItem: FC<PropsWithChildren<NavigationItemProps>> = (props) => {
 const Socials = () => {
   return (
     <div className="flex gap-x-3xl">
-      <Link href="https://x.com" target="_blank">
+      <Link href="https://x.com/dawnstudioco" target="_blank">
         <Image
           src="/social-media-icons/x.svg"
           width={24}
@@ -118,14 +126,14 @@ const Socials = () => {
           alt="X.com"
         />
       </Link>
-      <Link href="https://linkedin.com" target="_blank">
+      {/* <Link href="https://linkedin.com" target="_blank">
         <Image
           src="/social-media-icons/linkedin.svg"
           width={24}
           height={24}
           alt="LinkedIn"
         />
-      </Link>
+      </Link> */}
     </div>
   );
 };

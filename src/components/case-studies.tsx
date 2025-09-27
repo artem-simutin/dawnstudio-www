@@ -88,7 +88,7 @@ const CaseStudyPreview: FC<
           width={512}
           height={289}
           alt="Illustration"
-          className="h-auto w-full max-w-[350px] max-h-[350px] object-fill"
+          className="w-[290px] h-[280px] object-fill"
         />
         <motion.div
           className="w-5 h-5 absolute left-xl top-xl grayscale-100"
@@ -151,7 +151,7 @@ const CaseStudyPreview: FC<
                 }}
                 className="flex w-full flex-col gap-y-md overflow-hidden"
               >
-                <div className="flex gap-x-lg">
+                <div className="flex gap-x-sm">
                   <motion.div
                     key={`case-study-${props.href}-tag-link`}
                     initial={{ opacity: 0, y: 8, scale: 0.95 }}
@@ -283,7 +283,7 @@ const CaseStudyPreviewTablet: FC<
             width={512}
             height={289}
             alt="Illustration"
-            className="h-auto w-full max-w-[350px]"
+            className="h-auto w-[120px]"
           />
         </motion.div>
         <motion.div
@@ -345,7 +345,7 @@ const CaseStudyPreviewTablet: FC<
                 }}
                 className="flex w-full flex-col gap-y-md overflow-hidden p-xl pt-0 tablet:p-3xl tablet:pt-0"
               >
-                <div className="flex gap-x-lg">
+                <div className="flex gap-x-sm">
                   <motion.div
                     key={`case-study-${props.href}-tag-link-mobile`}
                     initial={{ opacity: 0, y: 8, scale: 0.95 }}
@@ -476,7 +476,7 @@ const CaseStudyPreviewMobile: FC<
             width={512}
             height={289}
             alt="Illustration"
-            className="h-auto w-full max-w-[350px]"
+            className="h-auto w-[290px]"
           />
         </motion.div>
         <motion.div
@@ -538,7 +538,7 @@ const CaseStudyPreviewMobile: FC<
                 }}
                 className="flex w-full flex-col gap-y-md overflow-hidden p-xl pt-0 tablet:p-3xl tablet:pt-0"
               >
-                <div className="flex gap-x-lg">
+                <div className="flex gap-x-sm">
                   <motion.div
                     key={`case-study-${props.href}-tag-link-mobile`}
                     initial={{ opacity: 0, y: 8, scale: 0.95 }}

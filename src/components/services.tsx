@@ -123,7 +123,7 @@ const Row: FC<RowProps> = ({ items, illustration }) => {
 
   return (
     <div className="w-full flex border-b border-border-secondary desktop:border-x desktop:flex-row flex-col">
-      <div className="w-full flex flex-col justify-center desktop:px-4xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-b tablet:border-r tablet:border-b-0 border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
+      <div className="w-full flex flex-col justify-center desktop:px-5xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl desktop:border-b-0 desktop:border-r border-b border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
         <div className="w-full flex flex-col space-y-lg max-w-96">
           <div className="flex gap-x-lg items-center">
             <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">
@@ -147,7 +147,7 @@ const Row: FC<RowProps> = ({ items, illustration }) => {
           className="absolute top-6 right-6 text-utility-gray-100 hidden desktop:block"
         />
       </div>
-      <div className="w-full overflow-hidden flex items-center justify-center max-w-full desktop:max-w-[258px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-auto border-b desktop:border-b-0 desktop:border-r border-dashed border-border-secondary">
+      <div className="w-full overflow-hidden flex items-center justify-center max-w-full desktop:max-w-[258px] bg-[url(/patterns/square-small.svg)] h-[240px] tablet:h-[260px] border-b desktop:border-b-0 desktop:border-r border-dashed border-border-secondary">
         <div
           className="relative"
           style={{
@@ -164,7 +164,7 @@ const Row: FC<RowProps> = ({ items, illustration }) => {
           />
         </div>
       </div>
-      <div className="w-full flex flex-col justify-center desktop:px-6xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
+      <div className="w-full flex flex-col justify-center desktop:px-5xl desktop:py-8xl gap-y-3xl tablet:gap-y-4xl border-dashed border-border-secondary relative tablet:px-4xl tablet:py-7xl min-w-96 px-xl py-6xl">
         <div className="w-full flex flex-col space-y-lg max-w-96">
           <div className="flex gap-x-lg items-center">
             <div className="rounded-xs border border-border-primary w-4xl h-4xl flex justify-center items-center shadow-xs">

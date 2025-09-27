@@ -8,6 +8,20 @@ import { buttonVariants } from "@/components/ui/button";
 import config from "@/config";
 import { Accordion } from "@radix-ui/react-accordion";
 import Link from "next/link";
+import {
+  AtSign,
+  BezierCurve03,
+  Circle,
+  SearchRefraction,
+  Star04,
+  ZapFast,
+} from "untitledui-js/react";
+
+export const metadata = {
+  title: "About us | Dawn Studio",
+  description:
+    "Most founders fail because they optimize for perfection instead of feedback. They spend 6 months building features nobody asked for while their competitors ship, learn, and iterate.After years of building products, we've developed a system that allows us to ship products fast.",
+};
 
 const AboutUs = () => {
   return (
@@ -156,6 +170,11 @@ const AboutUs = () => {
                     title="Research and strategy"
                     description="We provide clear insights on your market, competition, and customers to guide product decisions."
                   />
+                  <WhatWeDoLink
+                    href="/#research-strategy"
+                    title="Marketing support"
+                    description="Visibility for your product through trusted marketing and branding partnerships."
+                  />
                 </div>
                 <div className="absolute -bottom-1.5 -right-1.5 z-10">
                   <Rhombus />
@@ -180,26 +199,32 @@ const AboutUs = () => {
                   <OurValuesCard
                     title="Involvement"
                     description="Product first. We build what users need, not what looks good in presentations."
+                    icon={Circle}
                   />
                   <OurValuesCard
                     title="Transparency"
                     description="We have nothing to hide. Open process, clear communication, no surprises."
+                    icon={SearchRefraction}
                   />
                   <OurValuesCard
                     title="Responsibility"
                     description="Only actions matter. We deliver on commitments and let results speak."
+                    icon={AtSign}
                   />
                   <OurValuesCard
                     title="Innovation"
                     description="Everything can be automated. We use AI and modern tools to build faster."
+                    icon={Star04}
                   />
                   <OurValuesCard
                     title="Efficiency"
                     description="Time is money. We skip unnecessary meetings and focus on shipping."
+                    icon={ZapFast}
                   />
                   <OurValuesCard
                     title="Accessibility"
                     description="No need to spend millions. Great software shouldn't require massive budgets."
+                    icon={BezierCurve03}
                   />
                 </div>
                 <div className="absolute -bottom-1.5 -right-1.5 z-10">
@@ -228,9 +253,9 @@ const AboutUs = () => {
                   <TeamMemberAccordion
                     value="kristian-veter"
                     name="Kristian Veter"
-                    position="Business Development Lead"
+                    position="AI Product Lead"
                     imageUrl="/people/kristian-veter.jpg"
-                    description="Former co-founder of Opendoor. Early staff at Spotify and Clearbit."
+                    description="The mind behind our AI work, making features and integrations deliver real business value."
                     socialMediaLinks={[
                       {
                         icon: "/social-media-icons/x.svg",
@@ -240,6 +265,10 @@ const AboutUs = () => {
                         icon: "/social-media-icons/linkedin.svg",
                         href: "https://www.linkedin.com/in/kristian-veter/",
                       },
+                      {
+                        icon: "/social-media-icons/youtube.svg",
+                        href: "https://www.youtube.com/@kristianvtr",
+                      },
                     ]}
                   />
                   <TeamMemberAccordion
@@ -247,7 +276,7 @@ const AboutUs = () => {
                     name="Artem Simutin"
                     position="Lead Developer"
                     imageUrl="/people/artem-simutin.jpeg"
-                    description="Former co-founder of Opendoor. Early staff at Spotify and Clearbit."
+                    description="The quiet force behind our stack, making everything run smoothly."
                     socialMediaLinks={[
                       {
                         icon: "/social-media-icons/x.svg",
@@ -264,11 +293,24 @@ const AboutUs = () => {
                     name="Denis Simutin"
                     position="Lead Designer"
                     imageUrl="/people/denis-simutin.jpg"
-                    description="Former co-founder of Opendoor. Early staff at Spotify and Clearbit."
+                    description="The eye behind our interface, making every screen clear and consistent."
                     socialMediaLinks={[
                       {
                         icon: "/social-media-icons/x.svg",
-                        href: "https://x.com",
+                        href: "https://x.com/denissimutin",
+                      },
+                    ]}
+                  />
+                  <TeamMemberAccordion
+                    value="joel-dennis"
+                    name="Joel Dennis"
+                    position="Lead Marketing"
+                    imageUrl="/people/joel-dennis.jpg"
+                    description="TThe voice of our customers, ensuring that marketing efforts align with your needs."
+                    socialMediaLinks={[
+                      {
+                        icon: "/social-media-icons/linkedin.svg",
+                        href: "https://www.linkedin.com/in/joeladennis/",
                       },
                     ]}
                   />

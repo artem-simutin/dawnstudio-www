@@ -80,7 +80,7 @@ const Hero = () => {
                   </div>
                   <div className="flex gap-x-lg gap-y-sm tablet:flex-row flex-col tablet:w-auto w-full">
                     <div className="flex gap-x-lg">
-                      <div className="px-lg py-xxs desktop:px-3xl tablet:px-2xl tablet:py-xs desktop:py-sm border border-border-primary rounded-md shadow-xs">
+                      <div className="px-lg py-xxs pb-sm desktop:px-3xl tablet:px-2xl tablet:py-xs tablet:pb-md desktop:py-sm desktop:pb-lg border border-border-primary rounded-md shadow-xs">
                         <span className="text-display-md tablet:text-display-lg desktop:text-display-xl leading-display-md tablet:leading-display-lg desktop:leading-display-xl text-text-primary font-bold">
                           Digital Products
                         </span>

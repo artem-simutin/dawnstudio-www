@@ -82,7 +82,7 @@ const SocialProof = () => {
 
 const SimpleCard: FC<Company> = (props) => {
   return (
-    <div>
+    <div className="flex items-center justify-center">
       <Image
         src={props.logoSrc}
         width={props.logoWidth}

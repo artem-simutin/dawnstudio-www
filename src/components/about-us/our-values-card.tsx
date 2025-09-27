@@ -3,15 +3,18 @@ import { Cursor02 } from "untitledui-js/react";
 const OurValuesCard = ({
   title,
   description,
+  icon,
 }: {
   title: string;
   description: string;
+  icon?: typeof Cursor02;
 }) => {
+  const Icon = icon ?? Cursor02;
   return (
     <div className="border border-border-secondary shadow-xs  rounded-xs">
       <div className="p-4 tablet:p-6 desktop:p-8 flex flex-col gap-2">
         <div className="flex gap-3 items-center">
-          <Cursor02 className="h-4 w-4 text-text-secondary" />
+          <Icon className="h-4 w-4 text-text-secondary" />
           <p className="text-xl font-semibold text-text-secondary">{title}</p>
         </div>
         <p className="text-text-tertiary text-md font-normal">{description}</p>

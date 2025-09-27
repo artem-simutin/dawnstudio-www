@@ -96,7 +96,7 @@ const TeamMemberAccordion = ({
             </a>
           ))}
         </div>
-        <div className="tablet:h-5 h-2  bg-[url(/patterns/slash-darker.svg)] w-full border-t border-border-secondary" />
+        <div className="tablet:h-2 h-2 bg-[url(/patterns/slash-darker.svg)] w-full border-t border-border-secondary" />
       </AccordionPrimitive.Content>
     </AccordionPrimitive.Item>
   );
