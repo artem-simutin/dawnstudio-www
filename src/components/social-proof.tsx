@@ -1,13 +1,13 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import React, { FC } from "react";
-import { LinkExternal01 } from "untitledui-js/react";
 
 interface Company {
   name: string;
   logoSrc: string;
   logoWidth: number;
   logoHeight: number;
+  logoClassName?: string;
   href: string;
   tags: string[];
   websiteScreenshotSrc: string;
@@ -34,6 +34,7 @@ const companies: Company[] = [
     tags: ["Web", "SaaS", "B2B", "Procrutment"],
     websiteScreenshotSrc: "/companies/landings/paperfly.app.png",
     showLogoName: false,
+    logoClassName: "h-11",
   },
   {
     name: "ADL Activigram",
@@ -44,6 +45,7 @@ const companies: Company[] = [
     tags: ["Mobile", "Study", "Healthcare"],
     websiteScreenshotSrc: "/companies/landings/adl.png",
     showLogoName: true,
+    logoClassName: "h-20 w-auto",
   },
   {
     name: "Prxy.ai",
@@ -54,6 +56,7 @@ const companies: Company[] = [
     tags: ["Web", "B2B", "Marketing"],
     websiteScreenshotSrc: "/companies/landings/prxyai.com.png",
     showLogoName: false,
+    logoClassName: "h-8",
   },
 ];
 
@@ -68,60 +71,79 @@ const SocialProof = () => {
         </div>
         <div className="border-l border-border-secondary flex bg-[url(/patterns/slash.svg)] min-w-full flex-1"></div>
       </div>
-      <div className="flex py-8xl px-4xl gap-x-4xl bg-background-secondary/50 w-full flex-1 overflow-x-auto">
+      <div className="grid grid-cols-2 gap-y-8 desktop:flex py-8xl px-4xl gap-x-4xl bg-background-secondary/30 w-full flex-1 overflow-x-auto justify-around items-center">
         {companies.map((c) => (
-          <Card key={c.href} {...c} />
+          <SimpleCard key={c.href} {...c} />
         ))}
       </div>
     </section>
   );
 };
 
-const Card: FC<Company> = (props) => {
+const SimpleCard: FC<Company> = (props) => {
   return (
-    <Link
-      href={props.href}
-      className="flex flex-col border border-border-secondary rounded-xs min-w-[400px]  flex-shrink-0 bg-background-primary shadow-[0_4px_1px_0_var(--color-effects-shadow-xs)]"
-      target="_blank"
-    >
-      <div className="w-full flex items-center justify-between p-4xl border-b border-border-secondary">
-        <div className="flex gap-x-3 w-full items-center">
-          <Image
-            src={props.logoSrc}
-            width={props.logoWidth}
-            height={props.logoHeight}
-            alt={props.name}
-            className="h-8 object-contain object-left"
-          />
-          {props.showLogoName && (
-            <span className="text-md leading-md font-bold text-text-tertiary">
-              {props.name}
-            </span>
-          )}
-        </div>
-
-        <LinkExternal01 size={20} className="text-text-quaternary" />
-      </div>
+    <div>
       <Image
-        src={props.websiteScreenshotSrc}
-        width={400}
-        height={192}
+        src={props.logoSrc}
+        width={props.logoWidth}
+        height={props.logoHeight}
         alt={props.name}
-        className="w-full border-b border-border-secondary h-[192px] object-cover"
+        className={cn(
+          "w-auto h-12 object-contain object-left",
+          props.logoClassName
+        )}
+        quality={100}
+        unoptimized
       />
-      <div className="flex w-full gap-x-md p-xl border-border-secondary border-b">
-        {props.tags.map((tag) => (
-          <span
-            key={`company-tag-${props.name}-tag-${tag}`}
-            className="border border-border-secondary rounded-lg py-xs px-md text-xs font-medium text-text-secondary leading-xs"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-      <div className="w-full bg-[url(/patterns/slash-darker.svg)] h-1.5"></div>
-    </Link>
+    </div>
   );
 };
+
+// const Card: FC<Company> = (props) => {
+//   return (
+//     <Link
+//       href={props.href}
+//       className="flex flex-col border border-border-secondary rounded-xs min-w-[400px]  flex-shrink-0 bg-background-primary shadow-[0_4px_1px_0_var(--color-effects-shadow-xs)]"
+//       target="_blank"
+//     >
+//       <div className="w-full flex items-center justify-between p-4xl border-b border-border-secondary">
+//         <div className="flex gap-x-3 w-full items-center">
+//           <Image
+//             src={props.logoSrc}
+//             width={props.logoWidth}
+//             height={props.logoHeight}
+//             alt={props.name}
+//             className="h-8 object-contain object-left"
+//           />
+//           {props.showLogoName && (
+//             <span className="text-md leading-md font-bold text-text-tertiary">
+//               {props.name}
+//             </span>
+//           )}
+//         </div>
+
+//         <LinkExternal01 size={20} className="text-text-quaternary" />
+//       </div>
+//       <Image
+//         src={props.websiteScreenshotSrc}
+//         width={400}
+//         height={192}
+//         alt={props.name}
+//         className="w-full border-b border-border-secondary h-[192px] object-cover"
+//       />
+//       <div className="flex w-full gap-x-md p-xl border-border-secondary border-b">
+//         {props.tags.map((tag) => (
+//           <span
+//             key={`company-tag-${props.name}-tag-${tag}`}
+//             className="border border-border-secondary rounded-lg py-xs px-md text-xs font-medium text-text-secondary leading-xs"
+//           >
+//             {tag}
+//           </span>
+//         ))}
+//       </div>
+//       <div className="w-full bg-[url(/patterns/slash-darker.svg)] h-1.5"></div>
+//     </Link>
+//   );
+// };
 
 export default SocialProof;

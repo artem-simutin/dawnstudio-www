@@ -61,7 +61,7 @@ const Services = () => {
               logoSrc: "/products/figma.svg",
               logoAlt: "Figma logo",
               title: "Product design",
-              content: "We help you with both your product and your brand",
+              content: "We help you with both your product and your brand.",
             },
           ]}
         />
