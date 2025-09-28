@@ -306,7 +306,7 @@ const AboutUs = () => {
                     name="Joel Dennis"
                     position="Lead Marketing"
                     imageUrl="/people/joel-dennis.jpg"
-                    description="TThe voice of our customers, ensuring that marketing efforts align with your needs."
+                    description="The voice of our customers, ensuring that marketing efforts align with your needs."
                     socialMediaLinks={[
                       {
                         icon: "/social-media-icons/linkedin.svg",

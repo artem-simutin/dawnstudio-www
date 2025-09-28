@@ -86,7 +86,7 @@ const Services = () => {
               logoAlt: "Google Ads logo",
               title: "Marketing support",
               content:
-                "Visibility for your product through trusted marketing and branding partnerships.",
+                "We help you increase visibility through trusted marketing partnerships.",
             },
           ]}
         />
